@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="AuthenticationProxy" startOnLoad="true" transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <property description="Capture Institution Code" expression="//authenticate/institutionCode" name="instCode" scope="default" type="STRING"/>
+            <property description="Capture Institution Password" expression="//authenticate/password" name="instPassword" scope="default" type="STRING"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <Authenticate>
+                        <guid>$1</guid>
+                        <customerCode>$2</customerCode>
+                        <password>$3</password>
+                    </Authenticate>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')"/>
+                    <arg evaluator="xml" expression="$ctx:instCode"/>
+                    <arg evaluator="xml" expression="$ctx:instPassword"/>
+                </args>
+            </payloadFactory>
+            <log category="DEBUG" level="full"/>
+            <call>
+                <endpoint key="AuthenticateEP"/>
+            </call>
+            <payloadFactory media-type="xml">
+                <format>
+                    <AuthenticateResponse>
+                        <AuthenticateResult>$1</AuthenticateResult>
+                    </AuthenticateResponse>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="//AuthenticateResponse/AuthenticateResult"/>
+                </args>
+            </payloadFactory>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+</proxy>

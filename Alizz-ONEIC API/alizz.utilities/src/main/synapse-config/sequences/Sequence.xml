@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <header name="Accept" scope="transport" value="text/xml; charset=utf-8"/>
+    <header name="Content-Type" scope="transport" value="text/xml; charset=utf-8"/>
+</sequence>

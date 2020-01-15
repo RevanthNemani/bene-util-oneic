@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="fcubsupEP" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl port="FCUBSUPServiceSEI" service="FCUBSUPService" uri="http://aibfcubs:7001/FCUBSUPService/FCUBSUPService?WSDL"/>
+</endpoint>

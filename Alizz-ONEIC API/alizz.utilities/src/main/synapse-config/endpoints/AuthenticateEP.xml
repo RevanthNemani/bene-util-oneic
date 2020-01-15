@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="AuthenticateEP" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl port="BasicHttpBinding_ITokenService" service="Token" uri="http://10.8.16.68:6001/Token.svc?wsdl"/>
+</endpoint>

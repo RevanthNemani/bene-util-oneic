@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "0cbec63b-eeb6-49c1-b5cb-8fa26aa6dbc9",
+		"name": "beneficiaries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createBeneficiary-customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"_postbeneficiary_create\": {\r\n      \"benType\": \"1\",\r\n      \"cif\": \"0000341\",\r\n      \"benAlias\": \"beneficiary\",\r\n      \"benSwift\": \"SBININ67GG\",\r\n      \"benAccountNumber\": \"001234567890\",\r\n      \"benFirstName\": \"first\",\r\n      \"benLastName\": \"last\",\r\n      \"benAddress1\": \"18, beach house\",\r\n      \"benAddress2\": \"Miami\",\r\n      \"benAddress3\": \"USA\",\r\n      \"benCurrency\": \"USD\",\r\n      \"creator\": \"1\",\r\n      \"updator\": \"1\"\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "http://10.10.150.22:8281/services/beneficiaryds/beneficiary/create",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"150",
+						"22"
+					],
+					"port": "8281",
+					"path": [
+						"services",
+						"beneficiaryds",
+						"beneficiary",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBeneficiary -utility",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_postbeneficiary_create\": {\n        \"benType\": \"4\",\n        \"cif\": \"0000457\",\n        \"benAlias\": \"electricity\",\n        \"consumerNumber\": \"90000234\",\n        \"consumerType\": \"2\",\n        \"service\": \"2\",\n        \"creator\": \"1\",\n        \"updator\": \"1\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8280/services/beneficiarydb/beneficiary/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"beneficiary",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readBeneficiaries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://10.10.150.22:8281/services/beneficiarydb/beneficiary/0000341",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"150",
+						"22"
+					],
+					"port": "8281",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"beneficiary",
+						"0000341"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readUtilities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://10.10.150.22::8281/services/beneficiarydb/utility/0000457",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"150",
+						"22:"
+					],
+					"port": "8281",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"utility",
+						"0000457"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readToken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://10.10.150.22:8281/services/beneficiarydb/token/1",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"150",
+						"22"
+					],
+					"port": "8281",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"token",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_posttoken_update\": {\n        \"tokenId\": 1,\n        \"token\": \"TEST00003KISS1234567KSJDEL99\",\n        \"exp\": \"2019-01-05\",\n        \"updator\": \"alizz-oneic-postman\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://10.10.150.22:8281/services/beneficiarydb/token/update",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"150",
+						"22"
+					],
+					"port": "8281",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"token",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBeneficiaries",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"_post_update\": {\r\n      \"benSwift\": \"SBIN\",\r\n      \"benAccountNumber\": \"?\",\r\n      \"benFirstName\": \"?\",\r\n      \"benLastName\": \"?\",\r\n      \"benAddress1\": \"?\",\r\n      \"benAddress2\": \"?\",\r\n      \"benCurrency\": \"?\",\r\n      \"consumerNumber\": \"?\",\r\n      \"consumerType\": \"?\",\r\n      \"service\": \"?\",\r\n      \"isActive\": 0,\r\n      \"updator\": 1,\r\n      \"cif\": \"0000003\",\r\n      \"benAlias\": \"test003\"\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8280/services/beneficiarydb/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBeneficiaries",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"_deletebeneficiary_delete\": {\r\n      \"cif\": \"0000341\",\r\n      \"benAlias\": \"beneficiary\"\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "http://10.10.103.3:8280/services/beneficiarydb/beneficiary/delete",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"103",
+						"3"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"beneficiarydb",
+						"beneficiary",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

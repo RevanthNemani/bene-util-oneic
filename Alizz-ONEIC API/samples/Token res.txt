@@ -1,0 +1,26 @@
+<MFEP xmlns="">
+  <MsgHeader>
+    <TmStp>2018-01-02T00:39:24</TmStp>
+    <GUID>7dbbe4ca-ef34-11e7-b47c-c0a80a140000</GUID>
+    <TrsInf>
+      <RcvCode>13</RcvCode>
+      <ResTyp>TOKNRS</ResTyp>
+    </TrsInf>
+    <Result>
+      <ErrorCode>0</ErrorCode>
+      <ErrorDesc>Success</ErrorDesc>
+      <Severity>Info</Severity>
+    </Result>
+  </MsgHeader>
+  <MsgBody>
+    <TokenConf>
+      <TokenKey>01E52873E76AB71BC1A56AD04042C08C73642253571B17C25C2F875E45B61AB013</TokenKey>
+      <ExpiryDate>2019-01-02T00:39:24</ExpiryDate>
+    </TokenConf>
+  </MsgBody>
+  <MsgFooter>
+    <Security>
+      <Signature>JEo+WiUnAkDh8//TnjilT8UyfdrDFdGfNOQptHTQxl95cdlxAjBaKR+oxbVVA/qTly8b/zsonJDVgiM//BoBkJmXSeQJrz04t7mnxsV94cBkVkVKV2ghf7M5IupZUdGTOsVUDSKC624X+s5T2hhKAHC/6SRUDwzeEeqpZ157Yed1nrZn/fjd/92a5YbSI1n3CLFjbrPSAcm5cEXP0NK5m/ef0uYCDNQm7cUn3verwcI3mqzAaEDiaBopgsC8fYt5klrLSJ6xLGvQxuTdpm7ObmXtr0HlbkzkI5cINWkf0jZjmqyW0utL0glJJfYQYnNh3UfBx93rrjYzf/dZ1fmv4g==</Signature>
+    </Security>
+  </MsgFooter>
+</MFEP>

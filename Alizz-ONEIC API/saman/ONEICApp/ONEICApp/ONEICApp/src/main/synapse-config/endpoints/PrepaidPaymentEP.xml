@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="PrepaidPaymentEP" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl port="BasicHttpBinding_IPrepaidPayment" service="PrepaidPayment" uri="http://10.8.16.68:6017/PrepaidPayment.svc?wsdl"/>
+</endpoint>

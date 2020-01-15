@@ -1,0 +1,92 @@
+<data disableLegacyBoxcarringMode="true" enableBatchRequests="true" enableBoxcarring="true" name="beneficiaryds" transports="http https local">
+   <config enableOData="false" id="001">
+      <property name="driverClassName">com.mysql.cj.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://10.10.150.42:3306/BENEFICIARY_DB</property>
+      <property name="username">beneficiary</property>
+      <property name="password">Beneficiary@2019</property>
+   </config>
+   <query id="createBeneficiary" returnUpdatedRowCount="true" useConfig="001">
+      <sql>INSERT INTO&#xd;    BENEFICIARIES (&#xd;        BEN_TYPE_ID,&#xd;        CIF,&#xd;        BEN_ALIAS_NAME,&#xd;        BEN_SWIFT,&#xd;        BEN_ACCOUNT_NUM,&#xd;        BEN_FIRST_NAME,&#xd;        BEN_LAST_NAME,&#xd;        BEN_ADDRESS_1,&#xd;        BEN_ADDRESS_2,&#xd;        BEN_ADDRESS_3,&#xd;        BEN_CURRENCY,&#xd;        CONSUMER_NUM,&#xd;        CONSUMER_TYPE_ID,&#xd;        SERVICE_ID,&#xd;        RESERVE,&#xd;        CREATED_BY,&#xd;        UPDATED_BY&#xd;    )&#xd;VALUES&#xd;    (&#xd;      :benType ,&#xd;      :cif ,&#xd;      :benAlias ,&#xd;      :benSwift ,&#xd;      :benAccountNumber ,&#xd;      :benFirstName ,&#xd;      :benLastName ,&#xd;      :benAddress1 ,&#xd;      :benAddress2 ,&#xd;      :benAddress3 ,&#xd;      :benCurrency ,&#xd;      :consumerNumber ,&#xd;      :consumerType ,&#xd;      :service ,&#xd;      :reserve ,&#xd;      :creator ,&#xd;      :updator );</sql>
+      <result escapeNonPrintableChar="true" outputType="json" useColumnNumbers="true">{&#xd;    "createBeneficiary": {&#xd;        "success": "$1"&#xd;    }&#xd;}</result>
+      <param name="benType" sqlType="STRING"/>
+      <param name="cif" sqlType="STRING"/>
+      <param name="benAlias" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benSwift" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAccountNumber" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benFirstName" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benLastName" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress1" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress2" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress3" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benCurrency" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerNumber" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerType" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="service" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="reserve" optional="true" sqlType="STRING"/>
+      <param name="creator" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="updator" optional="true" sqlType="STRING"/>
+   </query>
+   <query id="updateBeneficiary" returnUpdatedRowCount="true" useConfig="001">
+      <sql>UPDATE&#xd;    BENEFICIARIES&#xd;SET&#xd;    BEN_TYPE_ID = :benType ,&#xd;    BEN_SWIFT = :benSwift ,&#xd;    BEN_ACCOUNT_NUM = :benAccountNumber ,&#xd;    BEN_FIRST_NAME = :benFirstName ,&#xd;    BEN_LAST_NAME = :benLastName ,&#xd;    BEN_ADDRESS_1 = :benAddress1 ,&#xd;    BEN_ADDRESS_2 = :benAddress2 ,&#xd;    BEN_ADDRESS_3 = :benAddress3 ,&#xd;    BEN_CURRENCY = :benCurrency ,&#xd;    CONSUMER_NUM = :consumerNumber ,&#xd;    CONSUMER_TYPE_ID = :consumerTypeId ,&#xd;    SERVICE_ID = :serviceId ,&#xd;    IS_ACTIVE = :isActive ,&#xd;    RESERVE = :reserve ,&#xd;    UPDATED_BY = :updator&#xd;WHERE&#xd;    CIF = :cif&#xd;    AND BEN_ALIAS_NAME = :benAlias ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json" useColumnNumbers="true">{&#xd;    "updateBeneficiary": {&#xd;        "success": "$1"&#xd;    }&#xd;}</result>
+      <param name="benType" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benSwift" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAccountNumber" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benFirstName" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benLastName" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress1" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress2" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress3" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benCurrency" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerNumber" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerTypeId" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="serviceId" optional="true" sqlType="STRING"/>
+      <param defaultValue="1" name="isActive" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="reserve" optional="true" sqlType="STRING"/>
+      <param name="updator" sqlType="STRING"/>
+      <param name="cif" sqlType="STRING"/>
+      <param name="benAlias" sqlType="STRING"/>
+   </query>
+   <resource disableStreaming="true" method="POST" path="beneficiary/create">
+      <call-query href="createBeneficiary">
+         <with-param name="benType" query-param="benType"/>
+         <with-param name="cif" query-param="cif"/>
+         <with-param name="benAlias" query-param="benAlias"/>
+         <with-param name="benSwift" query-param="benSwift"/>
+         <with-param name="benAccountNumber" query-param="benAccountNumber"/>
+         <with-param name="benFirstName" query-param="benFirstName"/>
+         <with-param name="benLastName" query-param="benLastName"/>
+         <with-param name="benAddress1" query-param="benAddress1"/>
+         <with-param name="benAddress2" query-param="benAddress2"/>
+         <with-param name="benAddress3" query-param="benAddress3"/>
+         <with-param name="benCurrency" query-param="benCurrency"/>
+         <with-param name="consumerNumber" query-param="consumerNumber"/>
+         <with-param name="consumerType" query-param="consumerType"/>
+         <with-param name="service" query-param="service"/>
+         <with-param name="reserve" query-param="reserve"/>
+         <with-param name="creator" query-param="creator"/>
+         <with-param name="updator" query-param="updator"/>
+      </call-query>
+   </resource>
+   <resource disableStreaming="true" method="POST" path="beneficiary/update">
+      <call-query href="updateBeneficiary">
+         <with-param name="benType" query-param="benType"/>
+         <with-param name="benSwift" query-param="benSwift"/>
+         <with-param name="benAccountNumber" query-param="benAccountNumber"/>
+         <with-param name="benFirstName" query-param="benFirstName"/>
+         <with-param name="benLastName" query-param="benLastName"/>
+         <with-param name="benAddress1" query-param="benAddress1"/>
+         <with-param name="benAddress2" query-param="benAddress2"/>
+         <with-param name="benAddress3" query-param="benAddress3"/>
+         <with-param name="benCurrency" query-param="benCurrency"/>
+         <with-param name="consumerNumber" query-param="consumerNumber"/>
+         <with-param name="consumerTypeId" query-param="consumerTypeId"/>
+         <with-param name="serviceId" query-param="serviceId"/>
+         <with-param name="isActive" query-param="isActive"/>
+         <with-param name="reserve" query-param="reserve"/>
+         <with-param name="updator" query-param="updator"/>
+         <with-param name="cif" query-param="cif"/>
+         <with-param name="benAlias" query-param="benAlias"/>
+      </call-query>
+   </resource>
+</data>

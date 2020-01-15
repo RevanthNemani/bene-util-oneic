@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="json-header-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <header name="Accept" scope="transport" value="application/json"/>
+    <header name="Content-Type" scope="transport" value="application/json"/>
+</sequence>

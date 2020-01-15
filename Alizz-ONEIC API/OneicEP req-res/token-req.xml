@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+    <To xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none" s:mustUnderstand="1">https://efwebstaging.tasdeed.local:7001/Token.svc/BasicHttps</To>
+    <Action xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none" s:mustUnderstand="1">http://tempuri.org/ITokenService/Authenticate</Action>
+  </s:Header>
+  <soapenv:Body>
+    <NS1:Authenticate xmlns:NS1="http://tempuri.org/">
+      <NS1:guid>7dbbe4ca-ef34-11e7-b47c-c0a80a140000</NS1:guid>
+      <NS1:customerCode>13</NS1:customerCode>
+      <NS1:password>ZWKO0H54</NS1:password>
+    </NS1:Authenticate>
+  </soapenv:Body>
+</soapenv:Envelope>

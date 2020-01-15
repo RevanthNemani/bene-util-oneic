@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="asd" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl:definitions name="InternationalTime" targetNamespace="http://www.alizzislamic.com/InternationalTime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.alizzislamic.com/InternationalTime/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <wsdl:types>
+            <xsd:schema targetNamespace="http://www.alizzislamic.com/InternationalTime/">
+                <xsd:element name="getInternationalTime">
+                    <xsd:complexType>
+                        <xsd:all>
+                            <xsd:element name="Country" type="xsd:string"/>
+                            <xsd:element name="City" type="xsd:string"/>
+                        </xsd:all>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="getInternationalTimeResponse" type="xsd:time"/>
+            </xsd:schema>
+        </wsdl:types>
+        <wsdl:message name="getInternationalTimeRequest">
+            <wsdl:part element="tns:getInternationalTime" name="getInternationalTimeRequest"/>
+        </wsdl:message>
+        <wsdl:message name="getInternationalTimeResponse">
+            <wsdl:part element="tns:getInternationalTimeResponse" name="getInternationalTimeResponse"/>
+        </wsdl:message>
+        <wsdl:portType name="InternationalTime">
+            <wsdl:operation name="getInternationalTime">
+                <wsdl:input message="tns:getInternationalTimeRequest"/>
+                <wsdl:output message="tns:getInternationalTimeResponse"/>
+            </wsdl:operation>
+        </wsdl:portType>
+        <wsdl:binding name="InternationalTimeSOAP" type="tns:InternationalTime">
+            <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+            <wsdl:operation name="getInternationalTime">
+                <soap:operation soapAction="http://www.alizzislamic.com/InternationalTime/getInternationalTime"/>
+                <wsdl:input>
+                    <soap:body use="literal"/>
+                </wsdl:input>
+                <wsdl:output>
+                    <soap:body use="literal"/>
+                </wsdl:output>
+            </wsdl:operation>
+        </wsdl:binding>
+        <wsdl:service name="InternationalTime">
+            <wsdl:port binding="tns:InternationalTimeSOAP" name="InternationalTimeSOAP">
+                <soap:address location="http://www.example.org/"/>
+            </wsdl:port>
+        </wsdl:service>
+    </wsdl:definitions>
+</localEntry>

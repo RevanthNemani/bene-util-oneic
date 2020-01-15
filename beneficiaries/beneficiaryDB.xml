@@ -1,0 +1,114 @@
+<data disableLegacyBoxcarringMode="true" enableBatchRequests="true" enableBoxcarring="true" name="beneficiarydb" transports="http https local">
+   <config enableOData="false" id="0001">
+      <property name="driverClassName">com.mysql.cj.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://10.10.150.42:3306/BENEFICIARY_DB</property>
+      <property name="username">beneficiary</property>
+      <property name="password">Beneficiary@2019</property>
+   </config>
+   <config enableOData="false" id="0002">
+      <property name="driverClassName">com.mysql.cj.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://10.10.150.42:3306/BENEFICIARY_DB</property>
+      <property name="username">beneficiary</property>
+      <property name="password">Beneficiary@2019</property>
+   </config>
+   <query id="createBeneficiary" returnUpdatedRowCount="true" useConfig="0001">
+      <sql>INSERT INTO&#xd;    BENEFICIARIES (&#xd;        BEN_TYPE_ID,&#xd;        CIF,&#xd;        BEN_ALIAS_NAME,&#xd;        BEN_SWIFT,&#xd;        BEN_ACCOUNT_NUM,&#xd;        BEN_FIRST_NAME,&#xd;        BEN_LAST_NAME,&#xd;        BEN_ADDRESS_1,&#xd;        BEN_ADDRESS_2,&#xd;        BEN_ADDRESS_3,&#xd;        BEN_CURRENCY,&#xd;        CONSUMER_NUM,&#xd;        CONSUMER_TYPE_ID,&#xd;        SERVICE_ID,&#xd;        RESERVE,&#xd;        CREATED_BY,&#xd;        UPDATED_BY&#xd;    )&#xd;VALUES&#xd;    (&#xd;      :benType ,&#xd;      :cif ,&#xd;      :benAlias ,&#xd;      :benSwift ,&#xd;      :benAccountNumber ,&#xd;      :benFirstName ,&#xd;      :benLastName ,&#xd;      :benAddress1 ,&#xd;      :benAddress2 ,&#xd;      :benAddress3 ,&#xd;      :benCurrency ,&#xd;      :consumerNumber ,&#xd;      :consumerType ,&#xd;      :service ,&#xd;      :reserve ,&#xd;      :creator ,&#xd;      :updator&#xd;    );</sql>
+      <result escapeNonPrintableChar="true" outputType="json" useColumnNumbers="true">{&#xd;    "createBeneficiary": {&#xd;        "success": "$1"&#xd;    }&#xd;}&#xd;</result>
+      <param name="benType" sqlType="STRING"/>
+      <param name="cif" sqlType="STRING"/>
+      <param name="benAlias" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benSwift" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAccountNumber" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benFirstName" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benLastName" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress1" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress2" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress3" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benCurrency" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerNumber" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerType" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="service" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="reserve" sqlType="STRING"/>
+      <param name="creator" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="updator" sqlType="STRING"/>
+   </query>
+   <query id="updateBeneficiary" returnUpdatedRowCount="true" useConfig="0002">
+      <sql>UPDATE BENEFICIARY_DB.BENEFICIARIES&#xd;SET&#xd;BEN_SWIFT = :benSwift ,&#xd;BEN_ACCOUNT_NUM = :benAccountNumber ,&#xd;BEN_FIRST_NAME = :benFirstName ,&#xd;BEN_LAST_NAME = :benLastName ,&#xd;BEN_ADDRESS_1 = :benAddress1 ,&#xd;BEN_ADDRESS_2 = :benAddress2 ,&#xd;BEN_ADDRESS_3 = :benCurrency ,&#xd;CONSUMER_NUM = :consumerNumber ,&#xd;CONSUMER_TYPE_ID = :consumerType ,&#xd;SERVICE_ID = :service ,&#xd;IS_ACTIVE = :isActive ,&#xd;RESERVE = :reserve ,&#xd;UPDATED_BY = :updator&#xd;WHERE CIF = :cif AND BEN_ALIAS_NAME = :benAlias ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json" useColumnNumbers="true">{ "updateBeneficiary": { "Success": $1 } }</result>
+      <param defaultValue="#{NULL}" name="benSwift" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAccountNumber" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benFirstName" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benLastName" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress1" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benAddress2" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="benCurrency" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerNumber" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="consumerType" sqlType="TINYINT"/>
+      <param defaultValue="#{NULL}" name="service" sqlType="INTEGER"/>
+      <param defaultValue="#{NULL}" name="isActive" sqlType="TINYINT"/>
+      <param defaultValue="#{NULL}" name="reserve" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="updator" sqlType="SMALLINT"/>
+      <param name="cif" sqlType="STRING"/>
+      <param name="benAlias" sqlType="STRING"/>
+   </query>
+   <query id="deleteBeneficiary" returnUpdatedRowCount="true" useConfig="0001">
+      <sql>DELETE FROM BENEFICIARY_DB.BENEFICIARIES WHERE CIF = :cif AND BEN_ALIAS_NAME = :benAlias ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json" useColumnNumbers="true">{ "DeleteBeneficiary": { "Success": $1 } }</result>
+      <param name="cif" sqlType="STRING"/>
+      <param name="benAlias" sqlType="STRING"/>
+   </query>
+   <query id="readUtility" useConfig="0002">
+      <sql>SELECT &#xd;ben.BENEFICIARY_ID, &#xd;ben.BEN_TYPE_ID,&#xd;btm.BEN_TYPE,&#xd;ben.CIF, &#xd;ben.BEN_ALIAS_NAME,&#xd;ben.CONSUMER_NUM,&#xd;ben.CONSUMER_TYPE_ID,&#xd;ctm.CONSUMER_TYPE_NAME,&#xd;svr.SERVICE_ID,&#xd;svr.SERVICE_NAME,&#xd;svr.CREDIT_ACCOUNT_NUM,&#xd;svr.MIN_PAY_AMOUNT,&#xd;svr.MAX_PAY_AMOUNT,&#xd;svr.PRD,&#xd;cm.COMPANY_ID,&#xd;cm.COMPANY_NAME,&#xd;cm.WEB_URL,&#xd;(CASE WHEN ben.IS_ACTIVE = 1 AND svr.IS_ACTIVE = 1 AND cm.IS_ACTIVE = 1 THEN 1 ELSE 0 END) IS_ACTIVE FROM &#xd;BENEFICIARY_DB.BENEFICIARIES ben,&#xd;BENEFICIARY_DB.BENEFICIARY_TYPE_MASTER btm,&#xd;BENEFICIARY_DB.CONSUMER_TYPE_MASTER ctm,&#xd;BENEFICIARY_DB.COMPANY_MASTER cm,&#xd;BENEFICIARY_DB.SERVICES svr&#xd;WHERE ben.BEN_TYPE_ID = btm.BEN_TYPE_ID&#xd;AND ben.BEN_TYPE_ID = 4&#xd;AND ben.CONSUMER_TYPE_ID = ctm.CONSUMER_TYPE_ID&#xd;AND ben.SERVICE_ID = svr.SERVICE_ID&#xd;AND svr.COMPANY_ID = cm.COMPANY_ID&#xd;AND ben.CIF = :cif ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json">{&#xd;    "readUtilities": {&#xd;        "utilities": [&#xd;            {&#xd;                "cif": "$CIF",&#xd;                "benID": "$BENEFICIARY_ID",&#xd;                "benTypeId": "$BEN_TYPE_ID",&#xd;                "benType": "$BEN_TYPE",&#xd;                "benAlias": "$BEN_ALIAS_NAME",&#xd;                "consumerNumber": "$CONSUMER_NUM",&#xd;                "consumerTypeId": "$CONSUMER_TYPE_ID",&#xd;                "consumerType": "$CONSUMER_TYPE_NAME",&#xd;                "serviceId": "$SERVICE_ID",&#xd;                "service": "$SERVICE_NAME",&#xd;                "creditAccountNumber": "$CREDIT_ACCOUNT_NUM",&#xd;                "minPayAmount": "$MIN_PAY_AMOUNT",&#xd;                "maxPayAmount": "$MAX_PAY_AMOUNT",&#xd;                "companyId": "$COMPANY_ID",&#xd;                "companyName": "$COMPANY_NAME",&#xd;                "companyUrl": "$WEB_URL",&#xd;                "flexCubeCode": "$PRD",&#xd;                "isActive": "$IS_ACTIVE"&#xd;            }&#xd;        ]&#xd;    }&#xd;}</result>
+      <param name="cif" sqlType="STRING"/>
+   </query>
+   <query id="readBeneficiary" useConfig="0001">
+      <sql>SELECT &#xd;ben.BENEFICIARY_ID, &#xd;ben.BEN_TYPE_ID,&#xd;btm.BEN_TYPE,&#xd;ben.CIF, &#xd;ben.BEN_ALIAS_NAME, &#xd;ben.BEN_SWIFT, &#xd;ben.BEN_ACCOUNT_NUM,&#xd;ben.BEN_FIRST_NAME, &#xd;ben.BEN_LAST_NAME, &#xd;ben.BEN_ADDRESS_1, &#xd;ben.BEN_ADDRESS_2, &#xd;ben.BEN_ADDRESS_3, &#xd;ben.BEN_CURRENCY,&#xd;ben.IS_ACTIVE FROM &#xd;BENEFICIARY_DB.BENEFICIARIES ben,&#xd;BENEFICIARY_DB.BENEFICIARY_TYPE_MASTER btm&#xd;WHERE ben.BEN_TYPE_ID = btm.BEN_TYPE_ID&#xd;AND ben.BEN_TYPE_ID &lt;&gt; 4&#xd;AND ben.CIF = :cif ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json">{&#xd;    "readBeneficiary": {&#xd;        "beneficiaries": [&#xd;            {&#xd;                "cif": "$CIF",&#xd;                "benID": "$BENEFICIARY_ID",&#xd;                "benTypeId": "$BEN_TYPE_ID",&#xd;                "benType": "$BEN_TYPE",&#xd;                "benAlias": "$BEN_ALIAS_NAME",&#xd;                "benSwift": "$BEN_SWIFT",&#xd;                "benAccountNumber": "$BEN_ACCOUNT_NUM",&#xd;                "benFirstName": "$BEN_FIRST_NAME",&#xd;                "benLastName": "$BEN_LAST_NAME",&#xd;                "benAddress1": "$BEN_ADDRESS_1",&#xd;                "benAddress2": "$BEN_ADDRESS_2",&#xd;                "benAddress3": "$BEN_ADDRESS_3",&#xd;                "benCurrency": "$BEN_CURRENCY",&#xd;                "isActive": "$IS_ACTIVE"&#xd;            }&#xd;        ]&#xd;    }&#xd;}</result>
+      <param name="cif" sqlType="STRING">
+         <validateLength maximum="10" minimum="5"/>
+      </param>
+   </query>
+   <query id="readToken" useConfig="0001">
+      <sql>SELECT TOKEN_KEY, TOKEN_EXP FROM BENEFICIARY_DB.TOKEN WHERE TOKEN_ID = :tokenId ;</sql>
+      <result outputType="json">{&#xd; "tokenRead": {&#xd; "token": [&#xd; {&#xd; "key": "$TOKEN_KEY",&#xd; "exp": "$TOKEN_EXP"&#xd; }&#xd; ]&#xd; }&#xd;}</result>
+      <param name="tokenId" sqlType="TINYINT"/>
+   </query>
+   <query id="updateToken" returnUpdatedRowCount="true" useConfig="0002">
+      <sql>UPDATE TOKEN SET TOKEN_KEY = :token , TOKEN_EXP = :exp , UPDATED_BY = :updator WHERE TOKEN_ID = :tokenId ;</sql>
+      <result outputType="json" useColumnNumbers="true">{&#xd;    "updateToken": {&#xd;        "success": "$1"&#xd;    }&#xd;}</result>
+      <param name="token" sqlType="STRING"/>
+      <param name="exp" sqlType="DATE"/>
+      <param name="updator" sqlType="STRING"/>
+      <param name="tokenId" sqlType="TINYINT"/>
+   </query>
+   <resource disableStreaming="true" method="DELETE" path="beneficiary/delete">
+      <call-query href="deleteBeneficiary">
+         <with-param name="cif" query-param="cif"/>
+         <with-param name="benAlias" query-param="benAlias"/>
+      </call-query>
+   </resource>
+   <resource disableStreaming="true" method="GET" path="beneficiary/{cif}">
+      <call-query href="readBeneficiary">
+         <with-param name="cif" query-param="cif"/>
+      </call-query>
+   </resource>
+   <resource disableStreaming="true" method="GET" path="utility/{cif}">
+      <call-query href="readUtility">
+         <with-param name="cif" query-param="cif"/>
+      </call-query>
+   </resource>
+   <resource disableStreaming="true" method="GET" path="token/{tokenId}">
+      <call-query href="readToken">
+         <with-param name="tokenId" query-param="tokenId"/>
+      </call-query>
+   </resource>
+   <resource disableStreaming="true" method="POST" path="token/update">
+      <call-query href="updateToken">
+         <with-param name="token" query-param="token"/>
+         <with-param name="exp" query-param="exp"/>
+         <with-param name="updator" query-param="updator"/>
+         <with-param name="tokenId" query-param="tokenId"/>
+      </call-query>
+   </resource>
+</data>

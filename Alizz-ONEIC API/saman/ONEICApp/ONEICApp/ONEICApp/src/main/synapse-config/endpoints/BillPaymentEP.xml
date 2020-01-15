@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="BillPaymentEP" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl port="BasicHttpBinding_IPayment" service="BillPayment" uri="http://10.8.16.68:6003/BillPayment.svc?wsdl"/>
+</endpoint>

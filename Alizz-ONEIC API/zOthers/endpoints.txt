@@ -1,0 +1,11 @@
+http://10.8.16.68:6001/Token.svc
+http://10.8.16.68:6003/BillPayment.svc
+http://10.8.16.68:6004/BillInquiry.svc
+http://10.8.16.68:6006/AddCustomerBilling.svc
+http://10.8.16.68:6007/RemoveCustomerBilling.svc
+http://10.8.16.68:6008/AccountInquiry.svc
+http://10.8.16.68:6009/AccountUpload.svc
+http://10.8.16.68:6017/PrepaidPayment.svc
+http://10.8.16.68:6018/PrepaidValidation.svc
+http://10.8.16.68:6019/PaymentInquiry.svc
+http://10.8.16.68:6023/BillersList.svc

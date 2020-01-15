@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/token" name="token" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST PUT" url-mapping="/gen">
+        <inSequence>
+            <property expression="json-eval($.updator)" name="Updator" scope="default" type="STRING"/>
+            <header action="remove" name="Content-Type" scope="transport"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns="http://tempuri.org/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <Authenticate>
+                                <guid>$1</guid>
+                                <customerCode>$2</customerCode>
+                                <password>$3</password>
+                            </Authenticate>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')"/>
+                    <arg evaluator="xml" expression="get-property('SOURCE_ID')"/>
+                    <arg evaluator="xml" expression="get-property('SOURCE_PWD')"/>
+                </args>
+            </payloadFactory>
+            <sequence key="Sequence"/>
+            <header description="SoapAction" name="SOAPAction" scope="transport" value="http://tempuri.org/ITokenService/Authenticate"/>
+            <call>
+                <endpoint key="AuthenticateEP"/>
+            </call>
+            <filter regex="0" source="//MFEP/MsgHeader/Result/ErrorCode">
+                <then>
+                    <payloadFactory description="updateTokenPayload" media-type="json">
+                        <format>
+							{&#xd;
+							"_posttoken_update": {&#xd;
+							"tokenId": 1,&#xd;
+							"token": "$1",&#xd;
+							"exp": "$2",&#xd;
+							"updator": "$3"&#xd;
+							}&#xd;
+							}
+						</format>
+                        <args>
+                            <arg evaluator="xml" expression="//MFEP/MsgBody/TokenConf/TokenKey"/>
+                            <arg evaluator="xml" expression="//MFEP/MsgBody/TokenConf/ExpiryDate"/>
+                            <arg evaluator="xml" expression="get-property('Updator')"/>
+                        </args>
+                    </payloadFactory>
+                    <sequence key="json-header-sequence"/>
+                    <header action="remove" name="SOAPAction" scope="transport"/>
+                    <log level="full" separator=","/>
+                    <call>
+                        <endpoint key="updateTokenEP"/>
+                    </call>
+                </then>
+                <else>
+                    <payloadFactory media-type="json">
+                        <format>
+							{&#xd;
+							"authenticationFailure": {&#xd;
+							"errorCode": "$1",&#xd;
+							"errorDesc": "$2"&#xd;
+							}&#xd;
+							}
+						</format>
+                        <args>
+                            <arg evaluator="xml" expression="//MFEP/MsgHeader/Result/ErrorCode"/>
+                            <arg evaluator="xml" expression="//MFEP/MsgHeader/Result/ErrorDesc"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </else>
+            </filter>
+            <log/>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

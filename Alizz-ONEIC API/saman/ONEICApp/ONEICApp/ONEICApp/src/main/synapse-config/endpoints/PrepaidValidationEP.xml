@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="PrepaidValidationEP" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl port="BasicHttpBinding_IPrepaidValidation" service="PrepaidValidation" uri="http://10.8.16.68:6018/PrepaidValidation.svc?wsdl"/>
+</endpoint>
