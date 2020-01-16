@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="fcubs_id_sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="//ns1:Header/ns1:TerminalId" name="terminalId" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
+    <property expression="//ns1:Header/ns1:SupervisorId" name="supervisoryId" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
+    <property expression="//ns1:Header/ns1:ChannelId" name="channelId" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
+</sequence>

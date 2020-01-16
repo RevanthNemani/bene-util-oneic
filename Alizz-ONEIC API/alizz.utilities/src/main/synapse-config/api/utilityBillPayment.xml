@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/ubill" name="utilityBillPayment" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST DELETE GET" url-mapping="/biller">
-        <inSequence/>
+        <inSequence>
+            <log level="full" separator=","/>
+            <sequence key="fcubs_id_sequence"/>
+        </inSequence>
         <outSequence/>
         <faultSequence/>
     </resource>
