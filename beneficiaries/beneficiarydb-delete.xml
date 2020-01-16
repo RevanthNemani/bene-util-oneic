@@ -1,0 +1,20 @@
+<data disableLegacyBoxcarringMode="true" enableBatchRequests="true" enableBoxcarring="true" name="beneficiarydb" transports="http https local">
+   <config enableOData="false" id="0001">
+      <property name="driverClassName">com.mysql.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://10.10.150.42:3306/BENEFICIARY_DB</property>
+      <property name="username">beneficiary</property>
+      <property name="password">Beneficiary@2019</property>
+   </config>
+   <query id="deleteBeneficiary" returnUpdatedRowCount="true" useConfig="0001">
+      <sql>DELETE FROM BENEFICIARY_DB.BENEFICIARIES WHERE CIF = :cif AND BEN_ALIAS_NAME = :benAlias ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json" useColumnNumbers="true">{ "DeleteBeneficiary": { "Success": $1 } }</result>
+      <param name="cif" optional="false" sqlType="STRING"/>
+      <param name="benAlias" optional="false" sqlType="STRING"/>
+   </query>
+   <resource disableStreaming="true" method="DELETE" path="beneficiary/delete">
+      <call-query href="deleteBeneficiary">
+         <with-param name="cif" query-param="cif"/>
+         <with-param name="benAlias" query-param="benAlias"/>
+      </call-query>
+   </resource>
+</data>
