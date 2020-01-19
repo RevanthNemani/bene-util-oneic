@@ -1,0 +1,18 @@
+<data name="utlds" transports="http https local">
+   <config enableOData="false" id="01">
+      <property name="driverClassName">com.mysql.cj.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://10.10.150.42:3306/BENEFICIARY_DB</property>
+      <property name="username">beneficiary</property>
+      <property name="password">Beneficiary@2019</property>
+   </config>
+   <query id="systemid" useConfig="01">
+      <sql>SELECT SYSTEM_ID FROM SYSTEM_MASTER sm WHERE sm.SYSTEM_NAME = :system ;</sql>
+      <result escapeNonPrintableChar="true" outputType="json">{&#xd; "system": { "id": "$SYSTEM_ID" }&#xd;}</result>
+      <param name="system" sqlType="STRING"/>
+   </query>
+   <resource disableStreaming="true" method="GET" path="id/{system}">
+      <call-query href="systemid">
+         <with-param name="system" query-param="system"/>
+      </call-query>
+   </resource>
+</data>

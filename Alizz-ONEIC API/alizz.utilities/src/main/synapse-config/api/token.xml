@@ -78,6 +78,14 @@
         <outSequence>
             <send/>
         </outSequence>
-        <faultSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+    "error": "backend fail"&#xd;
+}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
     </resource>
 </api>

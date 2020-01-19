@@ -4,6 +4,25 @@
         <inSequence>
             <log level="full" separator=","/>
             <sequence key="fcubs_id_sequence"/>
+            <log level="custom" separator=",">
+                <property expression="fn:concat('terminalId: ', get-property('terminalId'), 'supervisoryId: ',get-property('supervisoryId'), 'channelId: ',get-property('channelId'), 'action: ', get-property('flag'))" name="logs"/>
+            </log>
+            <switch source="//ns1:Body/ns1:Request/ns1:ActivityFlag" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                <case regex="ADD"/>
+                <case regex="DELETE"/>
+                <case regex="UPDATE"/>
+                <default>
+                    <payloadFactory media-type="json">
+                        <format>
+							{&#xd;
+							"action": "unknown action or bad payload"&#xd;
+							}
+						</format>
+                        <args/>
+                    </payloadFactory>
+                </default>
+            </switch>
+            <respond/>
         </inSequence>
         <outSequence/>
         <faultSequence/>

@@ -29,4 +29,13 @@
     <artifact name="fcubs_id_sequence" groupId="com.alizz.utilities.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/fcubs_id_sequence.xml</file>
     </artifact>
+    <artifact name="addBeneficiaryEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addBeneficiaryEP.xml</file>
+    </artifact>
+    <artifact name="deleteBeneficiaryEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/deleteBeneficiaryEP.xml</file>
+    </artifact>
+    <artifact name="systemIdEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/systemIdEP.xml</file>
+    </artifact>
 </artifacts>

@@ -7,9 +7,9 @@
   <ns1:Header>
     <ns1:MessageType>0200</ns1:MessageType>
     <ns1:TranCode>0027</ns1:TranCode>
-    <ns1:TerminalId>T1</ns1:TerminalId>
-    <ns1:SupervisorId>S1</ns1:SupervisorId>
-    <ns1:ChannelId>IVRSYS</ns1:ChannelId>
+    <ns1:TerminalId>MB</ns1:TerminalId>
+    <ns1:SupervisorId>DBSYSUSR</ns1:SupervisorId>
+    <ns1:ChannelId>DBSYS</ns1:ChannelId>
     <ns1:DateTime>15122019005915</ns1:DateTime>
     <ns1:STAN>571554</ns1:STAN>
   </ns1:Header>
@@ -28,6 +28,7 @@
 ```
 
 ### Response - add utility payments to beneficiaries
+
 ```{xml}
 <?xml version="1.0"?>
 <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
@@ -35,15 +36,16 @@
   <Header>
     <MessageType>0210</MessageType>
     <TranCode>0027</TranCode>
-    <TerminalId>T1</TerminalId>
-    <SupervisorId>S1</SupervisorId>
-    <ChannelId>IVRSYS</ChannelId>
+    <TerminalId>MB</TerminalId>
+    <SupervisorId>DBSYSUSR</SupervisorId>
+    <ChannelId>DBSYS</ChannelId>
     <DateTime>15122019005915</DateTime>
     <STAN>571554</STAN>
     <ErrorCode>000</ErrorCode>
     <ErrorMessage>Processed OK</ErrorMessage>
   </Header>
 </CCIMessageResponse>
+```
 
 ### Request - Bill fetch
 ```{xml}
