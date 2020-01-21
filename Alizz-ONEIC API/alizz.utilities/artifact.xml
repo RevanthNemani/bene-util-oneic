@@ -53,4 +53,7 @@
     <artifact name="updateBeneficiaryEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/updateBeneficiaryEP.xml</file>
     </artifact>
+    <artifact name="logSequence" groupId="com.alizz.utilities.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/logSequence.xml</file>
+    </artifact>
 </artifacts>

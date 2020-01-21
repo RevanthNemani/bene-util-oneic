@@ -4,29 +4,35 @@
         <inSequence>
             <log level="full" separator=","/>
             <sequence key="fcubs_id_sequence"/>
+            <property expression="//ns0:RdvMessageId" name="guid" scope="default" type="STRING" xmlns:ns0="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
+            <property expression="//ns1:Body/ns1:Request/ns1:ActivityFlag" name="flag" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
+            <property expression="//ns1:Body/ns1:Request/ns1:CIF" name="cif" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
+            <property expression="//ns1:Body/ns1:Request/ns1:Alias" name="alias" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
             <sequence key="getIdSequence"/>
             <switch source="get-property('flag')">
                 <case regex="ADD">
                     <payloadFactory media-type="json">
                         <format>
-							{&#xd;
-							"_postbeneficiary_create": {&#xd;
-							"benType": "4",&#xd;
-							"cif": "$1",&#xd;
-							"benAlias": "$2",&#xd;
-							"consumerNumber":
-							"$3",&#xd;
-							"consumerType": "$4",&#xd;
-							"service": "$5",&#xd;
-							"creator": "$6",&#xd;
-							"updator": "$7"&#xd;
+							&#xd;
+							{&#xd;&#xd;
+							"_postbeneficiary_create": {&#xd;&#xd;
+							"benType":
+							"4",&#xd;&#xd;
+							"cif": "$1",&#xd;&#xd;
+							"benAlias": "$2",&#xd;&#xd;
+							"consumerNumber": "$3",&#xd;&#xd;
+							"consumerType": "$4",&#xd;&#xd;
+							"service": "$5",&#xd;&#xd;
+							"creator": "$6",&#xd;&#xd;
+							"updator":
+							"$7"&#xd;&#xd;
+							}&#xd;&#xd;
 							}&#xd;
-							}
 						</format>
                         <args>
                             <arg evaluator="xml" expression="get-property('cif')"/>
                             <arg evaluator="xml" expression="get-property('alias')"/>
-                            <arg evaluator="xml" expression="get-property('consumernumber')"/>
+                            <arg evaluator="xml" expression="get-property('consumerNumber')"/>
                             <arg evaluator="xml" expression="get-property('consumertypeid')"/>
                             <arg evaluator="xml" expression="get-property('serviceid')"/>
                             <arg evaluator="xml" expression="get-property('systemid')"/>
@@ -81,12 +87,13 @@
                 </case>
                 <case regex="DELETE">
                     <payloadFactory media-type="json">
-                        <format>{&#xd;
-   "_deletebeneficiary_delete": {&#xd;
-      "cif": "$1",&#xd;
-      "benAlias": "$2"&#xd;
-   }&#xd;
-}&#xd;
+                        <format>
+							{&#xd;
+							"_deletebeneficiary_delete": {&#xd;
+							"cif": "$1",&#xd;
+							"benAlias": "$2"&#xd;
+							}&#xd;
+							}&#xd;
 						</format>
                         <args>
                             <arg evaluator="xml" expression="get-property('cif')"/>
@@ -233,13 +240,51 @@
         </faultSequence>
     </resource>
     <resource methods="POST GET" url-mapping="/show">
-        <inSequence/>
+        <inSequence>
+            <log level="full"/>
+            <sequence key="fcubs_id_sequence"/>
+            <sequence key="logSequence"/>
+            <respond/>
+        </inSequence>
         <outSequence/>
-        <faultSequence/>
+        <faultSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                        <Header>
+                            <MessageType>0210</MessageType>
+                            <ErrorCode>401</ErrorCode>
+                            <ErrorMessage>Rejected</ErrorMessage>
+                        </Header>
+                    </CCIMessageResponse>
+                </format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
     </resource>
     <resource methods="POST GET" url-mapping="/payment">
-        <inSequence/>
+        <inSequence>
+            <log level="full" separator=","/>
+            <sequence key="fcubs_id_sequence"/>
+            <sequence key="logSequence"/>
+            <respond/>
+        </inSequence>
         <outSequence/>
-        <faultSequence/>
+        <faultSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                        <Header>
+                            <MessageType>0210</MessageType>
+                            <ErrorCode>401</ErrorCode>
+                            <ErrorMessage>Rejected</ErrorMessage>
+                        </Header>
+                    </CCIMessageResponse>
+                </format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
     </resource>
 </api>

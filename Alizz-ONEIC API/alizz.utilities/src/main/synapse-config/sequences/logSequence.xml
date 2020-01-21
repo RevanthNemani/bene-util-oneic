@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="logSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property expression="fn:concat(' terminalId ', get-property('terminalId'), ' supervisoryId ', get-property('supervisoryId'), ' uri.var.channelId ', get-property('uri.var.channelId'), ' tranCode ', get-property('tranCode'), ' dateTime ', get-property('dateTime'), ' stan ', get-property('stan'), ' uri.var.ucompany ', get-property('uri.var.ucompany'), ' uri.var.service ', get-property('uri.var.service'), ' uri.var.consumerType ', get-property('uri.var.consumerType'), ' consumerNumber ', get-property('consumerNumber'))" name="logIds"/>
+    </log>
+</sequence>

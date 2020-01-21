@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="fcubs_id_sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-    <property expression="//ns0:RdvMessageId" name="guid" scope="default" type="STRING" xmlns:ns0="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Header/ns1:TerminalId" name="terminalId" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Header/ns1:SupervisorId" name="supervisoryId" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Header/ns1:ChannelId" name="uri.var.channelId" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Header/ns1:TranCode" name="tranCode" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Header/ns1:DateTime" name="dateTime" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Header/ns1:STAN" name="stan" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
-    <property expression="//ns1:Body/ns1:Request/ns1:ActivityFlag" name="flag" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
-    <property expression="//ns1:Body/ns1:Request/ns1:CIF" name="cif" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Body/ns1:Request/ns1:UtilityCompany" name="uri.var.ucompany" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Body/ns1:Request/ns1:ServiceType" name="uri.var.service" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Body/ns1:Request/ns1:ConsumerNumberType" name="uri.var.consumerType" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
     <property expression="//ns1:Body/ns1:Request/ns1:ConsumerNumber" name="consumerNumber" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
-    <property expression="//ns1:Body/ns1:Request/ns1:Alias" name="alias" scope="default" type="STRING" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"/>
 </sequence>
