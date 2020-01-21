@@ -4,13 +4,137 @@
         <inSequence>
             <log level="full" separator=","/>
             <sequence key="fcubs_id_sequence"/>
-            <log level="custom" separator=",">
-                <property expression="fn:concat('terminalId: ', get-property('terminalId'), 'supervisoryId: ',get-property('supervisoryId'), 'channelId: ',get-property('channelId'), 'action: ', get-property('flag'))" name="logs"/>
-            </log>
-            <switch source="//ns1:Body/ns1:Request/ns1:ActivityFlag" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices">
-                <case regex="ADD"/>
-                <case regex="DELETE"/>
-                <case regex="UPDATE"/>
+            <sequence key="getIdSequence"/>
+            <switch source="get-property('flag')">
+                <case regex="ADD">
+                    <payloadFactory media-type="json">
+                        <format>
+							{&#xd;
+							"_postbeneficiary_create": {&#xd;
+							"benType": "4",&#xd;
+							"cif": "$1",&#xd;
+							"benAlias": "$2",&#xd;
+							"consumerNumber":
+							"$3",&#xd;
+							"consumerType": "$4",&#xd;
+							"service": "$5",&#xd;
+							"creator": "$6",&#xd;
+							"updator": "$7"&#xd;
+							}&#xd;
+							}
+						</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('cif')"/>
+                            <arg evaluator="xml" expression="get-property('alias')"/>
+                            <arg evaluator="xml" expression="get-property('consumernumber')"/>
+                            <arg evaluator="xml" expression="get-property('consumertypeid')"/>
+                            <arg evaluator="xml" expression="get-property('serviceid')"/>
+                            <arg evaluator="xml" expression="get-property('systemid')"/>
+                            <arg evaluator="xml" expression="get-property('systemid')"/>
+                        </args>
+                    </payloadFactory>
+                    <header description="set-json-accept-header2" name="Accept" scope="transport" value="application/json"/>
+                    <header description="set-Content-header2" name="Content-Type" scope="transport" value="application/json"/>
+                    <call>
+                        <endpoint key="addBeneficiaryEP"/>
+                    </call>
+                    <log level="full" separator=","/>
+                    <property expression="json-eval($.createBeneficiary.success)" name="success" scope="default" type="STRING"/>
+                    <property expression="json-eval($.Fault.faultstring)" name="fault" scope="default" type="STRING"/>
+                    <property expression="str:contains(get-property('fault'), 'Duplicate')" name="faulted" scope="default" type="STRING"/>
+                    <log level="custom" separator=",">
+                        <property expression="get-property('faulted')" name="log_fault"/>
+                    </log>
+                    <filter regex="true" source="get-property('faulted')">
+                        <then>
+                            <payloadFactory media-type="xml">
+                                <format>
+                                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                        <RdvMessageId>$1</RdvMessageId>
+                                        <Header>
+                                            <MessageType>0210</MessageType>
+                                            <TranCode>$2</TranCode>
+                                            <TerminalId>$3</TerminalId>
+                                            <SupervisorId>$4</SupervisorId>
+                                            <ChannelId>$5</ChannelId>
+                                            <DateTime>$6</DateTime>
+                                            <STAN>$7</STAN>
+                                            <ErrorCode>100</ErrorCode>
+                                            <ErrorMessage>Duplicate</ErrorMessage>
+                                        </Header>
+                                    </CCIMessageResponse>
+                                </format>
+                                <args>
+                                    <arg evaluator="xml" expression="get-property('guid')"/>
+                                    <arg evaluator="xml" expression="get-property('tranCode')"/>
+                                    <arg evaluator="xml" expression="get-property('terminalId')"/>
+                                    <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                                    <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                                    <arg evaluator="xml" expression="get-property('dateTime')"/>
+                                    <arg evaluator="xml" expression="get-property('stan')"/>
+                                </args>
+                            </payloadFactory>
+                            <respond/>
+                        </then>
+                        <else/>
+                    </filter>
+                </case>
+                <case regex="DELETE">
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+   "_deletebeneficiary_delete": {&#xd;
+      "cif": "$1",&#xd;
+      "benAlias": "$2"&#xd;
+   }&#xd;
+}&#xd;
+						</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('cif')"/>
+                            <arg evaluator="xml" expression="get-property('alias')"/>
+                        </args>
+                    </payloadFactory>
+                    <log level="full" separator=","/>
+                    <header description="set-json-accept-header3" name="Accept" scope="transport" value="application/json"/>
+                    <header description="set-Content-header3" name="Content-Type" scope="transport" value="application/json"/>
+                    <call>
+                        <endpoint key="deleteBeneficiaryEP"/>
+                    </call>
+                    <log level="full" separator=","/>
+                    <property expression="json-eval($.DeleteBeneficiary.Success)" name="success" scope="default" type="STRING"/>
+                </case>
+                <case regex="UPDATE">
+                    <payloadFactory media-type="json">
+                        <format>
+							{&#xd;
+							"_postbeneficiary_update": {&#xd;
+							"benType": "4",&#xd;
+							"cif": "$1",&#xd;
+							"benAlias": "$2",&#xd;
+							"consumerNumber":
+							"$3",&#xd;
+							"consumerTypeId": "$4",&#xd;
+							"serviceId": "$5",&#xd;
+							"isActive": "1",&#xd;
+							"updator": "$6"&#xd;
+							}&#xd;
+							}
+						</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('cif')"/>
+                            <arg evaluator="xml" expression="get-property('alias')"/>
+                            <arg evaluator="xml" expression="get-property('consumernumber')"/>
+                            <arg evaluator="xml" expression="get-property('consumertypeid')"/>
+                            <arg evaluator="xml" expression="get-property('serviceid')"/>
+                            <arg evaluator="xml" expression="get-property('systemid')"/>
+                        </args>
+                    </payloadFactory>
+                    <header description="set-json-accept-header4" name="Accept" scope="transport" value="application/json"/>
+                    <header description="set-Content-header4" name="Content-Type" scope="transport" value="application/json"/>
+                    <call>
+                        <endpoint key="updateBeneficiaryEP"/>
+                    </call>
+                    <property expression="json-eval($.updateBeneficiary.success)" name="success" scope="default" type="STRING"/>
+                </case>
                 <default>
                     <payloadFactory media-type="json">
                         <format>
@@ -20,12 +144,93 @@
 						</format>
                         <args/>
                     </payloadFactory>
+                    <log level="full" separator=","/>
+                    <respond/>
                 </default>
             </switch>
-            <respond/>
+            <filter regex="1" source="get-property('success')">
+                <then>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                <RdvMessageId>$1</RdvMessageId>
+                                <Header>
+                                    <MessageType>0210</MessageType>
+                                    <TranCode>$2</TranCode>
+                                    <TerminalId>$3</TerminalId>
+                                    <SupervisorId>$4</SupervisorId>
+                                    <ChannelId>$5</ChannelId>
+                                    <DateTime>$6</DateTime>
+                                    <STAN>$7</STAN>
+                                    <ErrorCode>000</ErrorCode>
+                                    <ErrorMessage>Processed OK</ErrorMessage>
+                                </Header>
+                            </CCIMessageResponse>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('guid')"/>
+                            <arg evaluator="xml" expression="get-property('tranCode')"/>
+                            <arg evaluator="xml" expression="get-property('terminalId')"/>
+                            <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                            <arg evaluator="xml" expression="get-property('dateTime')"/>
+                            <arg evaluator="xml" expression="get-property('stan')"/>
+                        </args>
+                    </payloadFactory>
+                </then>
+                <else>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                <RdvMessageId>$1</RdvMessageId>
+                                <Header>
+                                    <MessageType>0210</MessageType>
+                                    <TranCode>$2</TranCode>
+                                    <TerminalId>$3</TerminalId>
+                                    <SupervisorId>$4</SupervisorId>
+                                    <ChannelId>$5</ChannelId>
+                                    <DateTime>$6</DateTime>
+                                    <STAN>$7</STAN>
+                                    <ErrorCode>128</ErrorCode>
+                                    <ErrorMessage>Transaction Fail</ErrorMessage>
+                                </Header>
+                            </CCIMessageResponse>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('guid')"/>
+                            <arg evaluator="xml" expression="get-property('tranCode')"/>
+                            <arg evaluator="xml" expression="get-property('terminalId')"/>
+                            <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                            <arg evaluator="xml" expression="get-property('dateTime')"/>
+                            <arg evaluator="xml" expression="get-property('stan')"/>
+                        </args>
+                    </payloadFactory>
+                </else>
+            </filter>
+            <send/>
         </inSequence>
-        <outSequence/>
-        <faultSequence/>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                        <RdvMessageId>$1</RdvMessageId>
+                        <Header>
+                            <MessageType>0210</MessageType>
+                            <ErrorCode>401</ErrorCode>
+                            <ErrorMessage>Rejected</ErrorMessage>
+                        </Header>
+                    </CCIMessageResponse>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('guid')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
     </resource>
     <resource methods="POST GET" url-mapping="/show">
         <inSequence/>

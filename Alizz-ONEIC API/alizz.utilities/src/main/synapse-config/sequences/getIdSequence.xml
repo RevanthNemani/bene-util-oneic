@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="getIdSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <sequence key="getJsonSequence"/>
+    <call>
+        <endpoint key="serviceIdEP"/>
+    </call>
+    <property expression="json-eval($.idDetails.companyId)" name="companyid" scope="default" type="STRING"/>
+    <property expression="json-eval($.idDetails.serviceID)" name="serviceid" scope="default" type="STRING"/>
+    <sequence key="getJsonSequence"/>
+    <call>
+        <endpoint key="consumerTypeIdEP"/>
+    </call>
+    <property expression="json-eval($.consumer.id)" name="consumertypeid" scope="default" type="STRING"/>
+    <sequence key="getJsonSequence"/>
+    <call>
+        <endpoint key="systemIdEP"/>
+    </call>
+    <property expression="json-eval($.system.id)" name="systemid" scope="default" type="STRING"/>
+</sequence>

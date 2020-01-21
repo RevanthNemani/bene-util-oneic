@@ -9,19 +9,25 @@
   <name>alizz.utilitiesCompositeApplication</name>
   <description>alizz.utilitiesCompositeApplication</description>
   <properties>
+    <com.alizz.utilities_._SOURCE_PWD>capp/EnterpriseServiceBus</com.alizz.utilities_._SOURCE_PWD>
+    <com.alizz.utilities.sequence_._getIdSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getIdSequence>
+    <com.alizz.utilities.sequence_._getJsonSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getJsonSequence>
+    <com.alizz.utilities.endpoint_._serviceIdEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._serviceIdEP>
+    <com.alizz.utilities.endpoint_._addBeneficiaryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._addBeneficiaryEP>
+    <com.alizz.utilities.endpoint_._fcubsupEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._fcubsupEP>
     <com.alizz.utilities.endpoint_._updateTokenEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._updateTokenEP>
-    <com.alizz.utilities.api_._utilityBillPayment>capp/EnterpriseServiceBus</com.alizz.utilities.api_._utilityBillPayment>
-    <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
-    <com.alizz.utilities.sequence_._fcubs_id_sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._fcubs_id_sequence>
-    <com.alizz.utilities.sequence_._Sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._Sequence>
     <com.alizz.utilities.api_._token>capp/EnterpriseServiceBus</com.alizz.utilities.api_._token>
     <com.alizz.utilities.sequence_._json-header-sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._json-header-sequence>
-    <com.alizz.utilities.endpoint_._fcubsupEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._fcubsupEP>
-    <com.alizz.utilities.endpoint_._addBeneficiaryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._addBeneficiaryEP>
+    <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
+    <com.alizz.utilities.api_._utilityBillPayment>capp/EnterpriseServiceBus</com.alizz.utilities.api_._utilityBillPayment>
+    <com.alizz.utilities.endpoint_._systemIdEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._systemIdEP>
+    <com.alizz.utilities.sequence_._Sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._Sequence>
     <com.alizz.utilities.endpoint_._AuthenticateEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._AuthenticateEP>
+    <com.alizz.utilities.sequence_._fcubs_id_sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._fcubs_id_sequence>
     <com.alizz.utilities.endpoint_._deleteBeneficiaryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._deleteBeneficiaryEP>
+    <com.alizz.utilities.endpoint_._consumerTypeIdEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._consumerTypeIdEP>
+    <com.alizz.utilities.endpoint_._updateBeneficiaryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._updateBeneficiaryEP>
     <com.alizz.utilities_._SOURCE_ID>capp/EnterpriseServiceBus</com.alizz.utilities_._SOURCE_ID>
-    <com.alizz.utilities_._SOURCE_PWD>capp/EnterpriseServiceBus</com.alizz.utilities_._SOURCE_PWD>
   </properties>
   <dependencies>
     <dependency>
@@ -50,6 +56,12 @@
     </dependency>
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>consumerTypeIdEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>deleteBeneficiaryEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
@@ -57,6 +69,24 @@
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>fcubsupEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>serviceIdEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>systemIdEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>updateBeneficiaryEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
     </dependency>
@@ -76,6 +106,18 @@
       <groupId>com.alizz.utilities.sequence</groupId>
       <artifactId>fcubs_id_sequence</artifactId>
       <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.sequence</groupId>
+      <artifactId>getIdSequence</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.sequence</groupId>
+      <artifactId>getJsonSequence</artifactId>
+      <version>0.1.0</version>
       <type>xml</type>
     </dependency>
     <dependency>

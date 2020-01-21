@@ -38,4 +38,19 @@
     <artifact name="systemIdEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/systemIdEP.xml</file>
     </artifact>
+    <artifact name="serviceIdEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/serviceIdEP.xml</file>
+    </artifact>
+    <artifact name="consumerTypeIdEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/consumerTypeIdEP.xml</file>
+    </artifact>
+    <artifact name="getJsonSequence" groupId="com.alizz.utilities.sequence" version="0.1.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/getJsonSequence.xml</file>
+    </artifact>
+    <artifact name="getIdSequence" groupId="com.alizz.utilities.sequence" version="0.1.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/getIdSequence.xml</file>
+    </artifact>
+    <artifact name="updateBeneficiaryEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/updateBeneficiaryEP.xml</file>
+    </artifact>
 </artifacts>
