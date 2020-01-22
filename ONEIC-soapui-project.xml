@@ -1,0 +1,1515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f598387f-766b-49ed-9de1-f1a77036094b" activeEnvironment="Default" name="ONEIC" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e7d4f6ad-d0ab-46ca-884f-75158a8cec40" wsaVersion="200508" name="WSHttpBinding_ITokenService1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ITokenService1" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6001/Token.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://efwebstaging.tasdeed.local:7001/Token.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="64ab763f-d8ba-4237-9d37-0e756890b782" isOneWay="false" action="http://tempuri.org/ITokenService/Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="43d95a28-8e35-4beb-af0f-d39f237d7f7d" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7001/Token.svc/WSHttps</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:Authenticate>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:customerCode>?</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+      </tem:Authenticate>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/Authenticate"/></con:call></con:operation><con:operation id="4d605005-c16a-4797-bc97-2a5311824d3c" isOneWay="false" action="http://tempuri.org/ITokenService/ValidateToken" name="ValidateToken" bindingOperationName="ValidateToken" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3b5e4ff0-dcc5-49ed-862b-766c28df76ff" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7001/Token.svc/WSHttps</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ValidateToken>\r
+         <!--Optional:-->\r
+         <tem:customerCode>?</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+         <!--Optional:-->\r
+         <tem:token>?</tem:token>\r
+      </tem:ValidateToken>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/ValidateToken"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1d536aea-a85c-4273-9466-ac74ad701bd2" wsaVersion="NONE" name="BasicHttpBinding_ITokenService1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ITokenService1" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6001/Token.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://efwebstaging.tasdeed.local:7001/Token.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="8d709ac7-8ba0-4396-b927-b32c73eb3db0" isOneWay="false" action="http://tempuri.org/ITokenService/Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9b106e5f-8844-4d7e-8a85-c4e5faeeb806" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7001/Token.svc/BasicHttps</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Authenticate>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:customerCode>?</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+      </tem:Authenticate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/Authenticate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cb943e44-27b0-4052-8119-966f118b157f" isOneWay="false" action="http://tempuri.org/ITokenService/ValidateToken" name="ValidateToken" bindingOperationName="ValidateToken" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="13ea39bb-f183-457a-bab4-d569f417c92b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7001/Token.svc/BasicHttps</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateToken>\r
+         <!--Optional:-->\r
+         <tem:customerCode>?</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+         <!--Optional:-->\r
+         <tem:token>?</tem:token>\r
+      </tem:ValidateToken>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/ValidateToken"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="54eb14de-0680-44dd-a248-90c566579a00" wsaVersion="NONE" name="BasicHttpBinding_ITokenService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ITokenService" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6001/Token.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.jaxb.JaxbXjcAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="read-only" value="false"/>
+  <con:entry key="Use cached WSDL" value="false"/>
+  <con:entry key="verbose" value="false"/>
+  <con:entry key="no validation" value="false"/>
+  <con:entry key="catalog" value=""/>
+  <con:entry key="package" value=""/>
+  <con:entry key="WSDL" value="http://10.8.16.68:6001/Token.svc?wsdl"/>
+  <con:entry key="binding files" value=""/>
+  <con:entry key="npa" value="false"/>
+  <con:entry key="output" value=""/>
+  <con:entry key="http proxy" value=""/>
+  <con:entry key="classpath" value=""/>
+  <con:entry key="Tool Args" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache/><con:endpoints><con:endpoint>http://efwebstaging.tasdeed.local:6001/Token.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="107bab40-a0d8-480e-8eb9-b6e902878817" isOneWay="false" action="http://tempuri.org/ITokenService/Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4d915564-e1af-4626-a16e-428a891c98ed" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6001/Token.svc/BasicHttp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Authenticate>\r
+         <!--Optional:-->\r
+         <tem:guid>3b5e9e3d-16aa-40f8-9b8b-48f0ced238fa</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:customerCode>5</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>UU4NY9JT</tem:password>\r
+      </tem:Authenticate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/Authenticate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8b1eb8a3-54d7-440d-9f20-19e6321df409" isOneWay="false" action="http://tempuri.org/ITokenService/ValidateToken" name="ValidateToken" bindingOperationName="ValidateToken" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e413fe86-8ccd-4d54-8fc5-43541c904edb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6001/Token.svc/BasicHttp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateToken>\r
+         <!--Optional:-->\r
+         <tem:customerCode>5</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>UU4NY9JT</tem:password>\r
+         <!--Optional:-->\r
+         <tem:token>A89FA99B5876D601A1DDCDB5658484CDFD7B231C421FE2A96316FFE36F22CFE85</tem:token>\r
+      </tem:ValidateToken>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/ValidateToken"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="7d50ceec-f724-414e-bc3b-301de7c48ee3" wsaVersion="200508" name="WSHttpBinding_ITokenService" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ITokenService" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6001/Token.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.8.16.68:6001/Token.svc?wsdl"><con:part><con:url>http://10.8.16.68:6001/Token.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Token" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ITokenService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITokenService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ITokenService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://efwebstaging.tasdeed.local:6001/Token.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://efwebstaging.tasdeed.local:6001/Token.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITokenService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate"/>
+  </wsdl:message>
+  <wsdl:message name="ITokenService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITokenService_ValidateToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateToken"/>
+  </wsdl:message>
+  <wsdl:message name="ITokenService_ValidateToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTokenResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ITokenService">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITokenService/Authenticate" message="tns:ITokenService_Authenticate_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITokenService/AuthenticateResponse" message="tns:ITokenService_Authenticate_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITokenService/ValidateToken" message="tns:ITokenService_ValidateToken_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITokenService/ValidateTokenResponse" message="tns:ITokenService_ValidateToken_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ITokenService" type="tns:ITokenService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ITokenService_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/ITokenService/Authenticate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap12:operation soapAction="http://tempuri.org/ITokenService/ValidateToken" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_ITokenService1" type="tns:ITokenService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ITokenService1_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/ITokenService/Authenticate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap12:operation soapAction="http://tempuri.org/ITokenService/ValidateToken" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITokenService" type="tns:ITokenService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/ITokenService/Authenticate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap:operation soapAction="http://tempuri.org/ITokenService/ValidateToken" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITokenService1" type="tns:ITokenService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ITokenService1_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/ITokenService/Authenticate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap:operation soapAction="http://tempuri.org/ITokenService/ValidateToken" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Token">
+    <wsdl:port name="WSHttpBinding_ITokenService" binding="tns:WSHttpBinding_ITokenService">
+      <soap12:address location="http://efwebstaging.tasdeed.local:6001/Token.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://efwebstaging.tasdeed.local:6001/Token.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_ITokenService1" binding="tns:WSHttpBinding_ITokenService1">
+      <soap12:address location="https://efwebstaging.tasdeed.local:7001/Token.svc/WSHttps"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://efwebstaging.tasdeed.local:7001/Token.svc/WSHttps</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITokenService" binding="tns:BasicHttpBinding_ITokenService">
+      <soap:address location="http://efwebstaging.tasdeed.local:6001/Token.svc/BasicHttp"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITokenService1" binding="tns:BasicHttpBinding_ITokenService1">
+      <soap:address location="https://efwebstaging.tasdeed.local:7001/Token.svc/BasicHttps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://efwebstaging.tasdeed.local:6001/Token.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="Authenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="customerCode" type="xs:int"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthenticateResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerCode" type="xs:int"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTokenResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://efwebstaging.tasdeed.local:6001/Token.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://efwebstaging.tasdeed.local:6001/Token.svc</con:endpoint></con:endpoints><con:operation id="9362637c-84f3-4a2b-99e8-8daef7a7fe41" isOneWay="false" action="http://tempuri.org/ITokenService/Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7a711d03-3e32-4ab0-bdfd-382a6f8d4bef" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6001/Token.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:Authenticate>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:customerCode>?</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+      </tem:Authenticate>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/Authenticate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="78cc39fd-36e1-4101-b92f-dccab5ef8d15" isOneWay="false" action="http://tempuri.org/ITokenService/ValidateToken" name="ValidateToken" bindingOperationName="ValidateToken" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c8fa1e07-8256-4b28-a31a-7fb346dfe6df" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6001/Token.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ValidateToken>\r
+         <!--Optional:-->\r
+         <tem:customerCode>?</tem:customerCode>\r
+         <!--Optional:-->\r
+         <tem:password>?</tem:password>\r
+         <!--Optional:-->\r
+         <tem:token>?</tem:token>\r
+      </tem:ValidateToken>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITokenService/ValidateToken"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="bbada8b1-bca8-4f6a-986e-1b6b9063a1be" wsaVersion="200508" name="WSHttpBinding_IBillInquiry1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IBillInquiry1" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6004/BillInquiry.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="b21e86ac-d717-4243-b29c-a2fbe3ab880a" isOneWay="false" action="http://tempuri.org/IBillInquiry/Inquire" name="Inquire" bindingOperationName="Inquire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c21100f4-8142-4bfd-b799-403cd7268ade" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/WSHttps</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:Inquire>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+         <!--Optional:-->\r
+         <tem:billInquiryRequest>\r
+            <!--You may enter ANY elements at this point-->\r
+         </tem:billInquiryRequest>\r
+      </tem:Inquire>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillInquiry/Inquire"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="ed64eaa5-67d7-4fb1-8e75-376a0b62c920" wsaVersion="NONE" name="BasicHttpBinding_IBillInquiry" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IBillInquiry" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6004/BillInquiry.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="50e091a9-d50e-4a6e-9cd2-5ad034beee5c" isOneWay="false" action="http://tempuri.org/IBillInquiry/Inquire" name="Inquire" bindingOperationName="Inquire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="61e6b651-6daf-482c-bb21-613940e2dc1a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc/BasicHttp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Inquire>\r
+         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32d7</tem:guid>\r
+         <tem:tokenKey>11EFF3DC1E401B7204B664E30735EBAE6DE7477F9BF0AA7D3942748EEB36FEE15</tem:tokenKey>\r
+         <tem:billInquiryRequest>\r
+<MFEP xmlns="">
+	<MsgHeader>
+		<TmStp>2020-01-22T10:43:46</TmStp>
+		<TrsInf>
+		<SdrCode>5</SdrCode>
+		<RcvCode>1</RcvCode>
+		<ReqTyp>BILINQRQ</ReqTyp>
+		</TrsInf>
+	</MsgHeader>
+	<MsgBody>
+		<AcctInfo>
+		<BillingNo>35327</BillingNo>
+		<BillNo>35327</BillNo>
+		<BillerCode>3</BillerCode>
+		</AcctInfo>
+		<ServiceType>Electricity</ServiceType>
+	</MsgBody>
+	<MsgFooter>
+		<Security>
+			<Signature/>
+		</Security>
+	</MsgFooter>
+</MFEP>
+         </tem:billInquiryRequest>\r
+      </tem:Inquire>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillInquiry/Inquire"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="94bfcf8d-30b8-4b00-a808-f8901867b597" wsaVersion="NONE" name="BasicHttpBinding_IBillInquiry1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IBillInquiry1" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6004/BillInquiry.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="d43a3193-812f-44a6-b13d-52bc9c0e76a9" isOneWay="false" action="http://tempuri.org/IBillInquiry/Inquire" name="Inquire" bindingOperationName="Inquire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0584701f-c434-4fdc-a527-643516cf9aee" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/BasicHttps</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Inquire>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+         <!--Optional:-->\r
+         <tem:billInquiryRequest>\r
+            <!--You may enter ANY elements at this point-->\r
+         </tem:billInquiryRequest>\r
+      </tem:Inquire>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillInquiry/Inquire"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="7925bac6-399e-4a92-b2db-05808e9106e9" wsaVersion="200508" name="WSHttpBinding_IBillInquiry" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IBillInquiry" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6004/BillInquiry.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.8.16.68:6004/BillInquiry.svc?wsdl"><con:part><con:url>http://10.8.16.68:6004/BillInquiry.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillInquiry" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillInquiry_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillInquiry1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBillInquiry1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://efwebstaging.tasdeed.local:6004/BillInquiry.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://efwebstaging.tasdeed.local:6004/BillInquiry.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillInquiry_Inquire_InputMessage">
+    <wsdl:part name="parameters" element="tns:Inquire"/>
+  </wsdl:message>
+  <wsdl:message name="IBillInquiry_Inquire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InquireResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IBillInquiry">
+    <wsdl:operation name="Inquire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillInquiry/Inquire" message="tns:IBillInquiry_Inquire_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillInquiry/InquireResponse" message="tns:IBillInquiry_Inquire_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IBillInquiry" type="tns:IBillInquiry">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBillInquiry_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Inquire">
+      <soap12:operation soapAction="http://tempuri.org/IBillInquiry/Inquire" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IBillInquiry1" type="tns:IBillInquiry">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBillInquiry1_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Inquire">
+      <soap12:operation soapAction="http://tempuri.org/IBillInquiry/Inquire" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IBillInquiry" type="tns:IBillInquiry">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Inquire">
+      <soap:operation soapAction="http://tempuri.org/IBillInquiry/Inquire" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IBillInquiry1" type="tns:IBillInquiry">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBillInquiry1_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Inquire">
+      <soap:operation soapAction="http://tempuri.org/IBillInquiry/Inquire" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillInquiry">
+    <wsdl:port name="WSHttpBinding_IBillInquiry" binding="tns:WSHttpBinding_IBillInquiry">
+      <soap12:address location="http://efwebstaging.tasdeed.local:6004/BillInquiry.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IBillInquiry1" binding="tns:WSHttpBinding_IBillInquiry1">
+      <soap12:address location="https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/WSHttps"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/WSHttps</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IBillInquiry" binding="tns:BasicHttpBinding_IBillInquiry">
+      <soap:address location="http://efwebstaging.tasdeed.local:6004/BillInquiry.svc/BasicHttp"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IBillInquiry1" binding="tns:BasicHttpBinding_IBillInquiry1">
+      <soap:address location="https://efwebstaging.tasdeed.local:7004/BillInquiry.svc/BasicHttps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="Inquire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="tokenKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="billInquiryRequest" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InquireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InquireResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc</con:endpoint></con:endpoints><con:operation id="e6fc4ac7-8d3f-4bb3-bf05-b4161a1b8f30" isOneWay="false" action="http://tempuri.org/IBillInquiry/Inquire" name="Inquire" bindingOperationName="Inquire" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="469554bf-48b6-4a37-b2ef-3acf4009de3c" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6004/BillInquiry.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:Inquire>\r
+         <!--Optional:-->\r
+         <tem:guid></tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>A89FA99B5876D601A1DDCDB5658484CDFD7B231C421FE2A96316FFE36F22CFE85</tem:tokenKey>\r
+         <!--Optional:-->\r
+         <tem:billInquiryRequest>\r
+<MFEP xmlns="">
+	<MsgHeader>
+		<TmStp>2018-01-02T12:15:46</TmStp>
+		<TrsInf>
+		<SdrCode>12</SdrCode>
+		<RcvCode>1</RcvCode>
+		<ReqTyp>BILINQRQ</ReqTyp>
+		</TrsInf>
+	</MsgHeader>
+	<MsgBody>
+		<AcctInfo>
+		<BillingNo>35325</BillingNo>
+		<BillNo>35325</BillNo>
+		<BillerCode>3</BillerCode>
+		</AcctInfo>
+		<ServiceType>Electricity</ServiceType>
+	</MsgBody>
+	<MsgFooter>
+		<Security>
+			<Signature>OanU84/2kBuRttgyi4VM5A/LWgzpIT91iGLEFf9ryUOFwkhnkvmz/BnNynOSSu65Jkmi/k8OCNdAvKfGmgg/8orKNaeuFqjctTk6aF+8qXsUHp92/cSlmJISvjLnTUEBXSGoRT998B4gtzaVOUI03GR5X5HG7ooMUxG8ypgwqnZdlsaFUEPts3DAgMsSdAZXhco7Yp2a2PYjxEuKo3UZsP8PMgwJQlxN+BCtj8WABVEFBe4FGu1Pr4hrnIhDDuG55pEzvrBbxwWn/SSccM/IWemFXwLIpbgVRiDv+RLptW12v2jAwt1UfAsrT12g79fzADaRMIJyro0ghgREUrYm4g==</Signature>
+		</Security>
+	</MsgFooter>
+</MFEP>
+         </tem:billInquiryRequest>\r
+      </tem:Inquire>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillInquiry/Inquire"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="817ed226-8a45-46a8-83f8-c8a8f475361a" wsaVersion="200508" name="WSHttpBinding_IBillersList1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IBillersList1" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6023/BillersList.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://efwebstaging.tasdeed.local:7023/BillersList.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="c0c8e373-d6b5-4fb5-bab4-26513a36de44" isOneWay="false" action="http://tempuri.org/IBillersList/GetBillersList" name="GetBillersList" bindingOperationName="GetBillersList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="65b5ea23-c1b0-4031-b3c7-0cc3739903a3" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7023/BillersList.svc/WSHttps</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:GetBillersList>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+      </tem:GetBillersList>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillersList/GetBillersList"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="389946d6-d20e-4c16-ab72-36a4e0e55252" wsaVersion="NONE" name="BasicHttpBinding_IBillersList1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IBillersList1" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6023/BillersList.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://efwebstaging.tasdeed.local:7023/BillersList.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="e0fe27bc-137c-4edd-8e94-1510c105d9dd" isOneWay="false" action="http://tempuri.org/IBillersList/GetBillersList" name="GetBillersList" bindingOperationName="GetBillersList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="047920f7-5786-4eb0-a362-8dca1e8a0761" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://efwebstaging.tasdeed.local:7023/BillersList.svc/BasicHttps</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetBillersList>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+      </tem:GetBillersList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillersList/GetBillersList"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="88a50d10-0eb7-4e0a-a4fa-7e74c96d2357" wsaVersion="NONE" name="BasicHttpBinding_IBillersList" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IBillersList" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6023/BillersList.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://efwebstaging.tasdeed.local:6023/BillersList.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="9a526a23-575c-4b53-8d6b-da364a458e2d" isOneWay="false" action="http://tempuri.org/IBillersList/GetBillersList" name="GetBillersList" bindingOperationName="GetBillersList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bfea54f3-7a33-484f-aa3c-f5550cde2dac" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6023/BillersList.svc/BasicHttp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetBillersList>\r
+         <!--Optional:-->\r
+         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32b9</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>11EFF3DC1E401B7204B664E30735EBAE6DE7477F9BF0AA7D3942748EEB36FEE15</tem:tokenKey>\r
+      </tem:GetBillersList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillersList/GetBillersList"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b2837c3f-5e80-450a-92fd-74f064611461" wsaVersion="200508" name="WSHttpBinding_IBillersList" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IBillersList" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6023/BillersList.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.8.16.68:6023/BillersList.svc?wsdl"><con:part><con:url>http://10.8.16.68:6023/BillersList.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillersList" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillersList_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillersList1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBillersList1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://efwebstaging.tasdeed.local:6023/BillersList.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://efwebstaging.tasdeed.local:6023/BillersList.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillersList_GetBillersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersList"/>
+  </wsdl:message>
+  <wsdl:message name="IBillersList_GetBillersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersListResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IBillersList">
+    <wsdl:operation name="GetBillersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillersList/GetBillersList" message="tns:IBillersList_GetBillersList_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillersList/GetBillersListResponse" message="tns:IBillersList_GetBillersList_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IBillersList" type="tns:IBillersList">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBillersList_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBillersList">
+      <soap12:operation soapAction="http://tempuri.org/IBillersList/GetBillersList" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IBillersList1" type="tns:IBillersList">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBillersList1_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBillersList">
+      <soap12:operation soapAction="http://tempuri.org/IBillersList/GetBillersList" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IBillersList" type="tns:IBillersList">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBillersList">
+      <soap:operation soapAction="http://tempuri.org/IBillersList/GetBillersList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IBillersList1" type="tns:IBillersList">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBillersList1_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBillersList">
+      <soap:operation soapAction="http://tempuri.org/IBillersList/GetBillersList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillersList">
+    <wsdl:port name="WSHttpBinding_IBillersList" binding="tns:WSHttpBinding_IBillersList">
+      <soap12:address location="http://efwebstaging.tasdeed.local:6023/BillersList.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://efwebstaging.tasdeed.local:6023/BillersList.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IBillersList1" binding="tns:WSHttpBinding_IBillersList1">
+      <soap12:address location="https://efwebstaging.tasdeed.local:7023/BillersList.svc/WSHttps"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://efwebstaging.tasdeed.local:7023/BillersList.svc/WSHttps</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IBillersList" binding="tns:BasicHttpBinding_IBillersList">
+      <soap:address location="http://efwebstaging.tasdeed.local:6023/BillersList.svc/BasicHttp"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IBillersList1" binding="tns:BasicHttpBinding_IBillersList1">
+      <soap:address location="https://efwebstaging.tasdeed.local:7023/BillersList.svc/BasicHttps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://efwebstaging.tasdeed.local:6023/BillersList.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="GetBillersList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="tokenKey" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBillersListResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://efwebstaging.tasdeed.local:6023/BillersList.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://efwebstaging.tasdeed.local:6023/BillersList.svc</con:endpoint></con:endpoints><con:operation id="bbe79577-af9e-4e08-b0f9-04ecc74ad0a5" isOneWay="false" action="http://tempuri.org/IBillersList/GetBillersList" name="GetBillersList" bindingOperationName="GetBillersList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fb0ef2a9-344c-40f7-81dd-d6edddd730a2" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://efwebstaging.tasdeed.local:6023/BillersList.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:GetBillersList>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+      </tem:GetBillersList>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillersList/GetBillersList"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="095c1230-5863-4878-8699-8b3d67df21af" wsaVersion="NONE" name="OTAuthProxySoap11Binding" type="wsdl" bindingName="{http://ws.apache.org/axis2}OTAuthProxySoap11Binding" soapVersion="1_1" anonymous="optional" definition="http://fcubswebtst-1.alizzislamic.local:8281/services/OTAuthProxy?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpSoap11Endpoint</con:endpoint><con:endpoint>https://FCUBSWebTST-1.alizzislamic.local:8244/services/OTAuthProxy.OTAuthProxyHttpsSoap11Endpoint</con:endpoint></con:endpoints><con:operation id="7d4a234e-13df-4586-9993-b17a66bb3617" isOneWay="false" action="urn:mediate" name="mediate" bindingOperationName="mediate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="78877665-0f56-4949-84c5-98e77f99f3d0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpSoap11Endpoint</con:endpoint><con:request>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   &lt;soapenv:Header/>\r
+   &lt;soapenv:Body/>\r
+&lt;/soapenv:Envelope></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="2d2eac18-985c-4eb4-bf6a-e8effdac8136" wsaVersion="NONE" name="OTAuthProxySoap12Binding" type="wsdl" bindingName="{http://ws.apache.org/axis2}OTAuthProxySoap12Binding" soapVersion="1_2" anonymous="optional" definition="http://fcubswebtst-1.alizzislamic.local:8281/services/OTAuthProxy?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://fcubswebtst-1.alizzislamic.local:8281/services/OTAuthProxy?wsdl"><con:part><con:url>http://fcubswebtst-1.alizzislamic.local:8281/services/OTAuthProxy?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.apache.org/axis2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types/>
+  <wsdl:message name="in"/>
+  <wsdl:message name="out"/>
+  <wsdl:portType name="OTAuthProxyPortType">
+    <wsdl:operation name="mediate">
+      <wsdl:input message="tns:in" wsaw:Action="urn:mediate"/>
+      <wsdl:output message="tns:out" wsaw:Action="urn:mediateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OTAuthProxySoap11Binding" type="tns:OTAuthProxyPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OTAuthProxySoap12Binding" type="tns:OTAuthProxyPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap12:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OTAuthProxyHttpBinding" type="tns:OTAuthProxyPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="mediate">
+      <http:operation location="mediate"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OTAuthProxy">
+    <wsdl:port name="OTAuthProxyHttpsSoap11Endpoint" binding="tns:OTAuthProxySoap11Binding">
+      <soap:address location="https://FCUBSWebTST-1.alizzislamic.local:8244/services/OTAuthProxy.OTAuthProxyHttpsSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="OTAuthProxyHttpSoap11Endpoint" binding="tns:OTAuthProxySoap11Binding">
+      <soap:address location="http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="OTAuthProxyHttpSoap12Endpoint" binding="tns:OTAuthProxySoap12Binding">
+      <soap12:address location="http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="OTAuthProxyHttpsSoap12Endpoint" binding="tns:OTAuthProxySoap12Binding">
+      <soap12:address location="https://FCUBSWebTST-1.alizzislamic.local:8244/services/OTAuthProxy.OTAuthProxyHttpsSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="OTAuthProxyHttpsEndpoint" binding="tns:OTAuthProxyHttpBinding">
+      <http:address location="https://FCUBSWebTST-1.alizzislamic.local:8244/services/OTAuthProxy.OTAuthProxyHttpsEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="OTAuthProxyHttpEndpoint" binding="tns:OTAuthProxyHttpBinding">
+      <http:address location="http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpSoap12Endpoint</con:endpoint><con:endpoint>https://FCUBSWebTST-1.alizzislamic.local:8244/services/OTAuthProxy.OTAuthProxyHttpsSoap12Endpoint</con:endpoint></con:endpoints><con:operation id="3e9071ad-8ef1-498c-8dfa-6ce97368ef2a" isOneWay="false" action="urn:mediate" name="mediate" bindingOperationName="mediate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="83616f14-6ecb-4e9b-91f6-f3fca941f30b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://FCUBSWebTST-1.alizzislamic.local:8281/services/OTAuthProxy.OTAuthProxyHttpSoap12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   
+   <soap:Body>
+
+         <tem:Authenticate>
+         <!--Optional:-->
+         <tem:guid>bd2a8fe3-99a4-4678-bb3b-ce5f5d8fff5c</tem:guid>
+         <!--Optional:-->
+         <tem:customerCode>5</tem:customerCode>
+         <!--Optional:-->
+         <tem:password>UU4NY9JT</tem:password>
+      </tem:Authenticate>
+
+   </soap:Body>soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4859dc74-9404-4da5-be02-0eeefd1be5c1" wsaVersion="NONE" name="BasicHttpBinding_IPayment1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IPayment1" soapVersion="1_1" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7003/BillPayment.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="6c65d80e-fb49-4494-b271-d62e96ca70c4" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="cdbe7786-75ea-4d5e-8235-6a2089671a5c" wsaVersion="200508" name="WSHttpBinding_IPayment1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IPayment1" soapVersion="1_2" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7003/BillPayment.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="31bcd5dc-e65e-44a1-963f-6d6edf131f23" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="389b4ed8-c65b-4abe-a493-6b23f86cbf4e" wsaVersion="NONE" name="BasicHttpBinding_IPayment" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IPayment" soapVersion="1_1" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://ef-webserve-001:6003/BillPayment.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="5db3145e-37db-4253-b38b-83b6b679d183" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="62c82c81-cbf5-4007-bd88-9c4442c52627" wsaVersion="200508" name="WSHttpBinding_IPayment" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IPayment" soapVersion="1_2" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://ef-webserve-001:6003/BillPayment.svc?wsdl"><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillPayment" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IPayment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IPayment1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IPayment1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPayment_PayBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:PayBill"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_PayBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PayBillResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IPayment">
+    <wsdl:operation name="PayBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/PayBill" message="tns:IPayment_PayBill_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/PayBillResponse" message="tns:IPayment_PayBill_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IPayment" type="tns:IPayment">
+    <wsp:PolicyReference URI="#WSHttpBinding_IPayment_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap12:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IPayment1" type="tns:IPayment">
+    <wsp:PolicyReference URI="#WSHttpBinding_IPayment1_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap12:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPayment" type="tns:IPayment">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPayment1" type="tns:IPayment">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IPayment1_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillPayment">
+    <wsdl:port name="WSHttpBinding_IPayment" binding="tns:WSHttpBinding_IPayment">
+      <soap12:address location="http://ef-webserve-001:6003/BillPayment.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ef-webserve-001:6003/BillPayment.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IPayment1" binding="tns:WSHttpBinding_IPayment1">
+      <soap12:address location="https://ef-webserve-001:7003/BillPayment.svc/WSHttps"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ef-webserve-001:7003/BillPayment.svc/WSHttps</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPayment" binding="tns:BasicHttpBinding_IPayment">
+      <soap:address location="http://ef-webserve-001:6003/BillPayment.svc/BasicHttp"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPayment1" binding="tns:BasicHttpBinding_IPayment1">
+      <soap:address location="https://ef-webserve-001:7003/BillPayment.svc/BasicHttps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="PayBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="tokenKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentRequest" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PayBillResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ef-webserve-001:6003/BillPayment.svc</con:endpoint></con:endpoints><con:operation id="a8be7a45-e450-442f-9f36-5338f5d3b880" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="284a47e8-ea7f-40a2-8c2c-dca384ff7f51" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ef-webserve-001:6003/BillPayment.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:PayBill>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+         <!--Optional:-->\r
+         <tem:paymentRequest>\r
+            <!--You may enter ANY elements at this point-->\r
+         </tem:paymentRequest>\r
+      </tem:PayBill>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPayment/PayBill"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="d33e5faa-6579-4071-b0c4-68588f9afff3" wsaVersion="NONE" name="BasicHttpBinding_IAddCustomerBilling1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IAddCustomerBilling1" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6006/AddCustomerBilling.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7006/AddCustomerBilling.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="b0981d39-0c56-4e2c-966d-e81fdfeec931" isOneWay="false" action="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" name="AddCustomerBilling" bindingOperationName="AddCustomerBilling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a3d041c6-7ffb-4a80-a506-1edde296dbb3" wsaVersion="200508" name="WSHttpBinding_IAddCustomerBilling1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IAddCustomerBilling1" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6006/AddCustomerBilling.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7006/AddCustomerBilling.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="23c0a6d0-930a-4a9a-aac9-c0c0909e1778" isOneWay="false" action="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" name="AddCustomerBilling" bindingOperationName="AddCustomerBilling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3e9564f7-9379-451f-9b92-801a71c28947" wsaVersion="NONE" name="BasicHttpBinding_IAddCustomerBilling" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IAddCustomerBilling" soapVersion="1_1" anonymous="optional" definition="http://10.8.16.68:6006/AddCustomerBilling.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://ef-webserve-001:6006/AddCustomerBilling.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="ad4278e9-a032-4aff-bee0-4a070e1be141" isOneWay="false" action="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" name="AddCustomerBilling" bindingOperationName="AddCustomerBilling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="70877c95-9a11-4efc-9735-d842f7ccc1b7" wsaVersion="200508" name="WSHttpBinding_IAddCustomerBilling" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IAddCustomerBilling" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6006/AddCustomerBilling.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.8.16.68:6006/AddCustomerBilling.svc?wsdl"><con:part><con:url>http://10.8.16.68:6006/AddCustomerBilling.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AddCustomerBilling" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IAddCustomerBilling_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IAddCustomerBilling1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IAddCustomerBilling1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ef-webserve-001:6006/AddCustomerBilling.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://ef-webserve-001:6006/AddCustomerBilling.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAddCustomerBilling_AddCustomerBilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerBilling"/>
+  </wsdl:message>
+  <wsdl:message name="IAddCustomerBilling_AddCustomerBilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerBillingResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IAddCustomerBilling">
+    <wsdl:operation name="AddCustomerBilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" message="tns:IAddCustomerBilling_AddCustomerBilling_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IAddCustomerBilling/AddCustomerBillingResponse" message="tns:IAddCustomerBilling_AddCustomerBilling_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IAddCustomerBilling" type="tns:IAddCustomerBilling">
+    <wsp:PolicyReference URI="#WSHttpBinding_IAddCustomerBilling_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddCustomerBilling">
+      <soap12:operation soapAction="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IAddCustomerBilling1" type="tns:IAddCustomerBilling">
+    <wsp:PolicyReference URI="#WSHttpBinding_IAddCustomerBilling1_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddCustomerBilling">
+      <soap12:operation soapAction="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IAddCustomerBilling" type="tns:IAddCustomerBilling">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddCustomerBilling">
+      <soap:operation soapAction="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IAddCustomerBilling1" type="tns:IAddCustomerBilling">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IAddCustomerBilling1_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddCustomerBilling">
+      <soap:operation soapAction="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddCustomerBilling">
+    <wsdl:port name="WSHttpBinding_IAddCustomerBilling" binding="tns:WSHttpBinding_IAddCustomerBilling">
+      <soap12:address location="http://ef-webserve-001:6006/AddCustomerBilling.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ef-webserve-001:6006/AddCustomerBilling.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IAddCustomerBilling1" binding="tns:WSHttpBinding_IAddCustomerBilling1">
+      <soap12:address location="https://ef-webserve-001:7006/AddCustomerBilling.svc/WSHttps"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ef-webserve-001:7006/AddCustomerBilling.svc/WSHttps</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IAddCustomerBilling" binding="tns:BasicHttpBinding_IAddCustomerBilling">
+      <soap:address location="http://ef-webserve-001:6006/AddCustomerBilling.svc/BasicHttp"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IAddCustomerBilling1" binding="tns:BasicHttpBinding_IAddCustomerBilling1">
+      <soap:address location="https://ef-webserve-001:7006/AddCustomerBilling.svc/BasicHttps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://ef-webserve-001:6006/AddCustomerBilling.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="AddCustomerBilling">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="tokenKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="addCustomerBillingRequest" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerBillingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddCustomerBillingResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://ef-webserve-001:6006/AddCustomerBilling.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ef-webserve-001:6006/AddCustomerBilling.svc</con:endpoint></con:endpoints><con:operation id="4f4bf2b4-1925-4f18-af92-269d73f81b9e" isOneWay="false" action="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling" name="AddCustomerBilling" bindingOperationName="AddCustomerBilling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a7c7f0ca-65df-40fc-a9a3-fc4e69369c8f" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ef-webserve-001:6006/AddCustomerBilling.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:AddCustomerBilling>\r
+         <!--Optional:-->\r
+         <tem:guid>?</tem:guid>\r
+         <!--Optional:-->\r
+         <tem:tokenKey>?</tem:tokenKey>\r
+         <!--Optional:-->\r
+         <tem:addCustomerBillingRequest>\r
+            <!--You may enter ANY elements at this point-->\r
+         </tem:addCustomerBillingRequest>\r
+      </tem:AddCustomerBilling>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IAddCustomerBilling/AddCustomerBilling"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,954 @@
+<GetBillersListResponse xmlns="http://tempuri.org/">
+         <GetBillersListResult>
+            <MFEP xmlns="">
+               <MsgHeader>
+                  <TmStp>2020-01-22T11:04:41</TmStp>
+                  <GUID>2b53da3d-49a8-4a42-b8ee-9e15985f32b9</GUID>
+                  <TrsInf>
+                     <RcvCode>5</RcvCode>
+                     <ResTyp>BILRSLSTRS</ResTyp>
+                  </TrsInf>
+                  <Result>
+                     <ErrorCode>0</ErrorCode>
+                     <ErrorDesc>Success</ErrorDesc>
+                     <Severity>Info</Severity>
+                  </Result>
+               </MsgHeader>
+               <MsgBody>
+                  <RecCount>16</RecCount>
+                  <SystemMarketing>
+                     <EnImg>http://www.asd.asd/asd.jpg</EnImg>
+                     <ArImg>http://www.asd.asd/asd.jpg</ArImg>
+                  </SystemMarketing>
+                  <BillersRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>3</Code>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.oman.com</Website>
+                           <Email>walkofahi@madfooat.com</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>ONEIC</EnShortName>
+                           <ArShortName>اونيك</ArShortName>
+                           <EnName>ONEIC</EnName>
+                           <ArName>الشركه الوطنيه العمانيه للهندسه والاستثمار</ArName>
+                        </BillerName>
+                        <BillerMarketing>
+                           <EnLogo>https://cdn1.imggmi.com/uploads/2019/4/8/c9d1c867908d548b0f4aa5fdb0ff2dda-full.jpg</EnLogo>
+                        </BillerMarketing>
+                        <BillerCategory>
+                           <EnShortName>UTIL</EnShortName>
+                           <ArShortName>أدوات</ArShortName>
+                           <EnName>Utility</EnName>
+                           <ArName>أدوات</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30966</Code>
+                                 <Type>Electricity</Type>
+                                 <EnShortDesc>Electricity</EnShortDesc>
+                                 <ArShortDesc>كهرباء</ArShortDesc>
+                                 <EnDesc>Electricity</EnDesc>
+                                 <ArDesc>كهرباء</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Subscription number</EnShortDesc>
+                                 <ArShortDesc>رقم الاشتراك</ArShortDesc>
+                                 <EnDesc>Enter subscription number</EnDesc>
+                                 <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30999</Code>
+                                 <Type>Water</Type>
+                                 <EnShortDesc>water</EnShortDesc>
+                                 <ArShortDesc>مياه</ArShortDesc>
+                                 <EnDesc>water</EnDesc>
+                                 <ArDesc>مياه</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Subscription number</EnShortDesc>
+                                 <ArShortDesc>رقم الاشتراك</ArShortDesc>
+                                 <EnDesc>Enter subscription number</EnDesc>
+                                 <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>4</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.omanpush.com</Website>
+                           <Email>wajdi.kofahi@oneic.com.om</Email>
+                           <Phone>+96885493062</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>OmPush</EnShortName>
+                           <ArShortName>بيلر</ArShortName>
+                           <EnName>Oman push</EnName>
+                           <ArName>عمان بيلر</ArName>
+                        </BillerName>
+                        <BillerMarketing>
+                           <EnLogo>https://i.imgur.com/pXovLrD.jpg</EnLogo>
+                        </BillerMarketing>
+                        <BillerCategory>
+                           <EnShortName>OTHR</EnShortName>
+                           <ArShortName>أخرى</ArShortName>
+                           <EnName>Other</EnName>
+                           <ArName>أخرى</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31031</Code>
+                                 <Type>Electricity</Type>
+                                 <EnShortDesc>Electricity</EnShortDesc>
+                                 <ArShortDesc>كهرباء</ArShortDesc>
+                                 <EnDesc>Electricity</EnDesc>
+                                 <ArDesc>كهرباء</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Electricity</EnShortDesc>
+                                 <ArShortDesc>كهرباء</ArShortDesc>
+                                 <EnDesc>Electricity</EnDesc>
+                                 <ArDesc>كهرباء</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31004</Code>
+                                 <Type>Individual</Type>
+                                 <EnShortDesc>Individual</EnShortDesc>
+                                 <ArShortDesc>فردي</ArShortDesc>
+                                 <EnDesc>Individual</EnDesc>
+                                 <ArDesc>فردي</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Individual</EnShortDesc>
+                                 <ArShortDesc>فردي</ArShortDesc>
+                                 <EnDesc>Individual</EnDesc>
+                                 <ArDesc>فردي</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31030</Code>
+                                 <Type>Water</Type>
+                                 <EnShortDesc>Water</EnShortDesc>
+                                 <ArShortDesc>مياه</ArShortDesc>
+                                 <EnDesc>Water</EnDesc>
+                                 <ArDesc>مياه</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Water</EnShortDesc>
+                                 <ArShortDesc>مياه</ArShortDesc>
+                                 <EnDesc>Water</EnDesc>
+                                 <ArDesc>مياه</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30991</Code>
+                                 <Type>Topup</Type>
+                                 <EnShortDesc>z</EnShortDesc>
+                                 <ArShortDesc>ب</ArShortDesc>
+                                 <EnDesc>z</EnDesc>
+                                 <ArDesc>ب</ArDesc>
+                                 <PaymentType>Prepaid</PaymentType>
+                                 <BillingNoRequired>false</BillingNoRequired>
+                                 <ContainsPrepaidCats>false</ContainsPrepaidCats>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>z</EnShortDesc>
+                                 <ArShortDesc>ب</ArShortDesc>
+                                 <EnDesc>z</EnDesc>
+                                 <ArDesc>ب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>6</Code>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.pasi.com</Website>
+                           <Email>MSaqib@pasi.gov.om</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>PASI</EnShortName>
+                           <ArShortName>باسي</ArShortName>
+                           <EnName>PASI</EnName>
+                           <ArName>باسي</ArName>
+                        </BillerName>
+                        <BillerMarketing>
+                           <EnLogo>https://i.imgur.com/pXovLrD.jpg</EnLogo>
+                        </BillerMarketing>
+                        <BillerCategory>
+                           <EnShortName>GOVT</EnShortName>
+                           <ArShortName>حكومي</ArShortName>
+                           <EnName>Government Service</EnName>
+                           <ArName>حكومي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30970</Code>
+                                 <Type>Individual</Type>
+                                 <EnShortDesc>individual</EnShortDesc>
+                                 <ArShortDesc>فردي</ArShortDesc>
+                                 <EnDesc>individual</EnDesc>
+                                 <ArDesc>فردي</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>inter customer id</EnShortDesc>
+                                 <ArShortDesc>رقم المشترك</ArShortDesc>
+                                 <EnDesc>inter customer id</EnDesc>
+                                 <ArDesc>رقم المشترك</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30976</Code>
+                                 <Type>CIVIL</Type>
+                                 <EnShortDesc>CIVIL</EnShortDesc>
+                                 <ArShortDesc>مدني</ArShortDesc>
+                                 <EnDesc>CIVIL</EnDesc>
+                                 <ArDesc>مدني</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>customer id</EnShortDesc>
+                                 <ArShortDesc>رقم المشترك</ArShortDesc>
+                                 <EnDesc>customer id</EnDesc>
+                                 <ArDesc>رقم المشترك</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30978</Code>
+                                 <Type>COMMERCIAL</Type>
+                                 <EnShortDesc>Commercial</EnShortDesc>
+                                 <ArShortDesc>تجاري</ArShortDesc>
+                                 <EnDesc>Commercial</EnDesc>
+                                 <ArDesc>تجاري</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Enter billing no</EnShortDesc>
+                                 <ArShortDesc>ادخل رقم الاشتراك</ArShortDesc>
+                                 <EnDesc>Enter billing no</EnDesc>
+                                 <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30979</Code>
+                                 <Type>MANPOWER</Type>
+                                 <EnShortDesc>Man Power</EnShortDesc>
+                                 <ArShortDesc>عامل</ArShortDesc>
+                                 <EnDesc>Man Power</EnDesc>
+                                 <ArDesc>عامل</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>enter billing no</EnShortDesc>
+                                 <ArShortDesc>رقم المشترك</ArShortDesc>
+                                 <EnDesc>enter billing no</EnDesc>
+                                 <ArDesc>رقم المشترك</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>16</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.pasi.com</Website>
+                           <Email>wajdi.kofahi@oneic.com.om</Email>
+                           <Phone>+96865698875</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>PASI1</EnShortName>
+                           <ArShortName>التأمينات</ArShortName>
+                           <EnName>Public Authority For Social Insurance</EnName>
+                           <ArName>الهيئه العامه للتأمينات الاجتماعيه</ArName>
+                        </BillerName>
+                        <BillerMarketing>
+                           <EnLogo>https://i.imgur.com/pXovLrD.jpg</EnLogo>
+                        </BillerMarketing>
+                        <BillerCategory>
+                           <EnShortName>GOVT</EnShortName>
+                           <ArShortName>حكومي</ArShortName>
+                           <EnName>Government Service</EnName>
+                           <ArName>حكومي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30980</Code>
+                                 <Type>CIVIL</Type>
+                                 <EnShortDesc>civil</EnShortDesc>
+                                 <ArShortDesc>مدني</ArShortDesc>
+                                 <EnDesc>civil</EnDesc>
+                                 <ArDesc>مدني</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>civil no</EnShortDesc>
+                                 <ArShortDesc>الرقم المدني</ArShortDesc>
+                                 <EnDesc>Enter civil no</EnDesc>
+                                 <ArDesc>ادخل الرقم المدني</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30981</Code>
+                                 <Type>COMMERCIAL</Type>
+                                 <EnShortDesc>commercial</EnShortDesc>
+                                 <ArShortDesc>تجاري</ArShortDesc>
+                                 <EnDesc>commercial</EnDesc>
+                                 <ArDesc>تجاري</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>commercial no</EnShortDesc>
+                                 <ArShortDesc>الرقم التجاري</ArShortDesc>
+                                 <EnDesc>enter commercial no</EnDesc>
+                                 <ArDesc>ادخل الرقم التجاري</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30982</Code>
+                                 <Type>MANPOWER</Type>
+                                 <EnShortDesc>ManPower</EnShortDesc>
+                                 <ArShortDesc>القوى العامله</ArShortDesc>
+                                 <EnDesc>ManPower</EnDesc>
+                                 <ArDesc>القوى العامله</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Manpower No</EnShortDesc>
+                                 <ArShortDesc>رقم القوى العاملة</ArShortDesc>
+                                 <EnDesc>Enter Manpower No</EnDesc>
+                                 <ArDesc>ادخل رقم القوى العاملة</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>17</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.school.com</Website>
+                           <Email>test@info.com</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>Muscat Hostels</EnShortName>
+                           <ArShortName>مسقط مساكن</ArShortName>
+                           <EnName>Muscat Hostels</EnName>
+                           <ArName>مساكن مسقط</ArName>
+                        </BillerName>
+                        <BillerMarketing>
+                           <EnLogo>https://i.imgur.com/pXovLrD.jpg</EnLogo>
+                        </BillerMarketing>
+                        <BillerCategory>
+                           <EnShortName>OTHR</EnShortName>
+                           <ArShortName>أخرى</ArShortName>
+                           <EnName>Other</EnName>
+                           <ArName>أخرى</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31027</Code>
+                                 <Type>Rent_Payment</Type>
+                                 <EnShortDesc>Rent Payment</EnShortDesc>
+                                 <ArShortDesc>دفع ايجار</ArShortDesc>
+                                 <EnDesc>Rent Payment</EnDesc>
+                                 <ArDesc>دفع ايجار</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Rent ID</EnShortDesc>
+                                 <ArShortDesc>رقم الايجار</ArShortDesc>
+                                 <EnDesc>Rent ID</EnDesc>
+                                 <ArDesc>رقم الايجار</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>21</Code>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.ismoman.com</Website>
+                           <Email>niranjan@ismoman.com</Email>
+                           <Phone>+96895410680</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>INDS</EnShortName>
+                           <ArShortName>مدارس الهنديه</ArShortName>
+                           <EnName>INDIAN SCHOOL MUSCAT</EnName>
+                           <ArName>المدارس الهنديه</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>30992</Code>
+                                 <Type>Students_Fees</Type>
+                                 <EnShortDesc>Student fees</EnShortDesc>
+                                 <ArShortDesc>رسوم الطلاب</ArShortDesc>
+                                 <EnDesc>Student fees</EnDesc>
+                                 <ArDesc>رسوم الطلاب</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Parent ID</EnShortDesc>
+                                 <ArShortDesc>رقم ولي الامر</ArShortDesc>
+                                 <EnDesc>Enter Parent ID</EnDesc>
+                                 <ArDesc>ادخل رقم ولي الامر</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>24</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.yahoo.com</Website>
+                           <Email>info@yahoo.com</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>GUTech</EnShortName>
+                           <ArShortName>الالمانيه</ArShortName>
+                           <EnName>GUTech</EnName>
+                           <ArName>الجامعه الالمانيه</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31015</Code>
+                                 <Type>Tuition_Fees</Type>
+                                 <EnShortDesc>Tuition_Fees</EnShortDesc>
+                                 <ArShortDesc>رسوم دراسه</ArShortDesc>
+                                 <EnDesc>Tuition_Fees</EnDesc>
+                                 <ArDesc>رسوم دراسه</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Student no</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>Enter student no</EnDesc>
+                                 <ArDesc>ادخل رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>25</Code>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.OMC.com</Website>
+                           <Email>mujeeb@omc.edu.om</Email>
+                           <Phone>+96824235007</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>MEC</EnShortName>
+                           <ArShortName>كلية</ArShortName>
+                           <EnName>Middle east college</EnName>
+                           <ArName>الشرق الاوسط</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31001</Code>
+                                 <Type>Student_fees</Type>
+                                 <EnShortDesc>Student fees</EnShortDesc>
+                                 <ArShortDesc>رسوم دراسه</ArShortDesc>
+                                 <EnDesc>Student fees</EnDesc>
+                                 <ArDesc>رسوم دراسه</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>student number</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>student number</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31032</Code>
+                                 <Type>Hostel</Type>
+                                 <EnShortDesc>Hostels</EnShortDesc>
+                                 <ArShortDesc>سكن</ArShortDesc>
+                                 <EnDesc>Hostels</EnDesc>
+                                 <ArDesc>سكن</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Student number</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>Student number</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31033</Code>
+                                 <Type>Tuition</Type>
+                                 <EnShortDesc>Tuition</EnShortDesc>
+                                 <ArShortDesc>رسوم طالب</ArShortDesc>
+                                 <EnDesc>Tuition</EnDesc>
+                                 <ArDesc>رسوم طالب</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Student number</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>Student number</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>27</Code>
+                           <IntegrationType>Offline</IntegrationType>
+                           <StmtBankCode>20</StmtBankCode>
+                           <Website>www.dhofar.com</Website>
+                           <Email>wajdi.kofahi@oneic.com.om</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>Dhofar</EnShortName>
+                           <ArShortName>ظفار</ArShortName>
+                           <EnName>Dhofar biller</EnName>
+                           <ArName>ظفار</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>OTHR</EnShortName>
+                           <ArShortName>أخرى</ArShortName>
+                           <EnName>Other</EnName>
+                           <ArName>أخرى</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31002</Code>
+                                 <Type>Electricity</Type>
+                                 <EnShortDesc>Electricity</EnShortDesc>
+                                 <ArShortDesc>كهرباء</ArShortDesc>
+                                 <EnDesc>Electricity</EnDesc>
+                                 <ArDesc>كهرباء</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Electricity</EnShortDesc>
+                                 <ArShortDesc>كهرباء</ArShortDesc>
+                                 <EnDesc>Electricity</EnDesc>
+                                 <ArDesc>كهرباء</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31003</Code>
+                                 <Type>Water</Type>
+                                 <EnShortDesc>water</EnShortDesc>
+                                 <ArShortDesc>مياه</ArShortDesc>
+                                 <EnDesc>water</EnDesc>
+                                 <ArDesc>مياه</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>water</EnShortDesc>
+                                 <ArShortDesc>مياه</ArShortDesc>
+                                 <EnDesc>water</EnDesc>
+                                 <ArDesc>مياه</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>28</Code>
+                           <IntegrationType>Offline</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.mu.com</Website>
+                           <Email>malmawali@muscatuniversity.edu.om</Email>
+                           <Phone>+96892988740</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>MUUY</EnShortName>
+                           <ArShortName>مسقط</ArShortName>
+                           <EnName>Muscat University</EnName>
+                           <ArName>جامعة مسقط</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31011</Code>
+                                 <Type>Students_Fees</Type>
+                                 <EnShortDesc>Students_Fees</EnShortDesc>
+                                 <ArShortDesc>رسوم طلاب</ArShortDesc>
+                                 <EnDesc>Students_Fees</EnDesc>
+                                 <ArDesc>رسوم طلاب</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Student ID</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>Student ID</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>31</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.arabopenuni.com</Website>
+                           <Email>info@test.com</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>AOU</EnShortName>
+                           <ArShortName>العربيه</ArShortName>
+                           <EnName>Arab Open University</EnName>
+                           <ArName>الجامعه العربيه المفتوحه</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31012</Code>
+                                 <Type>Students_Fees</Type>
+                                 <EnShortDesc>Student fees</EnShortDesc>
+                                 <ArShortDesc>رسوم طلاب</ArShortDesc>
+                                 <EnDesc>Student fees</EnDesc>
+                                 <ArDesc>رسوم طلاب</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Student number</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>Student number</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>33</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.iskan.com</Website>
+                           <Email>wajdi.kofahi@oneic.com.om</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>ISKAN</EnShortName>
+                           <ArShortName>اسكان</ArShortName>
+                           <EnName>ABQ Education Group</EnName>
+                           <ArName>مجموعه اسكان</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31019</Code>
+                                 <Type>As_Seeb_International_School</Type>
+                                 <EnShortDesc>As seeb</EnShortDesc>
+                                 <ArShortDesc>السيب</ArShortDesc>
+                                 <EnDesc>As_Seeb_International_School</EnDesc>
+                                 <ArDesc>السيب الدوليه</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>enter student no</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>enter student no</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31020</Code>
+                                 <Type>Azzan_Bin_Qais_International_School</Type>
+                                 <EnShortDesc>Azzan bin Qais</EnShortDesc>
+                                 <ArShortDesc>عزان بن قيس</ArShortDesc>
+                                 <EnDesc>Azzan bin Qais</EnDesc>
+                                 <ArDesc>عزان بن قيس</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>student number</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>student number</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31021</Code>
+                                 <Type>Sohar_International_School</Type>
+                                 <EnShortDesc>Sohar</EnShortDesc>
+                                 <ArShortDesc>صحار</ArShortDesc>
+                                 <EnDesc>Sohar</EnDesc>
+                                 <ArDesc>صحار</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>student number</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>student number</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>34</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.opensooq.com.om</Website>
+                           <Email>info@openspoq.com</Email>
+                           <Phone>+96898934425</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>OpenSooq</EnShortName>
+                           <ArShortName>السوق المفتوح</ArShortName>
+                           <EnName>OpenSooq</EnName>
+                           <ArName>السوق المفتوح</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>MDIA</EnShortName>
+                           <ArShortName>اعلام</ArShortName>
+                           <EnName>Media</EnName>
+                           <ArName>اعلام</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31025</Code>
+                                 <Type>opensooq-service</Type>
+                                 <EnShortDesc>Opensooq service</EnShortDesc>
+                                 <ArShortDesc>السوق المفتوح</ArShortDesc>
+                                 <EnDesc>Opensooq service</EnDesc>
+                                 <ArDesc>السوق المفتوح</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Application no</EnShortDesc>
+                                 <ArShortDesc>رقم الطلب</ArShortDesc>
+                                 <EnDesc>Application no</EnDesc>
+                                 <ArDesc>رقم الطلب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>36</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.test.com</Website>
+                           <Email>ehab.elzamel@alisary.com</Email>
+                           <Phone>+96891394212</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>Alisary center</EnShortName>
+                           <ArShortName>العيسري سنتر</ArShortName>
+                           <EnName>Alisary center</EnName>
+                           <ArName>العيسري سنتر</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>EDUC</EnShortName>
+                           <ArShortName>تعليمي</ArShortName>
+                           <EnName>Education</EnName>
+                           <ArName>تعليمي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31026</Code>
+                                 <Type>Students_Fees</Type>
+                                 <EnShortDesc>Students fees</EnShortDesc>
+                                 <ArShortDesc>رسوم طلاب</ArShortDesc>
+                                 <EnDesc>Students fees</EnDesc>
+                                 <ArDesc>رسوم طلاب</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>student no</EnShortDesc>
+                                 <ArShortDesc>رقم الطالب</ArShortDesc>
+                                 <EnDesc>Enter student no</EnDesc>
+                                 <ArDesc>رقم الطالب</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>37</Code>
+                           <IntegrationType>Online</IntegrationType>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.luluexchange.com</Website>
+                           <Email>wajdi.kofahi@oneic.com.om</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>LULU</EnShortName>
+                           <ArShortName>لولو</ArShortName>
+                           <EnName>LULU Exchange</EnName>
+                           <ArName>لولو للصرافه</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>FINC</EnShortName>
+                           <ArShortName>الخدمات المالية</ArShortName>
+                           <EnName>Financial services</EnName>
+                           <ArName>الخدمات المالية</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31029</Code>
+                                 <Type>Remittance</Type>
+                                 <EnShortDesc>Remittance</EnShortDesc>
+                                 <ArShortDesc>التحويلات</ArShortDesc>
+                                 <EnDesc>Remittance</EnDesc>
+                                 <ArDesc>التحويلات</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Enter Remittance no</EnShortDesc>
+                                 <ArShortDesc>رقم التحويلات</ArShortDesc>
+                                 <EnDesc>Enter Remittance no</EnDesc>
+                                 <ArDesc>رقم التحويلات</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                     <BillerRec>
+                        <BillerInfo>
+                           <Code>40</Code>
+                           <StmtBankCode>2</StmtBankCode>
+                           <Website>www.wajdi.com</Website>
+                           <Email>wajdi.kofahi@oneic.com.om</Email>
+                           <Phone>+96898934420</Phone>
+                        </BillerInfo>
+                        <BillerName>
+                           <EnShortName>Customs</EnShortName>
+                           <ArShortName>جمارك</ArShortName>
+                           <EnName>Oman Customs</EnName>
+                           <ArName>جمارك</ArName>
+                        </BillerName>
+                        <BillerCategory>
+                           <EnShortName>GOVT</EnShortName>
+                           <ArShortName>حكومي</ArShortName>
+                           <EnName>Government Service</EnName>
+                           <ArName>حكومي</ArName>
+                        </BillerCategory>
+                        <BillerServices>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31036</Code>
+                                 <Type>Individual</Type>
+                                 <EnShortDesc>Individual</EnShortDesc>
+                                 <ArShortDesc>أفراد</ArShortDesc>
+                                 <EnDesc>Individual</EnDesc>
+                                 <ArDesc>أفراد</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Civil ID</EnShortDesc>
+                                 <ArShortDesc>رقم المدني</ArShortDesc>
+                                 <EnDesc>Enter Civil ID</EnDesc>
+                                 <ArDesc>رقم المدني</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                           <BillerService>
+                              <ServiceInfo>
+                                 <Code>31035</Code>
+                                 <Type>Corporate</Type>
+                                 <EnShortDesc>Corporate</EnShortDesc>
+                                 <ArShortDesc>شركات</ArShortDesc>
+                                 <EnDesc>Corporate</EnDesc>
+                                 <ArDesc>شركات</ArDesc>
+                                 <PaymentType>Postpaid</PaymentType>
+                              </ServiceInfo>
+                              <BillingInfo>
+                                 <EnShortDesc>Civil ID</EnShortDesc>
+                                 <ArShortDesc>رقم المدني</ArShortDesc>
+                                 <EnDesc>Enter Civil ID</EnDesc>
+                                 <ArDesc>رقم المدني</ArDesc>
+                              </BillingInfo>
+                           </BillerService>
+                        </BillerServices>
+                     </BillerRec>
+                  </BillersRec>
+               </MsgBody>
+               <MsgFooter>
+                  <Security/>
+               </MsgFooter>
+            </MFEP>
+         </GetBillersListResult>
+      </GetBillersListResponse>
