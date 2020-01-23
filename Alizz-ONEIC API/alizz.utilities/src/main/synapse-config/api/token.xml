@@ -2,6 +2,7 @@
 <api context="/token" name="token" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST PUT" url-mapping="/gen">
         <inSequence>
+            <log level="full" separator=","/>
             <property expression="json-eval($.updator)" name="Updator" scope="default" type="STRING"/>
             <header action="remove" name="Content-Type" scope="transport"/>
             <payloadFactory media-type="xml">
@@ -28,6 +29,7 @@
             <call>
                 <endpoint key="AuthenticateEP"/>
             </call>
+            <log level="full" separator=","/>
             <filter regex="0" source="//MFEP/MsgHeader/Result/ErrorCode">
                 <then>
                     <payloadFactory description="updateTokenPayload" media-type="json">

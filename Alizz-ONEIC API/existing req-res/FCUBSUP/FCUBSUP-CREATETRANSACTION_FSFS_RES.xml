@@ -1,0 +1,131 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <CREATEUPTRANSACTION_FSFS_RES xmlns="http://fcubs.ofss.com/service/FCUBSUPService">
+            <FCUBS_HEADER>
+                <SOURCE>FLEXCUBE</SOURCE>
+                <UBSCOMP>FCUBS</UBSCOMP>
+                <MSGID>9200230090657649</MSGID>
+                <CORRELID>88520409012020158402</CORRELID>
+                <USERID>MBSYS</USERID>
+                <BRANCH>160</BRANCH>
+                <MODULEID>UP</MODULEID>
+                <SERVICE>FCUBSUPService</SERVICE>
+                <OPERATION>CreateUPTransaction</OPERATION>
+                <SOURCE_OPERATION>CreateUPTransaction</SOURCE_OPERATION>
+                <SOURCE_USERID>T1</SOURCE_USERID>
+                <DESTINATION>MBSYS</DESTINATION>
+                <MULTITRIPID>6200230070687025</MULTITRIPID>
+                <FUNCTIONID>UPGPYONL</FUNCTIONID>
+                <ACTION>NEW</ACTION>
+                <MSGSTAT>SUCCESS</MSGSTAT>
+            </FCUBS_HEADER>
+            <FCUBS_BODY>
+                <Transaction-Details>
+                    <XREF>88136609012020202022</XREF>
+                    <FCCREF>160BPN1200230003</FCCREF>
+                    <PRD>BPN1</PRD>
+                    <INSTID>0002412</INSTID>
+                    <BILLNO>1111</BILLNO>
+                    <BILLDT>2020-01-01</BILLDT>
+                    <BAMT>3</BAMT>
+                    <BCCY>OMR</BCCY>
+                    <CUSTACNO>0010000023003001</CUSTACNO>
+                    <ACCCY>OMR</ACCCY>
+                    <CONSNO>94451108</CONSNO>
+                    <NETAMT>3</NETAMT>
+                    <RATECODE>PUBLIC</RATECODE>
+                    <TXNCCY>OMR</TXNCCY>
+                    <OFSACNO>0010002412001002</OFSACNO>
+                    <OFSACBRN>001</OFSACBRN>
+                    <TXNDATE>2020-01-23</TXNDATE>
+                    <TXNBRN>160</TXNBRN>
+                    <RATETYPE>S</RATETYPE>
+                    <MAKERID>MBSYS</MAKERID>
+                    <MAKERSTAMP>2020-01-23 12:44:12</MAKERSTAMP>
+                    <CHECKERID>SYSTEM</CHECKERID>
+                    <CHECKERSTAMP>2020-01-23 12:44:12</CHECKERSTAMP>
+                    <AUTHSTAT>A</AUTHSTAT>
+                    <CONTSTAT>L</CONTSTAT>
+                    <CUSTBRN>001</CUSTBRN>
+                    <NARRATIVE>Bill Payment of  OOREDOO  PREPAID  ContractNum 94451108</NARRATIVE>
+                    <TCYTOTCHGAMT>0</TCYTOTCHGAMT>
+                    <CUST_ID>0000023</CUST_ID>
+                    <ACCTITLE>CUSTOMER_0000023</ACCTITLE>
+                    <ACTAMT>3</ACTAMT>
+                </Transaction-Details>
+                <FCUBS_WARNING_RESP>
+                    <WARNING>
+                        <WCODE>AC-NID-001</WCODE>
+                        <WDESC>Civil/National ID of the customer 0002412 is expired on 13-Dec-2014</WDESC>
+                    </WARNING>
+                    <WARNING>
+                        <WCODE>ST-SAVE-002</WCODE>
+                        <WDESC>Record Successfully Saved and Authorized</WDESC>
+                    </WARNING>
+                </FCUBS_WARNING_RESP>
+            </FCUBS_BODY>
+        </CREATEUPTRANSACTION_FSFS_RES>
+    </S:Body>
+</S:Envelope>
+
+
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <CREATEUPTRANSACTION_FSFS_RES xmlns="http://fcubs.ofss.com/service/FCUBSUPService">
+            <FCUBS_HEADER>
+                <SOURCE>FLEXCUBE</SOURCE>
+                <UBSCOMP>FCUBS</UBSCOMP>
+                <MSGID>9200230090659112</MSGID>
+                <CORRELID>88520409012020158403</CORRELID>
+                <USERID>MBSYS</USERID>
+                <BRANCH>160</BRANCH>
+                <MODULEID>UP</MODULEID>
+                <SERVICE>FCUBSUPService</SERVICE>
+                <OPERATION>CreateUPTransaction</OPERATION>
+                <SOURCE_OPERATION>CreateUPTransaction</SOURCE_OPERATION>
+                <SOURCE_USERID>T1</SOURCE_USERID>
+                <DESTINATION>MBSYS</DESTINATION>
+                <MULTITRIPID>6200230070693358</MULTITRIPID>
+                <FUNCTIONID>UPGPYONL</FUNCTIONID>
+                <ACTION>NEW</ACTION>
+                <MSGSTAT>FAILURE</MSGSTAT>
+                <ADDL>
+                    <PARAM>
+                        <NAME>SERVERSTAT</NAME>
+                        <VALUE>HOST</VALUE>
+                    </PARAM>
+                </ADDL>
+            </FCUBS_HEADER>
+            <FCUBS_BODY>
+                <Transaction-Details>
+                    <XREF>88136609012020202023</XREF>
+                    <PRD>BPN1</PRD>
+                    <INSTID>0002412</INSTID>
+                    <BILLNO>1111</BILLNO>
+                    <BILLDT>2020-01-01</BILLDT>
+                    <BAMT>60000</BAMT>
+                    <BCCY>OMR</BCCY>
+                    <CUSTACNO>0010000023003001</CUSTACNO>
+                    <ACCCY>OMR</ACCCY>
+                    <CONSNO>94451108</CONSNO>
+                    <TXNCCY>OMR</TXNCCY>
+                    <TXNDATE>2020-01-23</TXNDATE>
+                    <TXNBRN>160</TXNBRN>
+                    <CUSTBRN>001</CUSTBRN>
+                    <NARRATIVE>Bill Payment of  OOREDOO  PREPAID  ContractNum 94451108</NARRATIVE>
+                </Transaction-Details>
+                <FCUBS_ERROR_RESP>
+                    <ERROR>
+                        <ECODE>AC-OVD02</ECODE>
+                        <EDESC>Available Amount for Account 0010000023003001 after this Entry is 15,027.847-</EDESC>
+                    </ERROR>
+                    <ERROR>
+                        <ECODE>UP-UPL-01</ECODE>
+                        <EDESC>Failed To Upload</EDESC>
+                    </ERROR>
+                </FCUBS_ERROR_RESP>
+            </FCUBS_BODY>
+        </CREATEUPTRANSACTION_FSFS_RES>
+    </S:Body>
+</S:Envelope>

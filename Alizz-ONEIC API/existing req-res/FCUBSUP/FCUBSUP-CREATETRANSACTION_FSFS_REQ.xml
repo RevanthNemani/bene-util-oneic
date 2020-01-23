@@ -1,0 +1,41 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://fcubs.ofss.com/service/FCUBSUPService">
+    <soapenv:Header />
+    <soapenv:Body>
+        <CREATEUPTRANSACTION_FSFS_REQ>
+            <FCUBS_HEADER>
+                <SOURCE>MBSYS</SOURCE>
+                <UBSCOMP>FCUBS</UBSCOMP>
+                <MSGID>88520409012020158402</MSGID>
+                <CORRELID>88520409012020158402</CORRELID>
+                <USERID>MBSYS</USERID>
+                <BRANCH>160</BRANCH>
+                <MODULEID>UP</MODULEID>
+                <SERVICE>FCUBSUPService</SERVICE>
+                <OPERATION>CreateUPTransaction</OPERATION>
+                <SOURCE_OPERATION>CreateUPTransaction</SOURCE_OPERATION>
+                <SOURCE_USERID>T1</SOURCE_USERID>
+                <DESTINATION>FCUBS</DESTINATION>
+                <MSGSTAT>SUCCESS</MSGSTAT>
+            </FCUBS_HEADER>
+            <FCUBS_BODY>
+                <Transaction-Details>
+                    <XREF>88136609012020202022</XREF>
+                    <PRD>BPN1</PRD>
+                    <INSTID>0002412</INSTID>
+                    <BILLNO>1111</BILLNO>
+                    <BILLDT>2020-01-01</BILLDT>
+                    <BAMT>3</BAMT>
+                    <CUSTACNO>0010000023003001</CUSTACNO>
+                    <CUSTBRN>001</CUSTBRN>
+                    <BCCY>OMR</BCCY>
+                    <TXNCCY>OMR</TXNCCY>
+                    <ACCCY>OMR</ACCCY>
+                    <CONSNO>94451108</CONSNO>
+                    <TXNDATE>2020-01-23</TXNDATE>
+                    <TXNBRN>160</TXNBRN>
+                    <NARRATIVE>Bill Payment of  OOREDOO  PREPAID  ContractNum 94451108</NARRATIVE>
+                </Transaction-Details>
+            </FCUBS_BODY>
+        </CREATEUPTRANSACTION_FSFS_REQ>
+    </soapenv:Body>
+</soapenv:Envelope>
