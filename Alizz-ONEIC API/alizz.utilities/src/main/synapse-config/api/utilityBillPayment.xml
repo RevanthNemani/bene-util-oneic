@@ -243,6 +243,7 @@
         <inSequence>
             <log level="full"/>
             <sequence key="fcubs_id_sequence"/>
+            <sequence key="getIdSequence"/>
             <sequence key="logSequence"/>
             <respond/>
         </inSequence>
@@ -267,6 +268,7 @@
         <inSequence>
             <log level="full" separator=","/>
             <sequence key="fcubs_id_sequence"/>
+            <sequence key="getIdSequence"/>
             <sequence key="logSequence"/>
             <respond/>
         </inSequence>

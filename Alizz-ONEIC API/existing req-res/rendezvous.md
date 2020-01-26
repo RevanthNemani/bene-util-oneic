@@ -1,6 +1,7 @@
 # For Final consumers
 
 ### Request - add utility payments to beneficiaries
+
 ```{xml}
 <ns1:CCIMessage xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices">
   <RdvMessageId xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">220B8CA4-6F0D-461C-A6EF-84975560FB87</RdvMessageId>
@@ -48,6 +49,7 @@
 ```
 
 ### Request - Bill fetch
+
 ```{xml}
 <SOAP-ENV:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
   <SOAP-ENV:Header/>
@@ -76,6 +78,7 @@
 ```
 
 ### Response - Bill fetch
+
 ```{xml}
 <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
@@ -109,6 +112,7 @@
 ```
 
 ### Request - Bill payment
+
 ```{xml}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ccis="http://CCIGATEWAY.CCI.WebServices/CCIServices">
   <soapenv:Header/>
@@ -141,6 +145,7 @@
 ```
 
 ### Response - Bill payment
+
 ```{xml}
 <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
