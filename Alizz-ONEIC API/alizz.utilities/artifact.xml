@@ -56,4 +56,16 @@
     <artifact name="logSequence" groupId="com.alizz.utilities.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/logSequence.xml</file>
     </artifact>
+    <artifact name="info_sequence" groupId="com.alizz.utilities.sequence" version="0.1.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/info_sequence.xml</file>
+    </artifact>
+    <artifact name="getOneUtilityEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getOneUtilityEP.xml</file>
+    </artifact>
+    <artifact name="tokenEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/tokenEP.xml</file>
+    </artifact>
+    <artifact name="BillInquiryEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/BillInquiryEP.xml</file>
+    </artifact>
 </artifacts>

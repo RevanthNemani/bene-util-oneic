@@ -217,9 +217,7 @@
             </filter>
             <send/>
         </inSequence>
-        <outSequence>
-            <send/>
-        </outSequence>
+        <outSequence/>
         <faultSequence>
             <payloadFactory media-type="xml">
                 <format>
@@ -242,12 +240,154 @@
     <resource methods="POST GET" url-mapping="/show">
         <inSequence>
             <log level="full"/>
-            <sequence key="fcubs_id_sequence"/>
-            <sequence key="getIdSequence"/>
+            <sequence key="info_sequence"/>
+            <sequence key="getJsonSequence"/>
+            <call>
+                <endpoint key="tokenEP"/>
+            </call>
+            <log level="full" separator=","/>
+            <property expression="json-eval($.tokenRead.token[0].key)" name="tokenkey" scope="default" type="STRING"/>
+            <property expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd'T'HH:mm:ss&quot;)" name="tmstp" scope="default" type="STRING"/>
             <sequence key="logSequence"/>
-            <respond/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <tem:Inquire>
+                                <tem:guid>$1</tem:guid>
+                                <tem:tokenKey>$2</tem:tokenKey>
+                                <tem:billInquiryRequest>
+                                    <MFEP xmlns="">
+                                        <MsgHeader>
+                                            <TmStp>$3</TmStp>
+                                            <TrsInf>
+                                                <SdrCode>$4</SdrCode>
+                                                <RcvCode>1</RcvCode>
+                                                <ReqTyp>BILINQRQ</ReqTyp>
+                                            </TrsInf>
+                                        </MsgHeader>
+                                        <MsgBody>
+                                            <AcctInfo>
+                                                <BillingNo>$5</BillingNo>
+                                                <BillNo>$6</BillNo>
+                                                <BillerCode>$7</BillerCode>
+                                            </AcctInfo>
+                                            <ServiceType>$8</ServiceType>
+                                        </MsgBody>
+                                        <MsgFooter>
+                                            <Security>
+                                                <Signature/>
+                                            </Security>
+                                        </MsgFooter>
+                                    </MFEP>
+                                </tem:billInquiryRequest>
+                            </tem:Inquire>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')"/>
+                    <arg evaluator="xml" expression="get-property('tokenkey')"/>
+                    <arg evaluator="xml" expression="get-property('tmstp')"/>
+                    <arg evaluator="xml" expression="get-property('SOURCE_ID')"/>
+                    <arg evaluator="xml" expression="get-property('consumerNumber')"/>
+                    <arg evaluator="xml" expression="get-property('consumerNumber')"/>
+                    <arg evaluator="xml" expression="get-property('billerCode')"/>
+                    <arg evaluator="xml" expression="get-property('service')"/>
+                </args>
+            </payloadFactory>
+            <sequence key="Sequence"/>
+            <header description="SoapAction" name="SOAPAction" scope="transport" value="http://tempuri.org/IBillInquiry/Inquire"/>
+            <call>
+                <endpoint key="BillInquiryEP"/>
+            </call>
+            <enrich description="originalResponse">
+                <source clone="true" xpath="//MsgBody/BillsRec/BillRec"/>
+                <target action="child" property="originalResponse" type="property"/>
+            </enrich>
+            <switch source="//MsgBody/BillsRec/BillRec/Result/ErrorCode">
+                <case regex="0">
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <soap:Body>
+                                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                        <Header>
+                                            <MessageType>0210</MessageType>
+                                            <TranCode>$1</TranCode>
+                                            <TerminalId>$2</TerminalId>
+                                            <SupervisorId>$3</SupervisorId>
+                                            <ChannelId>$4</ChannelId>
+                                            <DateTime>$5</DateTime>
+                                            <STAN>$6</STAN>
+                                            <ErrorCode>000</ErrorCode>
+                                            <ErrorMessage>Processed OK</ErrorMessage>
+                                        </Header>
+                                        <Body>
+                                            <Response>
+                                                <OIFCResponse>$7</OIFCResponse>
+                                            </Response>
+                                        </Body>
+                                    </CCIMessageResponse>
+                                </soap:Body>
+                            </soap:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('tranCode')"/>
+                            <arg evaluator="xml" expression="get-property('terminalId')"/>
+                            <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                            <arg evaluator="xml" expression="get-property('dateTime')"/>
+                            <arg evaluator="xml" expression="get-property('stan')"/>
+                            <arg evaluator="xml" expression="get-property('originalResponse')"/>
+                        </args>
+                    </payloadFactory>
+                </case>
+                <default>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <soap:Body>
+                                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                        <Header>
+                                            <MessageType>0210</MessageType>
+                                            <TranCode>$1</TranCode>
+                                            <TerminalId>$2</TerminalId>
+                                            <SupervisorId>$3</SupervisorId>
+                                            <ChannelId>$4</ChannelId>
+                                            <DateTime>$5</DateTime>
+                                            <STAN>$6</STAN>
+                                            <ErrorCode>128</ErrorCode>
+                                            <ErrorMessage>Transaction Fail</ErrorMessage>
+                                        </Header>
+                                        <Body>
+                                            <Response>
+                                                <OIFCResponse>$7</OIFCResponse>
+                                            </Response>
+                                        </Body>
+                                    </CCIMessageResponse>
+                                </soap:Body>
+                            </soap:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('tranCode')"/>
+                            <arg evaluator="xml" expression="get-property('terminalId')"/>
+                            <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                            <arg evaluator="xml" expression="get-property('dateTime')"/>
+                            <arg evaluator="xml" expression="get-property('stan')"/>
+                            <arg evaluator="xml" expression="get-property('originalResponse')"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </default>
+            </switch>
+            <send/>
         </inSequence>
-        <outSequence/>
+        <outSequence>
+            <send/>
+        </outSequence>
         <faultSequence>
             <payloadFactory media-type="xml">
                 <format>
@@ -267,12 +407,18 @@
     <resource methods="POST GET" url-mapping="/payment">
         <inSequence>
             <log level="full" separator=","/>
-            <sequence key="fcubs_id_sequence"/>
-            <sequence key="getIdSequence"/>
-            <sequence key="logSequence"/>
-            <respond/>
+            <sequence key="info_sequence"/>
+            <property expression="//Request/TransactionId" name="transRef" scope="default" type="STRING"/>
+            <sequence key="getJsonSequence"/>
+            <call>
+                <endpoint key="getOneUtilityEP"/>
+            </call>
+            <log level="full" separator=","/>
+            <send/>
         </inSequence>
-        <outSequence/>
+        <outSequence>
+            <send/>
+        </outSequence>
         <faultSequence>
             <payloadFactory media-type="xml">
                 <format>

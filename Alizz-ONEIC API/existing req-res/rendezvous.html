@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>For Final consumers</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="for-final-consumers">For Final consumers</h1>
+<h3 id="request---add-utility-payments-to-beneficiaries">Request - add utility payments to beneficiaries</h3>
+<pre><code class="language-{xml}"><code><div>&lt;ns1:CCIMessage xmlns:ns1=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot;&gt;
+  &lt;RdvMessageId xmlns=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot;&gt;220B8CA4-6F0D-461C-A6EF-84975560FB87&lt;/RdvMessageId&gt;
+  &lt;ns1:Header&gt;
+    &lt;ns1:MessageType&gt;0200&lt;/ns1:MessageType&gt;
+    &lt;ns1:TranCode&gt;0027&lt;/ns1:TranCode&gt;
+    &lt;ns1:TerminalId&gt;MB&lt;/ns1:TerminalId&gt;
+    &lt;ns1:SupervisorId&gt;DBSYSUSR&lt;/ns1:SupervisorId&gt;
+    &lt;ns1:ChannelId&gt;DBSYS&lt;/ns1:ChannelId&gt;
+    &lt;ns1:DateTime&gt;15122019005915&lt;/ns1:DateTime&gt;
+    &lt;ns1:STAN&gt;571554&lt;/ns1:STAN&gt;
+  &lt;/ns1:Header&gt;
+  &lt;ns1:Body&gt;
+    &lt;ns1:Request&gt;
+      &lt;ns1:CIF&gt;0047128&lt;/ns1:CIF&gt;
+      &lt;ns1:UtilityCompany&gt;OOREDOO&lt;/ns1:UtilityCompany&gt;
+      &lt;ns1:ServiceType&gt;PREPAID&lt;/ns1:ServiceType&gt;
+      &lt;ns1:ConsumerNumberType&gt;MOBILENUMBER&lt;/ns1:ConsumerNumberType&gt;
+      &lt;ns1:ConsumerNumber&gt;96060979&lt;/ns1:ConsumerNumber&gt;
+      &lt;ns1:Alias&gt;Saif&lt;/ns1:Alias&gt;
+      &lt;ns1:ActivityFlag&gt;ADD&lt;/ns1:ActivityFlag&gt;
+    &lt;/ns1:Request&gt;
+  &lt;/ns1:Body&gt;
+&lt;/ns1:CCIMessage&gt;
+</div></code></code></pre>
+<h3 id="response---add-utility-payments-to-beneficiaries">Response - add utility payments to beneficiaries</h3>
+<pre><code class="language-{xml}"><code><div>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;CCIMessageResponse xmlns=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot;&gt;
+  &lt;RdvMessageId&gt;220B8CA4-6F0D-461C-A6EF-84975560FB87&lt;/RdvMessageId&gt;
+  &lt;Header&gt;
+    &lt;MessageType&gt;0210&lt;/MessageType&gt;
+    &lt;TranCode&gt;0027&lt;/TranCode&gt;
+    &lt;TerminalId&gt;MB&lt;/TerminalId&gt;
+    &lt;SupervisorId&gt;DBSYSUSR&lt;/SupervisorId&gt;
+    &lt;ChannelId&gt;DBSYS&lt;/ChannelId&gt;
+    &lt;DateTime&gt;15122019005915&lt;/DateTime&gt;
+    &lt;STAN&gt;571554&lt;/STAN&gt;
+    &lt;ErrorCode&gt;000&lt;/ErrorCode&gt;
+    &lt;ErrorMessage&gt;Processed OK&lt;/ErrorMessage&gt;
+  &lt;/Header&gt;
+&lt;/CCIMessageResponse&gt;
+</div></code></code></pre>
+<h3 id="request---bill-fetch">Request - Bill fetch</h3>
+<pre><code class="language-{xml}"><code><div>&lt;SOAP-ENV:Envelope xmlns:ns0=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns1=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;SOAP-ENV:Header/&gt;
+  &lt;ns0:Body&gt;
+    &lt;ns1:CCIMessage&gt;
+      &lt;ns1:Header&gt;
+        &lt;ns1:MessageType&gt;0200&lt;/ns1:MessageType&gt;
+        &lt;ns1:TranCode&gt;0023&lt;/ns1:TranCode&gt;
+        &lt;ns1:TerminalId&gt;T1&lt;/ns1:TerminalId&gt;
+        &lt;ns1:SupervisorId&gt;S1&lt;/ns1:SupervisorId&gt;
+        &lt;ns1:ChannelId&gt;IB&lt;/ns1:ChannelId&gt;
+        &lt;ns1:DateTime&gt;24042019073757&lt;/ns1:DateTime&gt;
+        &lt;ns1:STAN&gt;907196&lt;/ns1:STAN&gt;
+      &lt;/ns1:Header&gt;
+      &lt;ns1:Body&gt;
+        &lt;ns1:Request&gt;
+          &lt;ns1:cif&gt;0000024&lt;/ns1:cif&gt;
+          &lt;ns1:alias&gt;Electricity&lt;/ns1:alias&gt;
+        &lt;/ns1:Request&gt;
+      &lt;/ns1:Body&gt;
+    &lt;/ns1:CCIMessage&gt;
+  &lt;/ns0:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</div></code></code></pre>
+<h3 id="response---bill-fetch">Response - Bill fetch</h3>
+<pre><code class="language-{xml}"><code><div>&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap:Body&gt;
+    &lt;CCIMessageResponse xmlns=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot;&gt;
+      &lt;Header&gt;
+        &lt;MessageType&gt;0210&lt;/MessageType&gt;
+        &lt;TranCode&gt;0023&lt;/TranCode&gt;
+        &lt;TerminalId&gt;T1&lt;/TerminalId&gt;
+        &lt;SupervisorId&gt;S1&lt;/SupervisorId&gt;
+        &lt;ChannelId&gt;IB&lt;/ChannelId&gt;
+        &lt;DateTime&gt;24042019073757&lt;/DateTime&gt;
+        &lt;STAN&gt;907196&lt;/STAN&gt;
+        &lt;ErrorCode&gt;000&lt;/ErrorCode&gt;
+        &lt;ErrorMessage&gt;Processed OK&lt;/ErrorMessage&gt;
+      &lt;/Header&gt;
+      &lt;Body&gt;
+        &lt;Response&gt;
+          &lt;OIFCResponse&gt;
+            &lt;OutstandingBalance&gt;0&lt;/OutstandingBalance&gt;
+            &lt;Service&gt;E&lt;/Service&gt;
+            &lt;Status/&gt;
+            &lt;EngName&gt;ASAD SALIM SAID AL SHBIBI&lt;/EngName&gt;
+            &lt;ArbName&gt;???? ?? ???? ?? ???? ???????&lt;/ArbName&gt;
+          &lt;/OIFCResponse&gt;
+          &lt;TransactionId&gt;ALZ_290719624042019073757&lt;/TransactionId&gt;
+        &lt;/Response&gt;
+      &lt;/Body&gt;
+    &lt;/CCIMessageResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</div></code></code></pre>
+<h3 id="request---bill-payment">Request - Bill payment</h3>
+<pre><code class="language-{xml}"><code><div>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ccis=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot;&gt;
+  &lt;soapenv:Header/&gt;
+  &lt;soapenv:Body&gt;
+    &lt;ccis:CCIMessage&gt;
+      &lt;ccis:Header&gt;
+        &lt;ccis:MessageType&gt;0200&lt;/ccis:MessageType&gt;
+        &lt;ccis:TranCode&gt;0024&lt;/ccis:TranCode&gt;
+        &lt;ccis:TerminalId&gt;TI&lt;/ccis:TerminalId&gt;
+        &lt;ccis:SupervisorId&gt;S1&lt;/ccis:SupervisorId&gt;
+        &lt;ccis:ChannelId&gt;IB&lt;/ccis:ChannelId&gt;
+        &lt;ccis:DateTime&gt;24042019073757&lt;/ccis:DateTime&gt;
+        &lt;ccis:STAN&gt;101180&lt;/ccis:STAN&gt;
+      &lt;/ccis:Header&gt;
+      &lt;ccis:Body&gt;
+        &lt;ccis:Request&gt;
+          &lt;ccis:TransactionId&gt;ALZ_290719624042019073757&lt;/ccis:TransactionId&gt;
+          &lt;ccis:AccountNo&gt;0010001244002001&lt;/ccis:AccountNo&gt;
+          &lt;ns1:cif&gt;0000024&lt;/ns1:cif&gt;
+          &lt;ns1:alias&gt;Electricity&lt;/ns1:alias&gt;
+          &lt;ccis:Amount&gt;1.000&lt;/ccis:Amount&gt;
+          &lt;ccis:PrevalidationFlag&gt;true&lt;/ccis:PrevalidationFlag&gt;
+        &lt;/ccis:Request&gt;
+      &lt;/ccis:Body&gt;
+    &lt;/ccis:CCIMessage&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</div></code></code></pre>
+<h3 id="response---bill-payment">Response - Bill payment</h3>
+<pre><code class="language-{xml}"><code><div>&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap:Body&gt;
+    &lt;CCIMessageResponse xmlns=&quot;http://CCIGATEWAY.CCI.WebServices/CCIServices&quot;&gt;
+      &lt;Header&gt;
+        &lt;MessageType&gt;0210&lt;/MessageType&gt;
+        &lt;TranCode&gt;0024&lt;/TranCode&gt;
+        &lt;TerminalId&gt;TI&lt;/TerminalId&gt;
+        &lt;SupervisorId&gt;S1&lt;/SupervisorId&gt;
+        &lt;ChannelId&gt;IB&lt;/ChannelId&gt;
+        &lt;DateTime&gt;24042019073757&lt;/DateTime&gt;
+        &lt;STAN&gt;101180&lt;/STAN&gt;
+        &lt;ErrorCode&gt;000&lt;/ErrorCode&gt;
+      &lt;/Header&gt;
+      &lt;Body&gt;
+        &lt;Response&gt;
+          &lt;Branch&gt;001&lt;/Branch&gt;
+          &lt;TransactionId&gt;ALZ_290719624042019073757&lt;/TransactionId&gt;
+        &lt;/Response&gt;
+      &lt;/Body&gt;
+    &lt;/CCIMessageResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</div></code></code></pre>
+
+    </body>
+    </html>

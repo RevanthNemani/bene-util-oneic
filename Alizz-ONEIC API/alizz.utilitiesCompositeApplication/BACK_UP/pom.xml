@@ -5,19 +5,14 @@
   <groupId>com.alizz.utilities</groupId>
   <artifactId>alizz.utilitiesCompositeApplication</artifactId>
   <version>0.1.3</version>
-  <packaging>pom</packaging>
+  <packaging>carbon/application</packaging>
   <name>alizz.utilitiesCompositeApplication</name>
   <description>alizz.utilitiesCompositeApplication</description>
-  <modules>
-    <module>../alizz.utilities</module>
-  </modules>
   <properties>
     <com.alizz.utilities_._SOURCE_PWD>capp/EnterpriseServiceBus</com.alizz.utilities_._SOURCE_PWD>
     <com.alizz.utilities.sequence_._info_sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._info_sequence>
     <com.alizz.utilities.sequence_._getIdSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getIdSequence>
     <com.alizz.utilities.sequence_._getJsonSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getJsonSequence>
-    <com.alizz.utilities.endpoint_._BillInquiryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._BillInquiryEP>
-    <com.alizz.utilities.endpoint_._tokenEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._tokenEP>
     <com.alizz.utilities.endpoint_._serviceIdEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._serviceIdEP>
     <com.alizz.utilities.endpoint_._addBeneficiaryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._addBeneficiaryEP>
     <com.alizz.utilities.endpoint_._fcubsupEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._fcubsupEP>
@@ -53,12 +48,6 @@
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>AuthenticateEP</artifactId>
-      <version>0.1.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.alizz.utilities.endpoint</groupId>
-      <artifactId>BillInquiryEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
     </dependency>
@@ -101,12 +90,6 @@
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>systemIdEP</artifactId>
-      <version>0.1.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.alizz.utilities.endpoint</groupId>
-      <artifactId>tokenEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
     </dependency>
@@ -177,6 +160,44 @@
       <type>xml</type>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>ignore</checksumPolicy>
+      </releases>
+      <id>wso2-nexus</id>
+      <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+    </repository>
+    <repository>
+      <id>wso2-maven2-repository-1</id>
+      <url>http://dist.wso2.org/maven2</url>
+    </repository>
+    <repository>
+      <id>wso2-nexus-repository-1</id>
+      <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>ignore</checksumPolicy>
+      </releases>
+      <id>wso2-nexus</id>
+      <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>wso2-maven2-repository-1</id>
+      <url>http://dist.wso2.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>wso2-nexus-repository-1</id>
+      <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -185,8 +206,43 @@
         <configuration>
           <buildcommands />
           <projectnatures>
-            <projectnature>org.wso2.developerstudio.eclipse.mavenmultimodule.project.nature</projectnature>
+            <projectnature>org.wso2.developerstudio.eclipse.distribution.project.nature</projectnature>
           </projectnatures>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.wso2.maven</groupId>
+        <artifactId>maven-car-plugin</artifactId>
+        <version>2.1.1</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>car</id>
+            <phase>package</phase>
+            <goals>
+              <goal>car</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration />
+      </plugin>
+      <plugin>
+        <groupId>org.wso2.maven</groupId>
+        <artifactId>maven-car-deploy-plugin</artifactId>
+        <version>1.1.1</version>
+        <extensions>true</extensions>
+        <configuration>
+          <carbonServers>
+            <CarbonServer>
+              <trustStorePath>${basedir}/src/main/resources/security/wso2carbon.jks</trustStorePath>
+              <trustStorePassword>wso2carbon</trustStorePassword>
+              <trustStoreType>JKS</trustStoreType>
+              <serverUrl>https://localhost:9443</serverUrl>
+              <userName>admin</userName>
+              <password>admin</password>
+              <operation>deploy</operation>
+            </CarbonServer>
+          </carbonServers>
         </configuration>
       </plugin>
     </plugins>

@@ -51,7 +51,10 @@
 ### Request - Bill fetch
 
 ```{xml}
-<SOAP-ENV:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:ns1="http://CCIGATEWAY.CCI.WebServices/CCIServices"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
   <SOAP-ENV:Header/>
   <ns0:Body>
     <ns1:CCIMessage>
@@ -66,10 +69,10 @@
       </ns1:Header>
       <ns1:Body>
         <ns1:Request>
-          <ns1:UtilityCompany>OIFC</ns1:UtilityCompany>
-          <ns1:ServiceType>ELECTRICITY</ns1:ServiceType>
-          <ns1:ConsumerNumberType>ACCOUNTNUMBER</ns1:ConsumerNumberType>
-          <ns1:ConsumerNumber>W14883</ns1:ConsumerNumber>
+          <UtilityCompany>3</UtilityCompany>
+          <ServiceType>Electricity</ServiceType>
+          <ConsumerNumberType>ACCOUNTNUMBER</ConsumerNumberType>
+          <ConsumerNumber>35327</ConsumerNumber>
         </ns1:Request>
       </ns1:Body>
     </ns1:CCIMessage>
@@ -80,7 +83,9 @@
 ### Response - Bill fetch
 
 ```{xml}
-<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
     <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
       <Header>
@@ -114,7 +119,8 @@
 ### Request - Bill payment
 
 ```{xml}
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ccis="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:ccis="http://CCIGATEWAY.CCI.WebServices/CCIServices">
   <soapenv:Header/>
   <soapenv:Body>
     <ccis:CCIMessage>
@@ -131,10 +137,8 @@
         <ccis:Request>
           <ccis:TransactionId>ALZ_290719624042019073757</ccis:TransactionId>
           <ccis:AccountNo>0010001244002001</ccis:AccountNo>
-          <ccis:UtilityCompany>OIFC</ccis:UtilityCompany>
-          <ccis:ServiceType>ELECTRICITY</ccis:ServiceType>
-          <ccis:ConsumerNumberType>ACCOUNTNUMBER</ccis:ConsumerNumberType>
-          <ccis:ConsumerNumber>W14883</ccis:ConsumerNumber>
+          <ns1:cif>0000024</ns1:cif>
+          <ns1:alias>Electricity</ns1:alias>
           <ccis:Amount>1.000</ccis:Amount>
           <ccis:PrevalidationFlag>true</ccis:PrevalidationFlag>
         </ccis:Request>
@@ -147,7 +151,9 @@
 ### Response - Bill payment
 
 ```{xml}
-<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
     <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
       <Header>

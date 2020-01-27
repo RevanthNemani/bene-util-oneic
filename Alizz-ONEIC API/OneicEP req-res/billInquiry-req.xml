@@ -1,23 +1,34 @@
-<MFEP xmlns="">
-  <MsgHeader>
-    <TmStp>2018-01-02T12:15:46</TmStp>
-    <TrsInf>
-      <SdrCode>12</SdrCode>
-      <RcvCode>1</RcvCode>
-      <ReqTyp>BILINQRQ</ReqTyp>
-    </TrsInf>
-  </MsgHeader>
-  <MsgBody>
-    <AcctInfo>
-      <BillingNo>35325</BillingNo>
-      <BillNo>35325</BillNo>
-      <BillerCode>3</BillerCode>
-    </AcctInfo>
-    <ServiceType>Electricity</ServiceType>
-  </MsgBody>
-  <MsgFooter>
-    <Security>
-      <Signature>OanU84/2kBuRttgyi4VM5A/LWgzpIT91iGLEFf9ryUOFwkhnkvmz/BnNynOSSu65Jkmi/k8OCNdAvKfGmgg/8orKNaeuFqjctTk6aF+8qXsUHp92/cSlmJISvjLnTUEBXSGoRT998B4gtzaVOUI03GR5X5HG7ooMUxG8ypgwqnZdlsaFUEPts3DAgMsSdAZXhco7Yp2a2PYjxEuKo3UZsP8PMgwJQlxN+BCtj8WABVEFBe4FGu1Pr4hrnIhDDuG55pEzvrBbxwWn/SSccM/IWemFXwLIpbgVRiDv+RLptW12v2jAwt1UfAsrT12g79fzADaRMIJyro0ghgREUrYm4g==</Signature>
-    </Security>
-  </MsgFooter>
-</MFEP>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header />
+  <soap:Body>
+    <tem:Inquire>
+      <tem:guid></tem:guid>
+      <tem:tokenKey>2F182B900244022CC1D1B5D533641A48C80130055FAC83BDC5E02E0A71B20B815</tem:tokenKey>
+      <tem:billInquiryRequest>
+        <MFEP xmlns="">
+          <MsgHeader>
+            <TmStp>2020-01-26T12:15:46</TmStp>
+            <TrsInf>
+              <SdrCode>5</SdrCode>
+              <RcvCode>1</RcvCode>
+              <ReqTyp>BILINQRQ</ReqTyp>
+            </TrsInf>
+          </MsgHeader>
+          <MsgBody>
+            <AcctInfo>
+              <BillingNo>35325</BillingNo>
+              <BillNo>35325</BillNo>
+              <BillerCode>3</BillerCode>
+            </AcctInfo>
+            <ServiceType>Electricity</ServiceType>
+          </MsgBody>
+          <MsgFooter>
+            <Security>
+              <Signature></Signature>
+            </Security>
+          </MsgFooter>
+        </MFEP>
+      </tem:billInquiryRequest>
+    </tem:Inquire>
+  </soap:Body>
+</soap:Envelope>

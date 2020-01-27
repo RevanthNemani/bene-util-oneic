@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="info_sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="//Header/TerminalId" name="terminalId" scope="default" type="STRING"/>
+    <property expression="//Header/SupervisorId" name="supervisoryId" scope="default" type="STRING"/>
+    <property expression="//Header/ChannelId" name="uri.var.channelId" scope="default" type="STRING"/>
+    <property expression="//Header/TranCode" name="tranCode" scope="default" type="STRING"/>
+    <property expression="//Header/DateTime" name="dateTime" scope="default" type="STRING"/>
+    <property expression="//Header/STAN" name="stan" scope="default" type="STRING"/>
+    <property expression="//Request/UtilityCompany" name="billerCode" scope="default" type="STRING"/>
+    <property expression="//Request/ServiceType" name="service" scope="default" type="STRING"/>
+    <property expression="//Request/ConsumerNumberType" name="consumerNumberType" scope="default" type="STRING"/>
+    <property expression="//Request/ConsumerNumber" name="consumerNumber" scope="default" type="STRING"/>
+</sequence>
