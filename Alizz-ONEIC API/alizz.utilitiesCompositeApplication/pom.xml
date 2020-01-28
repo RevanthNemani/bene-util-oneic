@@ -16,6 +16,7 @@
     <com.alizz.utilities.sequence_._info_sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._info_sequence>
     <com.alizz.utilities.sequence_._getIdSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getIdSequence>
     <com.alizz.utilities.sequence_._getJsonSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getJsonSequence>
+    <com.alizz.utilities.endpoint_._BillPaymentEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._BillPaymentEP>
     <com.alizz.utilities.endpoint_._BillInquiryEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._BillInquiryEP>
     <com.alizz.utilities.endpoint_._tokenEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._tokenEP>
     <com.alizz.utilities.endpoint_._serviceIdEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._serviceIdEP>
@@ -24,6 +25,7 @@
     <com.alizz.utilities.endpoint_._updateTokenEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._updateTokenEP>
     <com.alizz.utilities.api_._token>capp/EnterpriseServiceBus</com.alizz.utilities.api_._token>
     <com.alizz.utilities.sequence_._json-header-sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._json-header-sequence>
+    <com.alizz.utilities.endpoint_._productEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._productEP>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
     <com.alizz.utilities.sequence_._logSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._logSequence>
     <com.alizz.utilities.endpoint_._getOneUtilityEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._getOneUtilityEP>
@@ -64,6 +66,12 @@
     </dependency>
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>BillPaymentEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>addBeneficiaryEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
@@ -89,6 +97,12 @@
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>getOneUtilityEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>productEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
     </dependency>

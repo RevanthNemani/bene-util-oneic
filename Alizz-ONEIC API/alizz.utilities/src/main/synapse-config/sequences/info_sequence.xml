@@ -6,8 +6,8 @@
     <property expression="//Header/TranCode" name="tranCode" scope="default" type="STRING"/>
     <property expression="//Header/DateTime" name="dateTime" scope="default" type="STRING"/>
     <property expression="//Header/STAN" name="stan" scope="default" type="STRING"/>
-    <property expression="//Request/UtilityCompany" name="billerCode" scope="default" type="STRING"/>
-    <property expression="//Request/ServiceType" name="service" scope="default" type="STRING"/>
+    <property expression="//Request/UtilityCompany" name="uri.var.billerCode" scope="default" type="STRING"/>
+    <property expression="//Request/ServiceType" name="uri.var.service" scope="default" type="STRING"/>
     <property expression="//Request/ConsumerNumberType" name="consumerNumberType" scope="default" type="STRING"/>
     <property expression="//Request/ConsumerNumber" name="consumerNumber" scope="default" type="STRING"/>
 </sequence>

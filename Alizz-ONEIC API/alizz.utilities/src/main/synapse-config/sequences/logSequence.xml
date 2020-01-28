@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="logSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
     <log level="custom">
-        <property expression="fn:concat(' terminalId ', get-property('terminalId'), ' supervisoryId ', get-property('supervisoryId'), ' uri.var.channelId ', get-property('uri.var.channelId'), ' tranCode ', get-property('tranCode'), ' dateTime ', get-property('dateTime'), ' stan ', get-property('stan'), ' UtilityCompany ', get-property('billerCode'), ' service ', get-property('service'), ' consumerNumberType ', get-property('consumerNumberType'), ' consumerNumber ', get-property('consumerNumber'), ' tokenKey: ', get-property('tokenkey'))" name="logIds"/>
+        <property expression="fn:concat(' terminalId ', get-property('terminalId'), ' supervisoryId ', get-property('supervisoryId'), ' uri.var.channelId ', get-property('uri.var.channelId'), ' tranCode ', get-property('tranCode'), ' dateTime ', get-property('dateTime'), ' stan ', get-property('stan'), ' UtilityCompany ', get-property('uri.var.billerCode'), ' service ', get-property('uri.var.service'), ' consumerNumberType ', get-property('consumerNumberType'), ' consumerNumber ', get-property('consumerNumber'), ' tokenKey: ', get-property('tokenkey'))" name="logIds"/>
     </log>
 </sequence>

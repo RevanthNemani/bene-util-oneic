@@ -293,8 +293,8 @@
                     <arg evaluator="xml" expression="get-property('SOURCE_ID')"/>
                     <arg evaluator="xml" expression="get-property('consumerNumber')"/>
                     <arg evaluator="xml" expression="get-property('consumerNumber')"/>
-                    <arg evaluator="xml" expression="get-property('billerCode')"/>
-                    <arg evaluator="xml" expression="get-property('service')"/>
+                    <arg evaluator="xml" expression="get-property('uri.var.billerCode')"/>
+                    <arg evaluator="xml" expression="get-property('uri.var.service')"/>
                 </args>
             </payloadFactory>
             <sequence key="Sequence"/>
@@ -302,6 +302,7 @@
             <call>
                 <endpoint key="BillInquiryEP"/>
             </call>
+            <property expression="//MsgBody/InqRefNo" name="TransRef" scope="default" type="STRING"/>
             <enrich description="originalResponse">
                 <source clone="true" xpath="//MsgBody/BillsRec/BillRec"/>
                 <target action="child" property="originalResponse" type="property"/>
@@ -326,7 +327,8 @@
                                         </Header>
                                         <Body>
                                             <Response>
-                                                <OIFCResponse>$7</OIFCResponse>
+                                                <TransRef>$8</TransRef>
+                                                <ONEICResponse>$7</ONEICResponse>
                                             </Response>
                                         </Body>
                                     </CCIMessageResponse>
@@ -341,6 +343,7 @@
                             <arg evaluator="xml" expression="get-property('dateTime')"/>
                             <arg evaluator="xml" expression="get-property('stan')"/>
                             <arg evaluator="xml" expression="get-property('originalResponse')"/>
+                            <arg evaluator="xml" expression="get-property('TransRef')"/>
                         </args>
                     </payloadFactory>
                 </case>
@@ -407,13 +410,259 @@
     <resource methods="POST GET" url-mapping="/payment">
         <inSequence>
             <log level="full" separator=","/>
+            <property expression="//Request/AccountNo" name="accountNumber" scope="default" type="STRING"/>
+            <property expression="//Request/Amount" name="amount" scope="default" type="STRING"/>
+            <property expression="fn:substring(get-property('accountNumber'), 4, 7)" name="cif" scope="default" type="STRING"/>
+            <property expression="fn:substring(get-property('accountNumber'), 1, 3)" name="branch" scope="default" type="STRING"/>
+            <property expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd&quot;)" name="date" scope="default" type="STRING"/>
             <sequence key="info_sequence"/>
             <property expression="//Request/TransactionId" name="transRef" scope="default" type="STRING"/>
             <sequence key="getJsonSequence"/>
             <call>
-                <endpoint key="getOneUtilityEP"/>
+                <endpoint key="productEP"/>
+            </call>
+            <property expression="json-eval($.readProduct.billers[0].fcubsProduct)" name="prd" scope="default" type="STRING"/>
+            <property expression="json-eval($.readProduct.billers[0].narative)" name="narration" scope="default" type="STRING"/>
+            <property expression="json-eval($.readProduct.billers[0].cif)" name="billerCif" scope="default" type="STRING"/>
+            <property expression="fn:concat(get-property('narration'), get-property('consumerNumber'))" name="narrative" scope="default" type="STRING"/>
+            <property expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')" name="guidToMassage" scope="default" type="STRING"/>
+            <property expression="fn:normalize-space(fn:translate(get-property('guidToMassage'), '-', ''))" name="MassagedGuid" scope="default" type="STRING"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <CREATEUPTRANSACTION_FSFS_REQ xmlns="http://fcubs.ofss.com/service/FCUBSUPService">
+                        <FCUBS_HEADER>
+                            <SOURCE>$1</SOURCE>
+                            <UBSCOMP>FCUBS</UBSCOMP>
+                            <MSGID>$2</MSGID>
+                            <CORRELID>$3</CORRELID>
+                            <USERID>$5</USERID>
+                            <BRANCH>$4</BRANCH>
+                            <MODULEID>UP</MODULEID>
+                            <SERVICE>FCUBSUPService</SERVICE>
+                            <OPERATION>CreateUPTransaction</OPERATION>
+                            <SOURCE_OPERATION>CreateUPTransaction</SOURCE_OPERATION>
+                            <SOURCE_USERID>$6</SOURCE_USERID>
+                            <DESTINATION>FCUBS</DESTINATION>
+                            <MSGSTAT>SUCCESS</MSGSTAT>
+                        </FCUBS_HEADER>
+                        <FCUBS_BODY>
+                            <Transaction-Details>
+                                <XREF>$7</XREF>
+                                <PRD>$8</PRD>
+                                <INSTID>$9</INSTID>
+                                <BILLNO>$10</BILLNO>
+                                <BILLDT>$11</BILLDT>
+                                <BAMT>$12</BAMT>
+                                <CUSTACNO>$13</CUSTACNO>
+                                <CUSTBRN>$14</CUSTBRN>
+                                <BCCY>OMR</BCCY>
+                                <TXNCCY>OMR</TXNCCY>
+                                <ACCCY>OMR</ACCCY>
+                                <CONSNO>$15</CONSNO>
+                                <TXNDATE>$16</TXNDATE>
+                                <TXNBRN>$17</TXNBRN>
+                                <NARRATIVE>$18</NARRATIVE>
+                            </Transaction-Details>
+                        </FCUBS_BODY>
+                    </CREATEUPTRANSACTION_FSFS_REQ>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                    <arg evaluator="xml" expression="get-property('MassagedGuid')"/>
+                    <arg evaluator="xml" expression="get-property('MassagedGuid')"/>
+                    <arg evaluator="xml" expression="get-property('branch')"/>
+                    <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                    <arg evaluator="xml" expression="get-property('terminalId')"/>
+                    <arg evaluator="xml" expression="get-property('transRef')"/>
+                    <arg evaluator="xml" expression="get-property('prd')"/>
+                    <arg evaluator="xml" expression="get-property('billerCif')"/>
+                    <arg evaluator="xml" expression="get-property('transRef')"/>
+                    <arg evaluator="xml" expression="get-property('date')"/>
+                    <arg evaluator="xml" expression="get-property('amount')"/>
+                    <arg evaluator="xml" expression="get-property('accountNumber')"/>
+                    <arg evaluator="xml" expression="get-property('branch')"/>
+                    <arg evaluator="xml" expression="get-property('consumerNumber')"/>
+                    <arg evaluator="xml" expression="get-property('date')"/>
+                    <arg evaluator="xml" expression="get-property('branch')"/>
+                    <arg evaluator="xml" expression="get-property('narrative')"/>
+                </args>
+            </payloadFactory>
+            <sequence key="Sequence"/>
+            <call>
+                <endpoint key="fcubsupEP"/>
             </call>
             <log level="full" separator=","/>
+            <filter regex="SUCCESS" source="//fcubs:FCUBS_HEADER/fcubs:MSGSTAT" xmlns:fcubs="http://fcubs.ofss.com/service/FCUBSUPService">
+                <then>
+                    <property expression="//fcubs:FCUBS_BODY/fcubs:Transaction-Details/fcubs:FCCREF" name="fcubsRef" scope="default" type="STRING"/>
+                    <property expression="//fcubs:FCUBS_BODY/fcubs:Transaction-Details/fcubs:CHECKERSTAMP" name="chkTmpStp" scope="default" type="STRING"/>
+                    <property expression="fn:substring(get-property('chkTmpStp'), 1, 10)" name="chkDt" scope="default" type="STRING"/>
+                    <property expression="fn:substring(get-property('chkTmpStp'), 12, 8)" name="chkTm" scope="default" type="STRING"/>
+                    <property expression="fn:concat(get-property('chkDt'), 'T', get-property('chkTm'))" name="chkDtTm" scope="default" type="STRING"/>
+                    <log level="custom">
+                        <property expression="get-property('chkDtTm')" name="chkTmpStpLog"/>
+                    </log>
+                    <sequence key="getJsonSequence"/>
+                    <call>
+                        <endpoint key="tokenEP"/>
+                    </call>
+                    <log level="full" separator=","/>
+                    <property expression="json-eval($.tokenRead.token[0].key)" name="tokenkey" scope="default" type="STRING"/>
+                    <log level="custom">
+                        <property expression="get-property('tokenkey')" name="tokenLog"/>
+                    </log>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <tem:PayBill>
+                                        <tem:guid>$1</tem:guid>
+                                        <tem:tokenKey>$2</tem:tokenKey>
+                                        <tem:paymentRequest>
+                                            <MFEP xmlns="">
+                                                <MsgHeader>
+                                                    <TmStp>$3</TmStp>
+                                                    <TrsInf>
+                                                        <SdrCode>$4</SdrCode>
+                                                        <RcvCode>1</RcvCode>
+                                                        <ReqTyp>BILPMTRQ</ReqTyp>
+                                                    </TrsInf>
+                                                </MsgHeader>
+                                                <MsgBody>
+                                                    <Transactions>
+                                                        <TrxInf>
+                                                            <AcctInfo>
+                                                                <BillingNo>$5</BillingNo>
+                                                                <BillNo>$6</BillNo>
+                                                                <BillerCode>$7</BillerCode>
+                                                            </AcctInfo>
+                                                            <InqRefNo>$8</InqRefNo>
+                                                            <BankTrxID>$9</BankTrxID>
+                                                            <PmtStatus>PmtNew</PmtStatus>
+                                                            <DueAmt>$10</DueAmt>
+                                                            <PaidAmt>$11</PaidAmt>
+                                                            <ProcessDate>$12</ProcessDate>
+                                                            <AccessChannel>PORTAL</AccessChannel>
+                                                            <PaymentMethod>CCARD</PaymentMethod>
+                                                            <PaymentType>Postpaid</PaymentType>
+                                                            <Currency>OMR</Currency>
+                                                            <ServiceTypeDetails>
+                                                                <ServiceType>$13</ServiceType>
+                                                            </ServiceTypeDetails>
+                                                            <PayerInfo/>
+                                                        </TrxInf>
+                                                    </Transactions>
+                                                </MsgBody>
+                                                <MsgFooter>
+                                                    <Security>
+                                                        <Signature/>
+                                                    </Security>
+                                                </MsgFooter>
+                                            </MFEP>
+                                        </tem:paymentRequest>
+                                    </tem:PayBill>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')"/>
+                            <arg evaluator="xml" expression="get-property('tokenKey')"/>
+                            <arg evaluator="xml" expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd'T'HH:mm:ss&quot;)"/>
+                            <arg evaluator="xml" expression="get-property('SOURCE_ID')"/>
+                            <arg evaluator="xml" expression="get-property('consumerNumber')"/>
+                            <arg evaluator="xml" expression="get-property('consumerNumber')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.billerCode')"/>
+                            <arg evaluator="xml" expression="get-property('transRef')"/>
+                            <arg evaluator="xml" expression="get-property('fcubsRef')"/>
+                            <arg evaluator="xml" expression="get-property('amount')"/>
+                            <arg evaluator="xml" expression="get-property('amount')"/>
+                            <arg evaluator="xml" expression="get-property('chkDtTm')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.service')"/>
+                        </args>
+                    </payloadFactory>
+                    <sequence key="Sequence"/>
+                    <header description="SoapAction" name="SOAPAction" scope="transport" value="http://tempuri.org/IPayment/PayBill"/>
+                    <call>
+                        <endpoint key="BillPaymentEP"/>
+                    </call>
+                </then>
+                <else>
+                    <enrich>
+                        <source clone="true" xpath="//fcubs:FCUBS_BODY/fcubs:FCUBS_ERROR_RESP/fcubs:ERROR[1]"/>
+                        <target action="child" property="errorResp" type="property"/>
+                    </enrich>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <soap:Body>
+                                    <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                        <Header>
+                                            <MessageType>0210</MessageType>
+                                            <TranCode>$1</TranCode>
+                                            <TerminalId>$2</TerminalId>
+                                            <SupervisorId>$3</SupervisorId>
+                                            <ChannelId>$4</ChannelId>
+                                            <DateTime>$5</DateTime>
+                                            <STAN>$6</STAN>
+                                            <ErrorCode>128</ErrorCode>
+                                        </Header>
+                                        <Body>
+                                            <Response>$7</Response>
+                                        </Body>
+                                    </CCIMessageResponse>
+                                </soap:Body>
+                            </soap:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('tranCode')"/>
+                            <arg evaluator="xml" expression="get-property('terminalId')"/>
+                            <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                            <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                            <arg evaluator="xml" expression="get-property('dateTime')"/>
+                            <arg evaluator="xml" expression="get-property('stan')"/>
+                            <arg evaluator="xml" expression="get-property('errorResp')"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </else>
+            </filter>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <soap:Body>
+                            <CCIMessageResponse xmlns="http://CCIGATEWAY.CCI.WebServices/CCIServices">
+                                <Header>
+                                    <MessageType>0210</MessageType>
+                                    <TranCode>$1</TranCode>
+                                    <TerminalId>$2</TerminalId>
+                                    <SupervisorId>$3</SupervisorId>
+                                    <ChannelId>$4</ChannelId>
+                                    <DateTime>$5</DateTime>
+                                    <STAN>$6</STAN>
+                                    <ErrorCode>000</ErrorCode>
+                                </Header>
+                                <Body>
+                                    <Response>
+                                        <Branch>$7</Branch>
+                                        <TransactionId>$8</TransactionId>
+                                    </Response>
+                                </Body>
+                            </CCIMessageResponse>
+                        </soap:Body>
+                    </soap:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('tranCode')"/>
+                    <arg evaluator="xml" expression="get-property('terminalId')"/>
+                    <arg evaluator="xml" expression="get-property('supervisoryId')"/>
+                    <arg evaluator="xml" expression="get-property('uri.var.channelId')"/>
+                    <arg evaluator="xml" expression="get-property('dateTime')"/>
+                    <arg evaluator="xml" expression="get-property('stan')"/>
+                    <arg evaluator="xml" expression="get-property('branch')"/>
+                    <arg evaluator="xml" expression="get-property('fcubsRef')"/>
+                </args>
+            </payloadFactory>
             <send/>
         </inSequence>
         <outSequence>

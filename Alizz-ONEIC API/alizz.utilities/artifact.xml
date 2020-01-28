@@ -68,4 +68,10 @@
     <artifact name="BillInquiryEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/BillInquiryEP.xml</file>
     </artifact>
+    <artifact name="productEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/productEP.xml</file>
+    </artifact>
+    <artifact name="BillPaymentEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/BillPaymentEP.xml</file>
+    </artifact>
 </artifacts>

@@ -404,12 +404,12 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:Inquire>\r
-         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32d7</tem:guid>\r
-         <tem:tokenKey>11EFF3DC1E401B7204B664E30735EBAE6DE7477F9BF0AA7D3942748EEB36FEE15</tem:tokenKey>\r
+         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32f9</tem:guid>\r
+         <tem:tokenKey>F1553C4F614D7460E2D8530693DE2C529E1740406AE573CAF9C6AB23CB246A415</tem:tokenKey>\r
          <tem:billInquiryRequest>\r
 <MFEP xmlns="">
 	<MsgHeader>
-		<TmStp>2020-01-22T10:43:46</TmStp>
+		<TmStp>2020-01-28T18:03:46</TmStp>
 		<TrsInf>
 		<SdrCode>5</SdrCode>
 		<RcvCode>1</RcvCode>
@@ -729,9 +729,9 @@
    <soapenv:Body>\r
       <tem:GetBillersList>\r
          <!--Optional:-->\r
-         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32b9</tem:guid>\r
+         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32c2</tem:guid>\r
          <!--Optional:-->\r
-         <tem:tokenKey>11EFF3DC1E401B7204B664E30735EBAE6DE7477F9BF0AA7D3942748EEB36FEE15</tem:tokenKey>\r
+         <tem:tokenKey>2F182B900244022CC1D1B5D533641A48C80130055FAC83BDC5E02E0A71B20B815</tem:tokenKey>\r
       </tem:GetBillersList>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IBillersList/GetBillersList"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b2837c3f-5e80-450a-92fd-74f064611461" wsaVersion="200508" name="WSHttpBinding_IBillersList" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IBillersList" soapVersion="1_2" anonymous="optional" definition="http://10.8.16.68:6023/BillersList.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.8.16.68:6023/BillersList.svc?wsdl"><con:part><con:url>http://10.8.16.68:6023/BillersList.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillersList" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
@@ -1042,7 +1042,283 @@
       </tem:Authenticate>
 
    </soap:Body>soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4859dc74-9404-4da5-be02-0eeefd1be5c1" wsaVersion="NONE" name="BasicHttpBinding_IPayment1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IPayment1" soapVersion="1_1" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7003/BillPayment.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="6c65d80e-fb49-4494-b271-d62e96ca70c4" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="cdbe7786-75ea-4d5e-8235-6a2089671a5c" wsaVersion="200508" name="WSHttpBinding_IPayment1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IPayment1" soapVersion="1_2" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7003/BillPayment.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="31bcd5dc-e65e-44a1-963f-6d6edf131f23" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="389b4ed8-c65b-4abe-a493-6b23f86cbf4e" wsaVersion="NONE" name="BasicHttpBinding_IPayment" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IPayment" soapVersion="1_1" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://ef-webserve-001:6003/BillPayment.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="5db3145e-37db-4253-b38b-83b6b679d183" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="62c82c81-cbf5-4007-bd88-9c4442c52627" wsaVersion="200508" name="WSHttpBinding_IPayment" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IPayment" soapVersion="1_2" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://ef-webserve-001:6003/BillPayment.svc?wsdl"><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillPayment" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4859dc74-9404-4da5-be02-0eeefd1be5c1" wsaVersion="NONE" name="BasicHttpBinding_IPayment1" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IPayment1" soapVersion="1_1" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7003/BillPayment.svc/BasicHttps</con:endpoint></con:endpoints><con:operation id="6c65d80e-fb49-4494-b271-d62e96ca70c4" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="cdbe7786-75ea-4d5e-8235-6a2089671a5c" wsaVersion="200508" name="WSHttpBinding_IPayment1" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IPayment1" soapVersion="1_2" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://ef-webserve-001:7003/BillPayment.svc/WSHttps</con:endpoint></con:endpoints><con:operation id="31bcd5dc-e65e-44a1-963f-6d6edf131f23" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="389b4ed8-c65b-4abe-a493-6b23f86cbf4e" wsaVersion="NONE" name="BasicHttpBinding_IPayment" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IPayment" soapVersion="1_1" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://ef-webserve-001:6003/BillPayment.svc?wsdl"><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillPayment" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IPayment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IPayment1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IPayment1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPayment_PayBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:PayBill"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_PayBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PayBillResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IPayment">
+    <wsdl:operation name="PayBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/PayBill" message="tns:IPayment_PayBill_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/PayBillResponse" message="tns:IPayment_PayBill_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IPayment" type="tns:IPayment">
+    <wsp:PolicyReference URI="#WSHttpBinding_IPayment_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap12:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IPayment1" type="tns:IPayment">
+    <wsp:PolicyReference URI="#WSHttpBinding_IPayment1_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap12:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPayment" type="tns:IPayment">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPayment1" type="tns:IPayment">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IPayment1_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PayBill">
+      <soap:operation soapAction="http://tempuri.org/IPayment/PayBill" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillPayment">
+    <wsdl:port name="WSHttpBinding_IPayment" binding="tns:WSHttpBinding_IPayment">
+      <soap12:address location="http://ef-webserve-001:6003/BillPayment.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ef-webserve-001:6003/BillPayment.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IPayment1" binding="tns:WSHttpBinding_IPayment1">
+      <soap12:address location="https://ef-webserve-001:7003/BillPayment.svc/WSHttps"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ef-webserve-001:7003/BillPayment.svc/WSHttps</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPayment" binding="tns:BasicHttpBinding_IPayment">
+      <soap:address location="http://ef-webserve-001:6003/BillPayment.svc/BasicHttp"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPayment1" binding="tns:BasicHttpBinding_IPayment1">
+      <soap:address location="https://ef-webserve-001:7003/BillPayment.svc/BasicHttps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="PayBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="tokenKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentRequest" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PayBillResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ef-webserve-001:6003/BillPayment.svc/BasicHttp</con:endpoint></con:endpoints><con:operation id="5db3145e-37db-4253-b38b-83b6b679d183" isOneWay="false" action="http://tempuri.org/IPayment/PayBill" name="PayBill" bindingOperationName="PayBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d6f3bbee-1651-4986-86b6-3ea900d0a46f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ef-webserve-001:6003/BillPayment.svc/BasicHttp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:tem="http://tempuri.org/">
+    <soapenv:Header />
+    <soapenv:Body>
+        <tem:PayBill>
+            <!--Optional:-->
+            <tem:guid>d3f4173b-363e-4923-af97-4df8956217be</tem:guid>
+            <!--Optional:-->
+            <tem:tokenKey>92BB5DFF6C6B6DDEFA6A4E14120E01ADF967C5084C86E10E84F2E53482FE6BF15</tem:tokenKey>
+            <!--Optional:-->
+            <tem:paymentRequest>
+                <MFEP xmlns="">
+                    <MsgHeader>
+                        <TmStp>2020-01-28T23:37:52</TmStp>
+                        <TrsInf>
+                            <SdrCode>5</SdrCode>
+                            <RcvCode>1</RcvCode>
+                            <ReqTyp>BILPMTRQ</ReqTyp>
+                        </TrsInf>
+                    </MsgHeader>
+                    <MsgBody>
+                        <Transactions>
+                            <TrxInf>
+                                <AcctInfo>
+                                    <BillingNo>35327</BillingNo>
+                                    <BillNo>35327</BillNo>
+                                    <BillerCode>3</BillerCode>
+                                </AcctInfo>
+                                <InqRefNo>3617307</InqRefNo>
+                                <BankTrxID>001BPN1200280003</BankTrxID>
+                                <PmtStatus>PmtNew</PmtStatus>
+                                <DueAmt>77</DueAmt>
+                                <PaidAmt>77</PaidAmt>
+                                <ProcessDate>2020-01-28T23:36:52</ProcessDate>
+                                <AccessChannel>PORTAL</AccessChannel>
+                                <PaymentMethod>CCARD</PaymentMethod>
+                                <PaymentType>Postpaid</PaymentType>
+                                <Currency>OMR</Currency>
+                                <ServiceTypeDetails>
+                                    <ServiceType>Water</ServiceType>
+                                </ServiceTypeDetails>
+                                <PayerInfo></PayerInfo>
+                            </TrxInf>
+                        </Transactions>
+                    </MsgBody>
+                    <MsgFooter>
+                        <Security>
+                            <Signature />
+                        </Security>
+                    </MsgFooter>
+                </MFEP>
+            </tem:paymentRequest>
+        </tem:PayBill>
+    </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPayment/PayBill"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="62c82c81-cbf5-4007-bd88-9c4442c52627" wsaVersion="200508" name="WSHttpBinding_IPayment" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IPayment" soapVersion="1_2" anonymous="optional" definition="http://ef-webserve-001:6003/BillPayment.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://ef-webserve-001:6003/BillPayment.svc?wsdl"><con:part><con:url>http://ef-webserve-001:6003/BillPayment.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BillPayment" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
   <wsp:Policy wsu:Id="WSHttpBinding_IPayment_policy">
     <wsp:ExactlyOne>
       <wsp:All>
