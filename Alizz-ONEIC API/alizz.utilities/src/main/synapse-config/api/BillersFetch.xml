@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/billers" name="BillersFetch" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" url-mapping="/list">
+        <inSequence>
+            <sequence key="getJsonSequence"/>
+            <call>
+                <endpoint key="tokenEP"/>
+            </call>
+            <property expression="json-eval($.tokenRead.token[0].key)" name="tokenkey" scope="default" type="STRING"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <tem:GetBillersList xmlns:tem="http://tempuri.org/">
+                        <!--Optional:-->
+                        <tem:guid>$1</tem:guid>
+                        <!--Optional:-->
+                        <tem:tokenKey>$2</tem:tokenKey>
+                    </tem:GetBillersList>
+                </format>
+                <args/>
+            </payloadFactory>
+            <sequence key="Sequence"/>
+            <call>
+                <endpoint key="billersListEP"/>
+            </call>
+            <log level="full" separator=","/>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

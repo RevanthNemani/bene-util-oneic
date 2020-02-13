@@ -12,6 +12,7 @@
     <module>../alizz.utilities</module>
   </modules>
   <properties>
+    <com.alizz.utilities.endpoint_._billersListEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._billersListEP>
     <com.alizz.utilities_._SOURCE_PWD>capp/EnterpriseServiceBus</com.alizz.utilities_._SOURCE_PWD>
     <com.alizz.utilities.sequence_._info_sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._info_sequence>
     <com.alizz.utilities.sequence_._getIdSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._getIdSequence>
@@ -30,6 +31,7 @@
     <com.alizz.utilities.sequence_._logSequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._logSequence>
     <com.alizz.utilities.endpoint_._getOneUtilityEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._getOneUtilityEP>
     <com.alizz.utilities.api_._utilityBillPayment>capp/EnterpriseServiceBus</com.alizz.utilities.api_._utilityBillPayment>
+    <com.alizz.utilities.api_._BillersFetch>capp/EnterpriseServiceBus</com.alizz.utilities.api_._BillersFetch>
     <com.alizz.utilities.endpoint_._systemIdEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._systemIdEP>
     <com.alizz.utilities.sequence_._Sequence>capp/EnterpriseServiceBus</com.alizz.utilities.sequence_._Sequence>
     <com.alizz.utilities.endpoint_._AuthenticateEP>capp/EnterpriseServiceBus</com.alizz.utilities.endpoint_._AuthenticateEP>
@@ -40,6 +42,12 @@
     <com.alizz.utilities_._SOURCE_ID>capp/EnterpriseServiceBus</com.alizz.utilities_._SOURCE_ID>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.alizz.utilities.api</groupId>
+      <artifactId>BillersFetch</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
     <dependency>
       <groupId>com.alizz.utilities.api</groupId>
       <artifactId>token</artifactId>
@@ -73,6 +81,12 @@
     <dependency>
       <groupId>com.alizz.utilities.endpoint</groupId>
       <artifactId>addBeneficiaryEP</artifactId>
+      <version>0.1.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.alizz.utilities.endpoint</groupId>
+      <artifactId>billersListEP</artifactId>
       <version>0.1.0</version>
       <type>xml</type>
     </dependency>

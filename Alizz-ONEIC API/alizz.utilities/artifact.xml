@@ -74,4 +74,10 @@
     <artifact name="BillPaymentEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/BillPaymentEP.xml</file>
     </artifact>
+    <artifact name="BillersFetch" groupId="com.alizz.utilities.api" version="0.1.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/BillersFetch.xml</file>
+    </artifact>
+    <artifact name="billersListEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/billersListEP.xml</file>
+    </artifact>
 </artifacts>
