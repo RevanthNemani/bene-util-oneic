@@ -2,8 +2,6 @@
 
 Copyright (c) 2019 alizz islamic Bank, all rights reserved
 
-API to modify beneficiaries and utility payments
-
 ## List Available billers
 
 ### Rest service:
@@ -256,6 +254,8 @@ API to modify beneficiaries and utility payments
 ```
 
 ## Modify Beneficiaries
+
+API to modify beneficiaries and utility payments
 
 ### Rest service:
 
