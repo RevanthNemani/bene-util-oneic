@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<endpoint name="billersListEP" xmlns="http://ws.apache.org/ns/synapse">
-    <wsdl port="BasicHttpBinding_IBillersList" service="BillersList" uri="http://10.8.16.68:6023/BillersList.svc?wsdl">
+<endpoint name="updateBillersEP" xmlns="http://ws.apache.org/ns/synapse">
+    <http method="post" uri-template="http://10.10.150.22:8281/services/beneficiaryds/billers/1">
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
-            <progressionFactor>1</progressionFactor>
+            <progressionFactor>1.0</progressionFactor>
         </suspendOnFailure>
         <markForSuspension>
             <retriesBeforeSuspension>0</retriesBeforeSuspension>
         </markForSuspension>
-    </wsdl>
+    </http>
 </endpoint>

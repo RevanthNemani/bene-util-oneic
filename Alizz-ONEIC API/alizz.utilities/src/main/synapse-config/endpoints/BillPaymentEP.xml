@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="BillPaymentEP" xmlns="http://ws.apache.org/ns/synapse">
-    <wsdl port="BasicHttpBinding_IPayment" service="BillPayment" uri="http://10.8.16.68:6003/BillPayment.svc?wsdl"/>
+    <wsdl port="BasicHttpBinding_IPayment" service="BillPayment" uri="http://10.8.16.68:6003/BillPayment.svc?wsdl">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </wsdl>
 </endpoint>

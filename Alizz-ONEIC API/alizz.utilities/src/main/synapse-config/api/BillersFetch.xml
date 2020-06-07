@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/billers" name="BillersFetch" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="GET" url-mapping="/list">
+    <resource methods="POST" url-mapping="/update">
         <inSequence>
             <sequence key="getJsonSequence"/>
             <call>
@@ -10,19 +10,56 @@
             <payloadFactory media-type="xml">
                 <format>
                     <tem:GetBillersList xmlns:tem="http://tempuri.org/">
-                        <!--Optional:-->
+                        <!--Optional: -->
                         <tem:guid>$1</tem:guid>
-                        <!--Optional:-->
+                        <!--Optional: -->
                         <tem:tokenKey>$2</tem:tokenKey>
                     </tem:GetBillersList>
                 </format>
-                <args/>
+                <args>
+                    <arg evaluator="xml" expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')"/>
+                    <arg evaluator="xml" expression="get-property('tokenkey')"/>
+                </args>
             </payloadFactory>
             <sequence key="Sequence"/>
+            <header description="SoapAction" name="SOAPAction" scope="transport" value="http://tempuri.org/IBillersList/GetBillersList"/>
             <call>
                 <endpoint key="billersListEP"/>
             </call>
-            <log level="full" separator=","/>
+            <property expression="//ns1:GetBillersListResult//MFEP//MsgBody" name="originalResponse" scope="default" type="STRING" xmlns:ns1="http://tempuri.org/"/>
+            <payloadFactory media-type="json">
+                <format>
+					{
+					"_postbillers_billerid": {
+					"billerid": "1",
+					"billers": "$1"
+					}
+					}
+				</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('originalResponse')" literal="true"/>
+                </args>
+            </payloadFactory>
+            <header action="remove" description="remove-xml-Accept-header" name="Accept" scope="transport"/>
+            <header action="remove" description="remove-xml-content-header" name="Content-Type" scope="transport"/>
+            <sequence key="json-header-sequence"/>
+            <call>
+                <endpoint key="updateBillersEP"/>
+            </call>
+            <send/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/list-billers">
+        <inSequence>
+            <header action="remove" description="remove-xml-Accept-header" name="Accept" scope="transport"/>
+            <header action="remove" description="remove-xml-content-header" name="Content-Type" scope="transport"/>
+            <header description="set-json-accept-header" name="Accept" scope="transport" value="application/xml"/>
+            <property name="FORCE_POST_PUT_NOBODY" scope="axis2" type="BOOLEAN" value="true"/>
+            <call>
+                <endpoint key="getStoredBillers"/>
+            </call>
             <send/>
         </inSequence>
         <outSequence>

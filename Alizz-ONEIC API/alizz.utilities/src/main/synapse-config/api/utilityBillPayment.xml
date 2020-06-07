@@ -488,6 +488,7 @@
                 </args>
             </payloadFactory>
             <sequence key="Sequence"/>
+            <log description="fcubs request" level="full" separator=","/>
             <call>
                 <endpoint key="fcubsupEP"/>
             </call>

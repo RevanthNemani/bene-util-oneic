@@ -3,6 +3,8 @@
 	<name>alizz.utilities</name>
 	<comment></comment>
 	<projects>
+		<project>alizz.utilitiesCompositeApplication</project>
+		<project>alizz.utilitiesRegistry</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

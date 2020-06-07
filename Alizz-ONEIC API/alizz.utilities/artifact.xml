@@ -80,4 +80,10 @@
     <artifact name="billersListEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/billersListEP.xml</file>
     </artifact>
+    <artifact name="updateBillersEP" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/updateBillersEP.xml</file>
+    </artifact>
+    <artifact name="getStoredBillers" groupId="com.alizz.utilities.endpoint" version="0.1.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getStoredBillers.xml</file>
+    </artifact>
 </artifacts>

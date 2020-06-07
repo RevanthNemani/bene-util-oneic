@@ -404,12 +404,12 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:Inquire>\r
-         <tem:guid>2b53da3d-49a8-4a42-b8ee-9e15985f32f9</tem:guid>\r
-         <tem:tokenKey>F1553C4F614D7460E2D8530693DE2C529E1740406AE573CAF9C6AB23CB246A415</tem:tokenKey>\r
+         <tem:guid>631f2eb6-3ae4-43fe-b478-d8cac264a72b</tem:guid>\r
+         <tem:tokenKey>986EC6D362FF57E37A36681DE32EFFB23A3B4EE9000057DCF0EE1CAE9C26EE7D5</tem:tokenKey>\r
          <tem:billInquiryRequest>\r
-<MFEP xmlns="">
+<MFEP>
 	<MsgHeader>
-		<TmStp>2020-01-28T18:03:46</TmStp>
+		<TmStp>2020-04-19T13:39:48</TmStp>
 		<TrsInf>
 		<SdrCode>5</SdrCode>
 		<RcvCode>1</RcvCode>
@@ -420,7 +420,7 @@
 		<AcctInfo>
 		<BillingNo>35327</BillingNo>
 		<BillNo>35327</BillNo>
-		<BillerCode>3</BillerCode>
+		<BillerCode>9</BillerCode>
 		</AcctInfo>
 		<ServiceType>Electricity</ServiceType>
 	</MsgBody>

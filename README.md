@@ -4,6 +4,257 @@ Copyright (c) 2019 alizz islamic Bank, all rights reserved
 
 API to modify beneficiaries and utility payments
 
+## List Available billers
+
+### Rest service:
+
+### Methods (-X): GET
+
+#### URL: [http://10.10.150.22:8281/billers/list-billers](http://10.10.150.22:8281/billers/list-billers)
+
+### Response
+
+```{xml}
+<biller xmlns="http://ws.wso2.org/dataservice/readBillers">
+    <billerList>
+        <MsgBody>
+            <RecCount>2</RecCount>
+            <SystemMarketing>
+                <EnImg>http://www.asd.asd/asd.jpg</EnImg>
+                <ArImg>http://www.asd.asd/asd.jpg</ArImg>
+            </SystemMarketing>
+            <BillersRec>
+                <BillerRec>
+                    <BillerInfo>
+                        <Code>3</Code>
+                        <StmtBankCode>2</StmtBankCode>
+                        <Website>www.oman.com</Website>
+                        <Email>walkofahi@madfooat.com</Email>
+                        <Phone>+96898934420</Phone>
+                    </BillerInfo>
+                    <BillerName>
+                        <EnShortName>ONEIC</EnShortName>
+                        <ArShortName>اونيك</ArShortName>
+                        <EnName>ONEIC</EnName>
+                        <ArName>الشركه الوطنيه العمانيه للهندسه والاستثمار</ArName>
+                    </BillerName>
+                    <BillerMarketing>
+                        <EnLogo>https://cdn1.imggmi.com/uploads/2019/4/8/c9d1c867908d548b0f4aa5fdb0ff2dda-full.jpg</EnLogo>
+                    </BillerMarketing>
+                    <BillerCategory>
+                        <EnShortName>UTIL</EnShortName>
+                        <ArShortName>أدوات</ArShortName>
+                        <EnName>Utility</EnName>
+                        <ArName>أدوات</ArName>
+                    </BillerCategory>
+                    <BillerServices>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>30966</Code>
+                                <Type>Electricity</Type>
+                                <EnShortDesc>Electricity</EnShortDesc>
+                                <ArShortDesc>كهرباء</ArShortDesc>
+                                <EnDesc>Electricity</EnDesc>
+                                <ArDesc>كهرباء</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Subscription number</EnShortDesc>
+                                <ArShortDesc>رقم الاشتراك</ArShortDesc>
+                                <EnDesc>Enter subscription number</EnDesc>
+                                <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>30999</Code>
+                                <Type>Water</Type>
+                                <EnShortDesc>water</EnShortDesc>
+                                <ArShortDesc>مياه</ArShortDesc>
+                                <EnDesc>water</EnDesc>
+                                <ArDesc>مياه</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Subscription number</EnShortDesc>
+                                <ArShortDesc>رقم الاشتراك</ArShortDesc>
+                                <EnDesc>Enter subscription number</EnDesc>
+                                <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31038</Code>
+                                <Type>OmantelPostpaid</Type>
+                                <EnShortDesc>Omantel GSM</EnShortDesc>
+                                <ArShortDesc>عمانتل هاتف</ArShortDesc>
+                                <EnDesc>Omantel GSM</EnDesc>
+                                <ArDesc>عمانتل هاتف</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Enter your number</EnShortDesc>
+                                <ArShortDesc>ادخل رقم الاشتراك</ArShortDesc>
+                                <EnDesc>Enter your number</EnDesc>
+                                <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31039</Code>
+                                <Type>OmantelTelecom</Type>
+                                <EnShortDesc>Omantel landline</EnShortDesc>
+                                <ArShortDesc>عمانتل ثابت</ArShortDesc>
+                                <EnDesc>Omantel landline</EnDesc>
+                                <ArDesc>عمانتل ثابت</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Enter your number</EnShortDesc>
+                                <ArShortDesc>ادخل رقم الاشتراك</ArShortDesc>
+                                <EnDesc>Enter your number</EnDesc>
+                                <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31037</Code>
+                                <Type>OmantelInternet</Type>
+                                <EnShortDesc>Omantel internet</EnShortDesc>
+                                <ArShortDesc>عمانتل انترنت</ArShortDesc>
+                                <EnDesc>Omantel internet</EnDesc>
+                                <ArDesc>عمانتل انترنت</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Enter your number</EnShortDesc>
+                                <ArShortDesc>ادخل رقم الاشتراك</ArShortDesc>
+                                <EnDesc>Enter your number</EnDesc>
+                                <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31040</Code>
+                                <Type>OoredooPostpaid</Type>
+                                <EnShortDesc>Ooredoo postpaid</EnShortDesc>
+                                <ArShortDesc>اوريدو فاتوره</ArShortDesc>
+                                <EnDesc>Ooredoo postpaid</EnDesc>
+                                <ArDesc>اوريدو فاتوره</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Enter your number</EnShortDesc>
+                                <ArShortDesc>ادخل رقم الاشتراك</ArShortDesc>
+                                <EnDesc>Enter your number</EnDesc>
+                                <ArDesc>ادخل رقم الاشتراك</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                    </BillerServices>
+                </BillerRec>
+                <BillerRec>
+                    <BillerInfo>
+                        <Code>4</Code>
+                        <IntegrationType>Online</IntegrationType>
+                        <StmtBankCode>2</StmtBankCode>
+                        <Website>www.omanpush.com</Website>
+                        <Email>wajdi.kofahi@oneic.com.om</Email>
+                        <Phone>+96885493062</Phone>
+                    </BillerInfo>
+                    <BillerName>
+                        <EnShortName>OmPush</EnShortName>
+                        <ArShortName>بيلر</ArShortName>
+                        <EnName>Oman push</EnName>
+                        <ArName>عمان بيلر</ArName>
+                    </BillerName>
+                    <BillerMarketing>
+                        <EnLogo>https://i.imgur.com/pXovLrD.jpg</EnLogo>
+                    </BillerMarketing>
+                    <BillerCategory>
+                        <EnShortName>OTHR</EnShortName>
+                        <ArShortName>أخرى</ArShortName>
+                        <EnName>Other</EnName>
+                        <ArName>أخرى</ArName>
+                    </BillerCategory>
+                    <BillerServices>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31031</Code>
+                                <Type>Electricity</Type>
+                                <EnShortDesc>Electricity</EnShortDesc>
+                                <ArShortDesc>كهرباء</ArShortDesc>
+                                <EnDesc>Electricity</EnDesc>
+                                <ArDesc>كهرباء</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Electricity</EnShortDesc>
+                                <ArShortDesc>كهرباء</ArShortDesc>
+                                <EnDesc>Electricity</EnDesc>
+                                <ArDesc>كهرباء</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31004</Code>
+                                <Type>Individual</Type>
+                                <EnShortDesc>Individual</EnShortDesc>
+                                <ArShortDesc>فردي</ArShortDesc>
+                                <EnDesc>Individual</EnDesc>
+                                <ArDesc>فردي</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Individual</EnShortDesc>
+                                <ArShortDesc>فردي</ArShortDesc>
+                                <EnDesc>Individual</EnDesc>
+                                <ArDesc>فردي</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>31030</Code>
+                                <Type>Water</Type>
+                                <EnShortDesc>Water</EnShortDesc>
+                                <ArShortDesc>مياه</ArShortDesc>
+                                <EnDesc>Water</EnDesc>
+                                <ArDesc>مياه</ArDesc>
+                                <PaymentType>Postpaid</PaymentType>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>Water</EnShortDesc>
+                                <ArShortDesc>مياه</ArShortDesc>
+                                <EnDesc>Water</EnDesc>
+                                <ArDesc>مياه</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                        <BillerService>
+                            <ServiceInfo>
+                                <Code>30991</Code>
+                                <Type>Topup</Type>
+                                <EnShortDesc>z</EnShortDesc>
+                                <ArShortDesc>ب</ArShortDesc>
+                                <EnDesc>z</EnDesc>
+                                <ArDesc>ب</ArDesc>
+                                <PaymentType>Prepaid</PaymentType>
+                                <BillingNoRequired>false</BillingNoRequired>
+                                <ContainsPrepaidCats>false</ContainsPrepaidCats>
+                            </ServiceInfo>
+                            <BillingInfo>
+                                <EnShortDesc>z</EnShortDesc>
+                                <ArShortDesc>ب</ArShortDesc>
+                                <EnDesc>z</EnDesc>
+                                <ArDesc>ب</ArDesc>
+                            </BillingInfo>
+                        </BillerService>
+                    </BillerServices>
+                </BillerRec>
+            </BillersRec>
+        </MsgBody>
+    </billerList>
+</biller>
+```
+
 ## Modify Beneficiaries
 
 ### Rest service:
@@ -14,8 +265,8 @@ API to modify beneficiaries and utility payments
 
 ### Headers (-H)
 
-1.	“Content-Type:text/xml”
-2.	“Accept:text/xml”
+1. “Content-Type:text/xml”
+2. “Accept:text/xml”
 
 ### Request 
 

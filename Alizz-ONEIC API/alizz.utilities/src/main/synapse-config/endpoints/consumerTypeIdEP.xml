@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="consumerTypeIdEP" xmlns="http://ws.apache.org/ns/synapse">
-    <http method="get" uri-template="http://10.10.150.22:8281/services/utlds/consumer/{uri.var.consumerType}"/>
+    <http method="get" uri-template="http://10.10.150.22:8281/services/utlds/consumer/{uri.var.consumerType}">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </http>
 </endpoint>
