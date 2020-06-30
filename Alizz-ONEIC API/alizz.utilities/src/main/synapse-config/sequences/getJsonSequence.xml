@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<sequence name="getJsonSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-    <header action="remove" description="remove-xml-Accept-header" name="Accept" scope="transport"/>
-    <header action="remove" description="remove-xml-content-header" name="Content-Type" scope="transport"/>
-    <header description="set-json-accept-header" name="Accept" scope="transport" value="application/json"/>
-    <property name="FORCE_POST_PUT_NOBODY" scope="axis2" type="BOOLEAN" value="true"/>
-</sequence>
